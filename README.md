@@ -1,5 +1,5 @@
-https://design-patterns-2021.netlify.app/
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a3afdba3-d30e-40a2-9642-e385621a07c1/deploy-status)](https://app.netlify.com/sites/design-patterns-2021/deploys)
+https://project-web-2021.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69690d4f-f2be-4992-8006-69c6e0a85e36/deploy-status)](https://app.netlify.com/sites/project-web-2021/deploys)
 
-# Design Patterns
+# Project Web
 Multi-Device Design presenteren in een screenflow.
