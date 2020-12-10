@@ -28,6 +28,7 @@
     "file-size": "^1.0.0"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.6"
   }
 }
