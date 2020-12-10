@@ -114,10 +114,8 @@ header .quote {
   border-radius: 5px;
   font-size: $h3;
   width: 30%;
-}
-
-.quote {
   border-left: 2.5px solid $sweetpink;
+  margin-bottom: 2rem;
 }
 
 .quote p {
@@ -180,10 +178,6 @@ figure {
   margin-bottom: 4rem;
 }
 
-article:last-child {
-  box-shadow: 0 0 0 0;
-  align-content: center;
-}
 
 @media screen and (max-width: 450px) {
   article {
