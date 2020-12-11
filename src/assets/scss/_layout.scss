@@ -36,6 +36,7 @@ aside figure {
 blockquote {
   margin: 0.2rem 0;
 }
+
 /* COMPONENTS */
 header {
   display: flex;
@@ -261,6 +262,7 @@ button {
     background-color: grey;
   }
 }
+
 /* ATOMS */
 .backToTop {
   position: fixed;
@@ -271,6 +273,7 @@ button {
   padding: 0.3rem 0.6rem;
   border-radius: 5px 5px 0 0;
 }
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 450px) {
   article {

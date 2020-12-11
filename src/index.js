@@ -7,10 +7,10 @@ const photoset_id = "72157717231770806"
 const extras = "extras=license%2C+date_upload%2C+date_taken%2C+owner_name%2C+icon_server%2C+original_format%2C+last_update%2C+geo%2C+tags%2C+machine_tags%2C+o_dims%2C+views%2C+media%2C+path_alias%2C+url_sq%2C+url_l"
 const apiLink= `${endpoint}?method=${method}&api_key=${api_key}&photoset_id=${photoset_id}&user_id=${user_id}&extras=${extras}&${format}`
 
-const albumname = document.getElementById('albumname')
-const owner = document.getElementById('owner')
-const amount = document.getElementById('amount')
-const album = document.getElementById('album')
+const albumname = document.querySelector('.albumname')
+const owner = document.querySelector('.owner')
+const amount = document.querySelector('.amount')
+const album = document.querySelector('.album')
 
 
 fetch(apiLink)
@@ -44,7 +44,7 @@ function renderPhotos(data) {
  }
 
  function hangSlingersOp() {
-   var slingers = document.getElementById("slingers");
+   var slingers = document.querySelector(".slingers");
    if (slingers.style.display === "none") {
      slingers.style.display = "block";
    } else {
