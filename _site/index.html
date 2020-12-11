@@ -27,8 +27,8 @@
     </aside>
     <nav>
       <ul>
-        <li><a href="#inspiratie">inspiratie</a></li>
-        <li><a href="#tijdlijn">tijdlijn</a></li>
+        <li><a onclick="updatePageUI('inspiratie')" href="/#inspiratie">inspiratie</a></li>
+        <li><a onclick="updatePageUI('/')" href="/">tijdlijn</a></li>
         <li><a href="#notities">notities</a></li>
       </ul>
     </nav>
@@ -39,8 +39,11 @@
     </div> -->
   </header>
   <main>
-    <section class="album">
+     <section data-route="/" id="/src/" class="flickr active">
       <h2 id="tijdlijn">Tijdlijn</h2>
+    </section>
+    <section data-route="inspiratie" id="/src/#inspiratie" class="unsplash">
+      <h2 id="inspiratie">Inspiratie</h2>
     </section>
     <aside>
       <figure class="quote">

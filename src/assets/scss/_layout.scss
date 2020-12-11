@@ -17,7 +17,7 @@ body {
 img {
   max-width: 100%;
   max-height: 100%;
-  padding: 0 0.5rem;
+  // padding: 0 0.5rem;
 }
 
 aside figure {
@@ -228,6 +228,33 @@ footer {
     margin-bottom: 0.5rem;
   }
 }
+
+/* SPECIFICS */
+main section {
+  display: none;
+}
+
+// main section[data-route="/"]:active {
+
+// }
+
+// main section[data-route="inspiratie"]:active {
+  
+// }
+
+
+.active {
+  display: flex;
+}
+
+.unsplash {
+  article {
+    max-width: 20%;
+  }
+}
+
+
+
 /* STATES */
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);

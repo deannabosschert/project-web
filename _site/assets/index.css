@@ -252,7 +252,6 @@ body {
 img {
   max-width: 100%;
   max-height: 100%;
-  padding: 0 0.5rem;
 }
 
 aside figure {
@@ -438,6 +437,19 @@ footer p {
   width: 25%;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+/* SPECIFICS */
+main section {
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
+.unsplash article {
+  max-width: 20%;
 }
 
 /* STATES */
