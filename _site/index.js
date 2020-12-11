@@ -30,7 +30,7 @@ function flickr() {
   const albumname = document.querySelector('.albumname')
   const owner = document.querySelector('.owner')
   const amount = document.querySelector('.amount')
-  const album = document.querySelector('.album')
+  const album = document.querySelector('.flickr')
 
 
   fetch(apiLink)
@@ -103,4 +103,18 @@ function hangSlingersOp() {
   } else {
     slingers.style.display = "none";
   }
+}
+
+
+// update page from route
+function updatePageUI(route) {
+  console.log(route)
+  const sections = document.querySelectorAll('section')
+  sections.forEach(section => {
+    section.classList.remove('active')
+  })
+
+  const activeSection = document.querySelector(`[data-route="${route}"]`)
+  console.log(activeSection)
+  activeSection.classList.add('active')
 }

@@ -439,6 +439,15 @@ footer p {
   margin-bottom: 0.5rem;
 }
 
+/* SPECIFICS */
+main section {
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
 /* STATES */
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);
