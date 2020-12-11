@@ -41,7 +41,7 @@ blockquote {
 header {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 
   section {
     display: flex;
@@ -169,6 +169,13 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 1rem;
+
+    h2 {
+      text-align: center;
+      align-self: center;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 }
 
