@@ -444,6 +444,14 @@ main section {
   display: none;
 }
 
+main section[data-route="/"]:active {
+  display: flex;
+}
+
+main section[data-route=inspiratie]:active {
+  display: flex;
+}
+
 .active {
   display: flex;
 }
@@ -452,10 +460,19 @@ main section {
   max-width: 20%;
 }
 
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchForm label, .searchForm input, .searchForm button {
+  margin: 0.5rem;
+}
+
 /* STATES */
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);
-  border: 5px solid rgba(95, 0, 158, 0.185);
   background-image: linear-gradient(to right, #8e8efc -10%, #8e8efc 60%, #ece0ec 99%, #b582b5 155%);
   color: white;
   border-radius: 5px;
@@ -466,6 +483,8 @@ button {
   vertical-align: middle;
   transition: 0.5s;
   background-size: 200% auto;
+  padding: 0.6rem 1rem;
+  margin: 0.2rem;
 }
 button:hover {
   box-shadow: 0;

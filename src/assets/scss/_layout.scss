@@ -234,13 +234,13 @@ main section {
   display: none;
 }
 
-// main section[data-route="/"]:active {
+main section[data-route="/"]:active {
+  display: flex;
+}
 
-// }
-
-// main section[data-route="inspiratie"]:active {
-  
-// }
+main section[data-route="inspiratie"]:active {
+  display: flex;
+}
 
 
 .active {
@@ -253,12 +253,23 @@ main section {
   }
 }
 
+.searchForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  label, input, button {
+    margin: 0.5rem;
+  }
+}
+
 
 
 /* STATES */
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);
-  border: 5px solid rgba(95, 0, 158, 0.185);
+  // border: 5px solid rgba(95, 0, 158, 0.185);
   background-image: linear-gradient(to right, $purple -10%, $purple 60%, $pink 99%, $lilac 155%);
   color: white;
   border-radius: $border-radius;
@@ -269,6 +280,8 @@ button {
   vertical-align: middle;
   transition: 0.5s;
   background-size: 200% auto;
+  padding: 0.6rem 1rem;
+  margin: 0.2rem;
 
   &:hover {
     // background-color: #efefef;
