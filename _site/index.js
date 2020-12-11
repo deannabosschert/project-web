@@ -19,7 +19,7 @@ fetch(apiLink)
 
 function renderPhotos(data) {
   const photoset = Object.values(data)[0]
-  console.log(photoset.photo[0])
+  // console.log(photoset.photo[0])
 
   albumname.innerHTML+= photoset.title
   amount.innerHTML+= photoset.total + ' photos'
@@ -27,7 +27,7 @@ function renderPhotos(data) {
 
 
   return photoset.photo.map(data => {
-    console.log(data.height_l)
+    // console.log(data.height_l)
         album.innerHTML+=
         `
         <article>
