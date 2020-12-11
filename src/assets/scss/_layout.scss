@@ -234,18 +234,26 @@ main section {
   display: none;
 }
 
-main section[data-route="/"]:active {
+// main section[data-route="/"]:active {
 
-}
+// }
 
-main section[data-route="inspiratie"]:active {
+// main section[data-route="inspiratie"]:active {
   
-}
+// }
 
 
 .active {
   display: flex;
 }
+
+.unsplash {
+  article {
+    max-width: 20%;
+  }
+}
+
+
 
 /* STATES */
 button {

@@ -448,6 +448,10 @@ main section {
   display: flex;
 }
 
+.unsplash article {
+  max-width: 20%;
+}
+
 /* STATES */
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);
