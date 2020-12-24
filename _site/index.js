@@ -13,7 +13,7 @@
 // }
 flickr()
 
-unsplash()
+// unsplash()
 
 
 
@@ -66,8 +66,11 @@ function flickr() {
 }
 
 function unsplash() {
+  const input = document.getElementById("unsplash-search")
+  const searchTerm = input.value.toUpperCase()
+
   const endpoint = "https://api.unsplash.com"
-  const searchTerm = "trees"
+  // const searchTerm = "trees"
   const count = "10"
   const clientID = "WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
   const apiLink = `${endpoint}/photos/random/?count=${count}&query=${searchTerm}&client_id=${clientID}`
@@ -110,6 +113,10 @@ function hangSlingersOp() {
   }
 }
 
+function searchInspiration() {
+  const input = document.getElementById("unsplash-search")
+  const searchTerm = input.value.toUpperCase()
+}
 
 // update page from route
 function updatePageUI(route) {
