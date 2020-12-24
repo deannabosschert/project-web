@@ -66,11 +66,17 @@ function flickr() {
 }
 
 function unsplash() {
-
-  const endpoint = "https://api.unsplash.com/"
-  const username = "deannabosschert"
-  const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
-  const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
+  const endpoint = "https://api.unsplash.com"
+  const searchTerm = "trees"
+  const count = "10"
+  const clientID = "WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
+  const apiLink = `${endpoint}/photos/random/?count=${count}&query=${searchTerm}&client_id=${clientID}`
+  
+  
+  // const username = "deannabosschert"
+  // const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
+  // const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
+  
   const gallery = document.querySelector('.unsplash')
 
   fetch(apiLink)
@@ -80,19 +86,17 @@ function unsplash() {
   function renderPhotos(data) {
     console.log(data)
     return data.map(data => {
-      console.log(data.urls.regular)
+      // console.log(data.urls.regular)
       gallery.innerHTML += 
       `
       <article>
       <figure>
         <img  style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
-        <figcaption>title</figcaption>
+        <figcaption>${data.description}</figcaption>
       </figure>
-      <p>${data.description}</p>
-      <ul>
-       <li>${data.tags}</li>
-      </ul>
-      </article>`
+      <p>${data.alt_description}</p>
+      </article>
+      `
     })
   }
 }
