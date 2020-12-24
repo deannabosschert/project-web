@@ -440,15 +440,19 @@ footer p {
 }
 
 /* SPECIFICS */
-main section {
+.tab {
   display: none;
 }
 
-main section[data-route="/"]:active {
+main .tab[data-route=tijdlijn]:active {
   display: flex;
 }
 
-main section[data-route=inspiratie]:active {
+main .tab[data-route=inspiratie]:active {
+  display: flex;
+}
+
+main .tab[data-route=notities]:active {
   display: flex;
 }
 
@@ -460,13 +464,13 @@ main section[data-route=inspiratie]:active {
   max-width: 20%;
 }
 
-.searchForm {
+.searchUnsplash {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.searchForm label, .searchForm input, .searchForm button {
+.searchUnsplash label, .searchUnsplash input, .searchUnsplash button {
   margin: 0.5rem;
 }
 

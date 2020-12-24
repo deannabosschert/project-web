@@ -13,10 +13,6 @@
 // }
 flickr()
 
-// unsplash()
-
-
-
 function flickr() {
   const endpoint = "https://www.flickr.com/services/rest/"
   const method = "flickr.photosets.getPhotos"
@@ -65,6 +61,9 @@ function flickr() {
 
 }
 
+const searchUnsplash = document.querySelector('.searchUnsplash');
+searchUnsplash.addEventListener('submit', unsplash);
+
 function unsplash() {
   const input = document.getElementById("unsplash-search")
   const searchTerm = input.value.toUpperCase()
@@ -80,7 +79,7 @@ function unsplash() {
   // const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
   // const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
   
-  const gallery = document.querySelector('.unsplash')
+  const gallery = document.querySelector('.unsplashGallery')
 
   fetch(apiLink)
     .then(res => res.json())
@@ -102,6 +101,9 @@ function unsplash() {
       `
     })
   }
+
+  event.preventDefault();
+
 }
 
 function hangSlingersOp() {
@@ -113,20 +115,15 @@ function hangSlingersOp() {
   }
 }
 
-function searchInspiration() {
-  const input = document.getElementById("unsplash-search")
-  const searchTerm = input.value.toUpperCase()
-}
-
 // update page from route
 function updatePageUI(route) {
-  console.log(route)
-  const sections = document.querySelectorAll('section')
-  sections.forEach(section => {
-    section.classList.remove('active')
+  // console.log(route)
+  const tabs = document.querySelectorAll('.tab')
+  tabs.forEach(tab => {
+    tab.classList.remove('active')
   })
 
   const activeSection = document.querySelector(`[data-route="${route}"]`)
-  console.log(activeSection)
+  // console.log(activeSection)
   activeSection.classList.add('active')
 }
