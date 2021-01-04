@@ -42,7 +42,7 @@ Dan kan ze namelijk via 'Add photo's', haar foto's direct importeren vanuit Flic
 ## Assignment 2
 Develop an interactive prototype which shows your concept of this Multi-Device Experience.
 
-### Installation
+## Installation
 ` npm install` ==> install my added packages
 
 #### Compiles and hot-reloads for development
