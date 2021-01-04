@@ -24,13 +24,14 @@ Dan kan ze namelijk via 'Add photo's', haar foto's direct importeren vanuit Flic
 
 ### API research
 #### Unsplash
-![screenshot of unsplash research](https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/unsplash_api_research.jpg)
+
+<img src="https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/unsplash_api_research.jpg" alt="screenshot of unsplash research" width="500">
 
 #### Flickr
-![screenshot of Flickr research](https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/flickr_api_research.jpg)
+<img src="https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/flickr_api_research.jpg" alt="screenshot of flickr research" width="500">
 
 #### Pinterest
-![screenshot of Pinterest research](https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/pinterest_api_research.jpg)
+<img src="https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/pinterest_api_research.jpg" alt="screenshot of pinterest research" width="500">
 
 ### Customer Journey Map
 ![customer journey map](https://github.com/deannabosschert/project-web/blob/main/src/assets/img/assignments/CJM.jpg)
