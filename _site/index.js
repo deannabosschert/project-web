@@ -13,10 +13,6 @@
 // }
 flickr()
 
-unsplash()
-
-
-
 function flickr() {
   const endpoint = "https://www.flickr.com/services/rest/"
   const method = "flickr.photosets.getPhotos"
@@ -65,13 +61,25 @@ function flickr() {
 
 }
 
-function unsplash() {
+const searchUnsplash = document.querySelector('.searchUnsplash');
+searchUnsplash.addEventListener('submit', unsplash);
 
-  const endpoint = "https://api.unsplash.com/"
-  const username = "deannabosschert"
-  const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
-  const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
-  const gallery = document.querySelector('.unsplash')
+function unsplash() {
+  const input = document.getElementById("unsplash-search")
+  const searchTerm = input.value.toUpperCase()
+
+  const endpoint = "https://api.unsplash.com"
+  // const searchTerm = "trees"
+  const count = "10"
+  const clientID = "WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
+  const apiLink = `${endpoint}/photos/random/?count=${count}&query=${searchTerm}&client_id=${clientID}`
+  
+  
+  // const username = "deannabosschert"
+  // const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
+  // const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
+  
+  const gallery = document.querySelector('.unsplashGallery')
 
   fetch(apiLink)
     .then(res => res.json())
@@ -80,21 +88,22 @@ function unsplash() {
   function renderPhotos(data) {
     console.log(data)
     return data.map(data => {
-      console.log(data.urls.regular)
+      // console.log(data.urls.regular)
       gallery.innerHTML += 
       `
       <article>
       <figure>
         <img  style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
-        <figcaption>title</figcaption>
+        <figcaption>${data.description}</figcaption>
       </figure>
-      <p>${data.description}</p>
-      <ul>
-       <li>${data.tags}</li>
-      </ul>
-      </article>`
+      <p>${data.alt_description}</p>
+      </article>
+      `
     })
   }
+
+  event.preventDefault();
+
 }
 
 function hangSlingersOp() {
@@ -106,16 +115,15 @@ function hangSlingersOp() {
   }
 }
 
-
 // update page from route
 function updatePageUI(route) {
-  console.log(route)
-  const sections = document.querySelectorAll('section')
-  sections.forEach(section => {
-    section.classList.remove('active')
+  // console.log(route)
+  const tabs = document.querySelectorAll('.tab')
+  tabs.forEach(tab => {
+    tab.classList.remove('active')
   })
 
   const activeSection = document.querySelector(`[data-route="${route}"]`)
-  console.log(activeSection)
+  // console.log(activeSection)
   activeSection.classList.add('active')
 }

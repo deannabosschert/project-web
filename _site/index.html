@@ -15,7 +15,7 @@
       <p class="owner"></p>
       <p class="amount"></p>
     </section>
-    <aside>
+    <!-- <aside>
       <figure onclick="hangSlingersOp()" class="quote">
         <img class="slingers" src="./assets/img/slingers_opgehangen.png">
         <blockquote cite="techkech.nl">
@@ -24,28 +24,33 @@
         </blockquote>
         <figcaption>- Deanna Bosschert, <cite> vijfdejaarsstudent CMD</cite></figcaption>
       </figure>
-    </aside>
+    </aside> -->
     <nav>
       <ul>
         <li><a onclick="updatePageUI('inspiratie')" href="/#inspiratie">inspiratie</a></li>
-        <li><a onclick="updatePageUI('/')" href="/">tijdlijn</a></li>
-        <li><a href="#notities">notities</a></li>
+        <li><a onclick="updatePageUI('tijdlijn')" href="/#tijdlijn">tijdlijn</a></li>
+        <li><a onclick="updatePageUI('notities')" href="/#notities">notities</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section data-route="/" id="/src/" class="flickr active">
+    <section data-route="tijdlijn" id="/src/" class="flickr tab">
       <h2 id="tijdlijn">Tijdlijn</h2>
     </section>
-    <section data-route="inspiratie" id="/src/#inspiratie" class="unsplash">
+    <section data-route="inspiratie" id="/src/#inspiratie" class="unsplash tab active">
       <h2 id="inspiratie">Inspiratie</h2>
-      <form class="searchForm">
+      <form class="searchUnsplash">
         <label for="site-search">Search for images:</label>
-        <input type="search" id="site-search" name="q" aria-label="Search through unsplash content">
-        <button>Search</button>
+        <input type="search" id="unsplash-search" name="q" aria-label="Search through unsplash content">
+        <button type="submit">Search</button>
       </form>
+     <section class="unsplashGallery">
+     </section >
     </section>
-    <aside>
+    <section data-route="notities" id="/src/#notities" class="notities tab">
+      <h2 id="notities">Notities</h2>
+    </section>
+    <!-- <aside>
       <figure class="quote">
         <blockquote cite="techkech.nl">
           <p>"Will simp voor studiepunten"
@@ -53,7 +58,7 @@
         </blockquote>
         <figcaption>— Ik, <cite>jullie favoriete langstudeerder</cite></figcaption>
       </figure>
-    </aside>
+    </aside> -->
   </main>
   <footer>
     <p>

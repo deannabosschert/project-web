@@ -230,20 +230,23 @@ footer {
 }
 
 /* SPECIFICS */
-main section {
+ .tab {
   display: none;
 }
 
-main section[data-route="/"]:active {
+main .tab[data-route="tijdlijn"]:active {
   display: flex;
 }
 
-main section[data-route="inspiratie"]:active {
+main .tab[data-route="inspiratie"]:active {
   display: flex;
 }
 
+main .tab[data-route="notities"]:active {
+  display: flex;
+}
 
-.active {
+ .active {
   display: flex;
 }
 
@@ -253,7 +256,7 @@ main section[data-route="inspiratie"]:active {
   }
 }
 
-.searchForm {
+.searchUnsplash {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -338,3 +341,37 @@ button {
     max-width: 45%;
   }
 }
+
+
+// voorbeeldje voor eerstejaars
+// .homepage {
+//   h1 {
+//     color: blue;
+//   }
+
+//   article {
+//     border-radius: 5px;
+//   }
+
+//   section {
+//     background-image: url("/src/assets/img/1.png")
+//   }
+// }
+
+
+// .homepage {
+//   background-image: url("/src/assets/img/1.png")
+// }
+
+// .profile {
+//   background-image: url("/src/assets/img/2.png")
+// }
+
+// .menu {
+//   background-image: url("/src/assets/img/3.png")
+// }
+
+
+// header aside figure {
+  
+// }
