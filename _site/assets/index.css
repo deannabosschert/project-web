@@ -460,7 +460,7 @@ main .tab[data-route=notities]:active {
   display: flex;
 }
 
-.unsplash article {
+.inspiratie article {
   max-width: 20%;
 }
 
@@ -472,6 +472,10 @@ main .tab[data-route=notities]:active {
 }
 .searchUnsplash label, .searchUnsplash input, .searchUnsplash button {
   margin: 0.5rem;
+}
+
+.inspiratie > span {
+  min-width: 60vw;
 }
 
 /* STATES */
@@ -530,11 +534,6 @@ button:disabled {
   article {
     max-width: 40%;
     margin: 0.75rem;
-  }
-}
-@media screen and (min-width: 1300px) {
-  article {
-    max-width: 45%;
   }
 }
 
