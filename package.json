@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "masonry-layout": "^4.2.2",
     "nodemon": "^2.0.6"
   }
 }

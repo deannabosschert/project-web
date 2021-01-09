@@ -250,7 +250,7 @@ main .tab[data-route="notities"]:active {
   display: flex;
 }
 
-.unsplash {
+.inspiratie {
   article {
     max-width: 20%;
   }
@@ -266,6 +266,18 @@ main .tab[data-route="notities"]:active {
     margin: 0.5rem;
   }
 }
+
+
+
+.inspiratie>span {
+
+  min-width: 60vw;
+}
+
+
+
+
+
 
 
 
@@ -337,10 +349,35 @@ button {
   }
 }
 @media screen and (min-width: 1300px) {
-  article {
-    max-width: 45%;
+  // article {
+  //   max-width: 45%;
+  // }
   }
-}
+
+
+//   .unsplashGallery {
+//     display: flex;
+//     flex-wrap: wrap;
+//     article {
+//       height: 10rem;
+//       line-height: 10rem;
+//       background: #EC985A;
+//       color: white;
+//       margin: 0 1rem 1rem 0;
+//       text-align: center;
+//       font-family: system-ui;
+//       font-weight: 900;
+//       font-size: 2rem;
+//       flex: 1 0 auto;
+//     } 
+//     @for $i from 1 through 36 { 
+//       article:nth-child(#{$i}) {
+//         $h: (random(400) + 70) + px;
+//         width: $h;
+//       }
+//     }
+//   }
+// }
 
 
 // voorbeeldje voor eerstejaars
@@ -371,7 +408,3 @@ button {
 //   background-image: url("/src/assets/img/3.png")
 // }
 
-
-// header aside figure {
-  
-// }

@@ -10,6 +10,9 @@
 //   } catch (err) {
 //     console.error(err)
 //   }
+
+// const Masonry = require("masonry-layout")
+
 // }
 flickr()
 
@@ -70,7 +73,7 @@ function unsplash() {
 
   const endpoint = "https://api.unsplash.com"
   // const searchTerm = "trees"
-  const count = "10"
+  const count = "18"
   const clientID = "WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
   const apiLink = `${endpoint}/photos/random/?count=${count}&query=${searchTerm}&client_id=${clientID}`
   
@@ -84,6 +87,7 @@ function unsplash() {
   fetch(apiLink)
     .then(res => res.json())
     .then(data => renderPhotos(data))
+    .then(data => fillMasonry(data))
 
   function renderPhotos(data) {
     console.log(data)
@@ -93,16 +97,28 @@ function unsplash() {
       `
       <article>
       <figure>
-        <img  style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
-        <figcaption>${data.description}</figcaption>
+        <img style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
       </figure>
-      <p>${data.alt_description}</p>
       </article>
       `
     })
   }
 
+
+  // `
+  // <article>
+  // <figure>
+  //   <img  style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
+  //   <figcaption>${data.description}</figcaption>
+  // </figure>
+  // <p>${data.alt_description}</p>
+  // </article>
+  // `
   event.preventDefault();
+}
+
+function fillMasonry() {
+  return
 
 }
 
