@@ -171,33 +171,33 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 5rem;
-  line-height: 5rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
 
 h2 {
-  font-size: 3rem;
-  line-height: 3rem;
-}
-
-h3 {
   font-size: 2rem;
   line-height: 2rem;
 }
 
-h4 {
-  font-size: 1.8rem;
-  line-height: 1.8rem;
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.75rem;
 }
 
-h5 {
+h4 {
   font-size: 1.675rem;
   line-height: 1.675rem;
 }
 
+h5 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
 h6 {
-  font-size: 1.4rem;
-  line-height: 1.4rem;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
 }
 
 p {
@@ -214,7 +214,7 @@ button {
 }
 
 nav ul li a {
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1;
   text-align: center;
 }
@@ -254,6 +254,19 @@ img {
   max-height: 100%;
 }
 
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+form label,
+form input,
+form button {
+  margin: 0.5rem;
+}
+
 aside figure {
   margin-bottom: 4rem;
 }
@@ -268,6 +281,10 @@ aside figure figcaption {
 
 blockquote {
   margin: 0.2rem 0;
+}
+
+h3 {
+  margin-bottom: 1.5rem;
 }
 
 /* COMPONENTS */
@@ -302,8 +319,11 @@ header section p {
   width: 65%;
   color: white;
   margin-bottom: 1rem;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
+}
+header section p span {
+  font-weight: 500;
 }
 header section button {
   width: 7rem;
@@ -318,7 +338,7 @@ header section a {
   top: 0;
   right: 30px;
   min-height: 20px;
-  padding: 0.2rem 3rem;
+  padding: 0.2rem 2rem;
 }
 header nav {
   min-width: 100%;
@@ -355,7 +375,7 @@ header .quote {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 0.2rem 1rem;
   border-radius: 5px;
-  font-size: 2rem;
+  font-size: 1.75rem;
   width: 30%;
   border-left: 2.5px solid #fc8ec5;
   margin-top: -3.8rem;
@@ -430,13 +450,23 @@ footer {
   justify-content: center;
   width: 100vw;
 }
-footer p {
+footer ul {
   display: flex;
   justify-content: space-between;
   max-height: 2rem;
-  width: 25%;
+  width: 50%;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+footer ul li, footer ul a {
+  max-height: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* SECTIONS */
+.inspiratie article {
+  max-width: 20%;
 }
 
 /* SPECIFICS */
@@ -454,24 +484,6 @@ main .tab[data-route=notities]:active {
 }
 main .active {
   display: flex;
-}
-
-.inspiratie article {
-  max-width: 20%;
-}
-
-.searchUnsplash {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.searchUnsplash label, .searchUnsplash input, .searchUnsplash button {
-  margin: 0.5rem;
-}
-
-.inspiratie > span {
-  min-width: 60vw;
 }
 
 /* STATES */
@@ -521,16 +533,5 @@ button:disabled {
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 450px) {
-  article {
-    width: 80%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  article {
-    max-width: 40%;
-    margin: 0.75rem;
-  }
-}
 
 /*# sourceMappingURL=index.css.map */
