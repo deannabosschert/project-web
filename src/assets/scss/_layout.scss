@@ -230,24 +230,26 @@ footer {
 }
 
 /* SPECIFICS */
+main {
  .tab {
   display: none;
 }
 
-main .tab[data-route="tijdlijn"]:active {
+.tab[data-route="tijdlijn"]:active {
   display: flex;
 }
 
-main .tab[data-route="inspiratie"]:active {
+ .tab[data-route="inspiratie"]:active {
   display: flex;
 }
 
-main .tab[data-route="notities"]:active {
+ .tab[data-route="notities"]:active {
   display: flex;
 }
 
  .active {
   display: flex;
+}
 }
 
 .inspiratie {

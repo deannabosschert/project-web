@@ -440,23 +440,19 @@ footer p {
 }
 
 /* SPECIFICS */
-.tab {
+main .tab {
   display: none;
 }
-
 main .tab[data-route=tijdlijn]:active {
   display: flex;
 }
-
 main .tab[data-route=inspiratie]:active {
   display: flex;
 }
-
 main .tab[data-route=notities]:active {
   display: flex;
 }
-
-.active {
+main .active {
   display: flex;
 }
 
