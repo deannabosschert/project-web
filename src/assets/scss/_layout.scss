@@ -20,6 +20,20 @@ img {
   // padding: 0 0.5rem;
 }
 
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  label,
+  input,
+  button {
+    margin: 0.5rem;
+  }
+}
+
 aside figure {
   margin-bottom: 4rem;
 
@@ -35,6 +49,10 @@ aside figure {
 
 blockquote {
   margin: 0.2rem 0;
+}
+
+h3 {
+  margin-bottom: 1.5rem;
 }
 
 /* COMPONENTS */
@@ -71,8 +89,12 @@ header {
       width: 65%;
       color: white;
       margin-bottom: 1rem;
-      font-size: $h2;
-      line-height: $h2;
+      font-size: $h6;
+      line-height: $h6;
+
+      span {
+        font-weight: 500;
+      }
     }
 
     button {
@@ -219,38 +241,23 @@ footer {
   justify-content: center;
   width: 100vw;
 
-  p {
+  ul {
     display: flex;
     justify-content: space-between;
     max-height: 2rem;
-    width: 25%;
+    width: 50%;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+
+    li, a {
+      max-height: 2rem;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
-/* SPECIFICS */
-main {
- .tab {
-  display: none;
-}
-
-.tab[data-route="tijdlijn"]:active {
-  display: flex;
-}
-
- .tab[data-route="inspiratie"]:active {
-  display: flex;
-}
-
- .tab[data-route="notities"]:active {
-  display: flex;
-}
-
- .active {
-  display: flex;
-}
-}
+/* SECTIONS */
 
 .inspiratie {
   article {
@@ -258,29 +265,28 @@ main {
   }
 }
 
-.searchUnsplash {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* SPECIFICS */
+main {
+  .tab {
+    display: none;
+  }
 
-  label, input, button {
-    margin: 0.5rem;
+  .tab[data-route="tijdlijn"]:active {
+    display: flex;
+  }
+
+  .tab[data-route="inspiratie"]:active {
+    display: flex;
+  }
+
+  .tab[data-route="notities"]:active {
+    display: flex;
+  }
+
+  .active {
+    display: flex;
   }
 }
-
-
-
-.inspiratie>span {
-
-  min-width: 60vw;
-}
-
-
-
-
-
-
 
 
 /* STATES */
@@ -341,20 +347,22 @@ button {
 /* MEDIA QUERIES */
 @media screen and (max-width: 450px) {
   article {
-    width: 80%;
+    // width: 80%;
   }
 }
+
 @media screen and (min-width: 1024px) {
   article {
-    max-width: 40%;
-    margin: 0.75rem;
+    // max-width: 40%;
+    // margin: 0.75rem;
   }
 }
+
 @media screen and (min-width: 1300px) {
   // article {
   //   max-width: 45%;
   // }
-  }
+}
 
 
 //   .unsplashGallery {
@@ -380,33 +388,3 @@ button {
 //     }
 //   }
 // }
-
-
-// voorbeeldje voor eerstejaars
-// .homepage {
-//   h1 {
-//     color: blue;
-//   }
-
-//   article {
-//     border-radius: 5px;
-//   }
-
-//   section {
-//     background-image: url("/src/assets/img/1.png")
-//   }
-// }
-
-
-// .homepage {
-//   background-image: url("/src/assets/img/1.png")
-// }
-
-// .profile {
-//   background-image: url("/src/assets/img/2.png")
-// }
-
-// .menu {
-//   background-image: url("/src/assets/img/3.png")
-// }
-
