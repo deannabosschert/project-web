@@ -21,16 +21,32 @@ img {
 }
 
 form {
-  width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  width: 100%;
   margin-bottom: 2.5rem;
 
   label,
   input,
   button {
     margin: 0.5rem;
+  }
+
+  label {
+    text-align: center;
+    width: 100%;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  input, button {
+    height: 3rem;
   }
 }
 
@@ -103,6 +119,8 @@ header {
       margin: 1rem 0 0.5rem;
     }
 
+      
+
     a {
       background-color: $sweetpink;
       color: white;
@@ -112,6 +130,12 @@ header {
       right: 30px;
       min-height: 20px;
       padding: 0.2rem $h2;
+      font-weight: bold;
+      text-align: center;
+      
+      span {
+        color: black;
+      }
     }
   }
 
@@ -132,7 +156,7 @@ header {
         // width: 5rem;
         border-radius: 2px;
         border-bottom: 2.5px solid $sweetpink;
-        padding: 0.1rem 0.3rem;
+        padding: 0.2rem 0.3rem;
 
         &:hover {
           border-bottom: 2px solid black;
@@ -249,7 +273,8 @@ footer {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 
-    li, a {
+    li,
+    a {
       max-height: 2rem;
       display: flex;
       justify-content: center;

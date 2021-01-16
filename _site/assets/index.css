@@ -154,19 +154,18 @@ table {
   font-style: italic;
   font-display: swap;
 }
-body {
-  line-height: 1.2rem;
-}
-
-p {
-  line-height: 1.4;
+h1,
+h2 {
+  font-weight: 600;
+  text-align: center;
 }
 
 html {
   font-family: Avenir;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: Avenir Black;
 }
 
@@ -183,6 +182,7 @@ h2 {
 h3 {
   font-size: 1.75rem;
   line-height: 1.75rem;
+  font-weight: 500;
 }
 
 h4 {
@@ -200,7 +200,9 @@ h6 {
   line-height: 1.375rem;
 }
 
-p {
+p,
+li,
+address, label, input {
   font-size: 1.2rem;
 }
 
@@ -219,12 +221,12 @@ nav ul li a {
   text-align: center;
 }
 
-header section a {
+header section aside {
   font-weight: bold;
   text-align: center;
 }
 
-header section a span {
+header section aside span {
   color: black;
 }
 
@@ -234,6 +236,74 @@ figcaption {
   text-align: right;
 }
 
+@media screen and (min-width: 250px) {
+  h3,
+nav ul li a {
+    font-size: calc(1.25rem * 1.2);
+  }
+
+  p,
+li,
+address {
+    font-size: 1.2rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+    line-height: calc(1rem * 2.5);
+  }
+}
+@media screen and (min-width: 450px) {
+  h3,
+nav ul li a {
+    font-size: calc(2.25rem * 1.32);
+  }
+
+  p,
+li,
+address {
+    font-size: calc(1.2rem * 1.2);
+    line-height: calc(1.2rem * 2);
+  }
+
+  figcaption {
+    font-size: 1rem;
+    line-height: calc(1rem * 2.5);
+  }
+}
+@media screen and (min-width: 730px) {
+  h3,
+nav ul li a {
+    font-size: calc(2.25rem * 1.2);
+    line-height: calc(2.25rem * 2);
+  }
+
+  p,
+li,
+address {
+    font-size: calc(1.2rem * 1.1);
+  }
+
+  figcaption {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h3,
+nav ul li a {
+    font-size: 1.75rem;
+  }
+
+  p,
+li,
+address {
+    font-size: 1.2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+}
 /* BASE */
 html {
   scroll-behavior: smooth;
@@ -255,16 +325,29 @@ img {
 }
 
 form {
-  width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  width: 100%;
   margin-bottom: 2.5rem;
 }
 form label,
 form input,
 form button {
   margin: 0.5rem;
+}
+form label {
+  text-align: center;
+  width: 100%;
+}
+form label h3 {
+  margin-bottom: 0;
+}
+form input, form button {
+  height: 3rem;
 }
 
 aside figure {
@@ -339,6 +422,11 @@ header section a {
   right: 30px;
   min-height: 20px;
   padding: 0.2rem 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+header section a span {
+  color: black;
 }
 header nav {
   min-width: 100%;
@@ -356,7 +444,7 @@ header nav ul li {
   text-align: center;
   border-radius: 2px;
   border-bottom: 2.5px solid #fc8ec5;
-  padding: 0.1rem 0.3rem;
+  padding: 0.2rem 0.3rem;
 }
 header nav ul li:hover {
   border-bottom: 2px solid black;
@@ -458,7 +546,8 @@ footer ul {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-footer ul li, footer ul a {
+footer ul li,
+footer ul a {
   max-height: 2rem;
   display: flex;
   justify-content: center;
