@@ -42,7 +42,7 @@ function flickr() {
 
     albumname.innerHTML += photoset.title
     amount.innerHTML += photoset.total + ' photos'
-    owner.innerHTML += 'by ' + `<em>${photoset.ownername}</em>`
+    owner.innerHTML += 'by ' + `<span>${photoset.ownername}</span>`
 
 
     return photoset.photo.map(data => {
@@ -54,7 +54,6 @@ function flickr() {
             <img src="${data.url_l}" alt="${data.title}">
             <figcaption>${data.title}</figcaption>
         </figure>
-        <p>hier komt een bijschrift</p>
         <ul>
          <li>${data.tags}</li>
         </ul>
