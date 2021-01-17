@@ -90,13 +90,14 @@ function unsplash() {
 
   function renderPhotos(data) {
     console.log(data)
+    gallery.innerHTML = `<h4>Search results for: <span>${searchTerm}</span></h4>`
     return data.map(data => {
       // console.log(data.urls.regular)
       gallery.innerHTML += 
       `
       <article>
       <figure>
-        <img style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
+        <img style="border: 6.5px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
       </figure>
       </article>
       `

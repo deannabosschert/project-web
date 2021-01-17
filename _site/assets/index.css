@@ -186,23 +186,25 @@ h3 {
 }
 
 h4 {
-  font-size: 1.675rem;
-  line-height: 1.675rem;
-}
-
-h5 {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-}
-
-h6 {
   font-size: 1.375rem;
   line-height: 1.375rem;
 }
 
+h5 {
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+}
+
+h6 {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
 p,
 li,
-address, label, input {
+address,
+label,
+input {
   font-size: 1.2rem;
 }
 
@@ -346,7 +348,8 @@ form label {
 form label h3 {
   margin-bottom: 0;
 }
-form input, form button {
+form input,
+form button {
   height: 3rem;
 }
 
@@ -380,13 +383,11 @@ header section {
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   background-color: #8EC5FC;
   background-image: linear-gradient(62deg, #7fb1e2 0%, #c9afe2 100%);
-  background-position: 8px left;
-  background-size: cover;
   justify-content: center;
-  height: 14rem;
+  height: 12rem;
   padding-left: 10%;
 }
 header section h1 {
@@ -402,8 +403,8 @@ header section p {
   width: 65%;
   color: white;
   margin-bottom: 1rem;
-  font-size: 1.375rem;
-  line-height: 1.375rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 header section p span {
   font-weight: 500;
@@ -504,15 +505,7 @@ main section h2 {
 }
 
 article {
-  background-color: #fefefe;
-  background-color: white;
-  border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  margin: 1rem;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
 article h2 {
   text-align: center;
@@ -554,8 +547,31 @@ footer ul a {
 }
 
 /* SECTIONS */
-.inspiratie article {
-  max-width: 20%;
+.unsplashGallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.unsplashGallery article {
+  max-width: 37.5%;
+  margin: 0.7rem;
+  padding: 0;
+}
+.unsplashGallery article figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.unsplashGallery h4 {
+  font-weight: lighter;
+  color: #433a4b;
+  font-variant: all-petite-caps;
+  width: 100%;
+  text-align: center;
+}
+.unsplashGallery h4 span {
+  font-weight: 700;
 }
 
 /* SPECIFICS */
@@ -617,7 +633,7 @@ button:disabled {
   right: 30px;
   background: black;
   color: white;
-  padding: 0.3rem 0.6rem;
+  padding: 1rem 0.8rem;
   border-radius: 5px 5px 0 0;
 }
 
