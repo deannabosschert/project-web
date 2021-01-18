@@ -23,9 +23,12 @@ async function filterData(data) {
     amount: data.photoset.total,
     photos: data.photoset.photo.map(data => {
       return {
-      url: data.url_l,
-      description: data.title,
-      tags: data.tags
+      id: data.id,
+      url_small: data.url_s,
+      url_large: data.url_l,
+      title: data.title,
+      tags: data.tags,
+      date: data.datetaken
       }
     })
     }

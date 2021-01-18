@@ -24,14 +24,14 @@ const router = {
           renderPhotos.timeline(photos)
           updatePageUI('/')
         })
-      },
-      notities: () => {
-        const loadData = loadPhotos.timeline()
-        loadData.then(photos => {
-          renderPhotos.notities(photos)
-          updatePageUI('notities')
-        })
-      },
+      // },
+      // notities: () => {
+      //   const loadData = loadPhotos.timeline()
+      //   loadData.then(photos => {
+      //     renderPhotos.notities(photos)
+      //     updatePageUI('notities')
+      //   })
+      // },
       // '/:id': id => {
       //   const loadData = loadPhotos.timeline()
       //   loadData.then(photos => {
@@ -41,7 +41,7 @@ const router = {
       //     renderPhotos.detail(onephoto)
       //   })
       //   updatePageUI('pictureDetail')
-      // }
+      }
     })
   },
   hasData() {
@@ -58,7 +58,7 @@ const router = {
         updatePageUI('/')
       },
       notities: () => {
-        renderPhotos.notities(photos)
+        // renderPhotos.notities(photos)
         updatePageUI('notities')
       },
       inspiratie: () => {

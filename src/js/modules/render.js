@@ -10,18 +10,24 @@ const renderPhotos = {
       amount: data.amount + ' photos'
     }
 
-    const photoList = {
-      // albumName: data.title,
-      // albumOwner: 'by ' + `<span>${data.ownername}</span>`,
-      // amount: data.title + ' photos',
-      photos: data.photos.map(photo => ({
-        url: photo.url_l,
+    // const photoList = data.photos.map(photo => ({
+    //     url: photo.url_l,
+    //     title: photo.title,
+    //     tags: photo.tags
+    //   }))
+    // }
+
+    const photoList = data.photos.map(photo => {
+      return {
+        url: photo.url_small,
         title: photo.title,
         tags: photo.tags
-      }))
-    }
+      }
+    })
 
-   
+
+    console.log(photoList)
+
     // const photoAvatars = JSON.parse(storage.getItem("githubAvatars"))
     // const avatarIMG = photoAvatars.map(photoAvatar => ({
     //   avatar: photoAvatar.transparency.model.avatar
