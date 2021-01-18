@@ -154,53 +154,57 @@ table {
   font-style: italic;
   font-display: swap;
 }
-body {
-  line-height: 1.2rem;
-}
-
-p {
-  line-height: 1.4;
+h1,
+h2 {
+  font-weight: 600;
+  text-align: center;
 }
 
 html {
   font-family: Avenir;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: Avenir Black;
 }
 
 h1 {
-  font-size: 5rem;
-  line-height: 5rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
 
 h2 {
-  font-size: 3rem;
-  line-height: 3rem;
-}
-
-h3 {
   font-size: 2rem;
   line-height: 2rem;
 }
 
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
 h4 {
-  font-size: 1.8rem;
-  line-height: 1.8rem;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
 }
 
 h5 {
-  font-size: 1.675rem;
-  line-height: 1.675rem;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
 }
 
 h6 {
-  font-size: 1.4rem;
-  line-height: 1.4rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
-p {
+p,
+li,
+address,
+label,
+input {
   font-size: 1.2rem;
 }
 
@@ -214,17 +218,17 @@ button {
 }
 
 nav ul li a {
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1;
   text-align: center;
 }
 
-header section a {
+header section aside {
   font-weight: bold;
   text-align: center;
 }
 
-header section a span {
+header section aside span {
   color: black;
 }
 
@@ -234,6 +238,74 @@ figcaption {
   text-align: right;
 }
 
+@media screen and (min-width: 250px) {
+  h3,
+nav ul li a {
+    font-size: calc(1.25rem * 1.2);
+  }
+
+  p,
+li,
+address {
+    font-size: 1.2rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
+    line-height: calc(1rem * 2.5);
+  }
+}
+@media screen and (min-width: 450px) {
+  h3,
+nav ul li a {
+    font-size: calc(2.25rem * 1.32);
+  }
+
+  p,
+li,
+address {
+    font-size: calc(1.2rem * 1.2);
+    line-height: calc(1.2rem * 2);
+  }
+
+  figcaption {
+    font-size: 1rem;
+    line-height: calc(1rem * 2.5);
+  }
+}
+@media screen and (min-width: 730px) {
+  h3,
+nav ul li a {
+    font-size: calc(2.25rem * 1.2);
+    line-height: calc(2.25rem * 2);
+  }
+
+  p,
+li,
+address {
+    font-size: calc(1.2rem * 1.1);
+  }
+
+  figcaption {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h3,
+nav ul li a {
+    font-size: 1.75rem;
+  }
+
+  p,
+li,
+address {
+    font-size: 1.2rem;
+  }
+
+  figcaption {
+    font-size: 1.2rem;
+  }
+}
 /* BASE */
 html {
   scroll-behavior: smooth;
@@ -254,6 +326,33 @@ img {
   max-height: 100%;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+}
+form label,
+form input,
+form button {
+  margin: 0.5rem;
+}
+form label {
+  text-align: center;
+  width: 100%;
+}
+form label h3 {
+  margin-bottom: 0;
+}
+form input,
+form button {
+  height: 3rem;
+}
+
 aside figure {
   margin-bottom: 4rem;
 }
@@ -270,6 +369,12 @@ blockquote {
   margin: 0.2rem 0;
 }
 
+h3 {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
 /* COMPONENTS */
 header {
   display: flex;
@@ -280,13 +385,11 @@ header section {
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   background-color: #8EC5FC;
   background-image: linear-gradient(62deg, #7fb1e2 0%, #c9afe2 100%);
-  background-position: 8px left;
-  background-size: cover;
   justify-content: center;
-  height: 14rem;
+  height: 12rem;
   padding-left: 10%;
 }
 header section h1 {
@@ -302,8 +405,11 @@ header section p {
   width: 65%;
   color: white;
   margin-bottom: 1rem;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+header section p span {
+  font-weight: 500;
 }
 header section button {
   width: 7rem;
@@ -318,7 +424,12 @@ header section a {
   top: 0;
   right: 30px;
   min-height: 20px;
-  padding: 0.2rem 3rem;
+  padding: 0.2rem 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+header section a span {
+  color: black;
 }
 header nav {
   min-width: 100%;
@@ -336,7 +447,7 @@ header nav ul li {
   text-align: center;
   border-radius: 2px;
   border-bottom: 2.5px solid #fc8ec5;
-  padding: 0.1rem 0.3rem;
+  padding: 0.2rem 0.3rem;
 }
 header nav ul li:hover {
   border-bottom: 2px solid black;
@@ -355,7 +466,7 @@ header .quote {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 0.2rem 1rem;
   border-radius: 5px;
-  font-size: 2rem;
+  font-size: 1.75rem;
   width: 30%;
   border-left: 2.5px solid #fc8ec5;
   margin-top: -3.8rem;
@@ -396,15 +507,7 @@ main section h2 {
 }
 
 article {
-  background-color: #fefefe;
-  background-color: white;
-  border-radius: 5px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  margin: 1rem;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
 article h2 {
   text-align: center;
@@ -430,13 +533,195 @@ footer {
   justify-content: center;
   width: 100vw;
 }
-footer p {
+footer ul {
   display: flex;
   justify-content: space-between;
   max-height: 2rem;
-  width: 25%;
+  width: 50%;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+footer ul li,
+footer ul a {
+  max-height: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* SECTIONS */
+.unsplashGallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 2.2rem;
+}
+.unsplashGallery h4 {
+  font-weight: lighter;
+  color: #433a4b;
+  font-variant: all-petite-caps;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.unsplashGallery h4 span {
+  font-weight: 700;
+}
+.unsplashGallery .masonry-with-columns {
+  columns: 3;
+  column-gap: 1rem;
+  line-height: 0;
+}
+.unsplashGallery .masonry-with-columns article {
+  display: inline-block;
+  width: 100%;
+}
+.unsplashGallery .masonry-with-columns article figure img {
+  padding: 0;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(1) {
+  height: 223px;
+  line-height: 223px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(2) {
+  height: 187px;
+  line-height: 187px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(3) {
+  height: 487px;
+  line-height: 487px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(4) {
+  height: 423px;
+  line-height: 423px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(5) {
+  height: 483px;
+  line-height: 483px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(6) {
+  height: 285px;
+  line-height: 285px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(7) {
+  height: 416px;
+  line-height: 416px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(8) {
+  height: 222px;
+  line-height: 222px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(9) {
+  height: 211px;
+  line-height: 211px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(10) {
+  height: 311px;
+  line-height: 311px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(11) {
+  height: 427px;
+  line-height: 427px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(12) {
+  height: 437px;
+  line-height: 437px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(13) {
+  height: 402px;
+  line-height: 402px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(14) {
+  height: 194px;
+  line-height: 194px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(15) {
+  height: 207px;
+  line-height: 207px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(16) {
+  height: 211px;
+  line-height: 211px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(17) {
+  height: 339px;
+  line-height: 339px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(18) {
+  height: 381px;
+  line-height: 381px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(19) {
+  height: 171px;
+  line-height: 171px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(20) {
+  height: 497px;
+  line-height: 497px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(21) {
+  height: 161px;
+  line-height: 161px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(22) {
+  height: 451px;
+  line-height: 451px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(23) {
+  height: 483px;
+  line-height: 483px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(24) {
+  height: 458px;
+  line-height: 458px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(25) {
+  height: 372px;
+  line-height: 372px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(26) {
+  height: 449px;
+  line-height: 449px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(27) {
+  height: 115px;
+  line-height: 115px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(28) {
+  height: 270px;
+  line-height: 270px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(29) {
+  height: 223px;
+  line-height: 223px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(30) {
+  height: 368px;
+  line-height: 368px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(31) {
+  height: 220px;
+  line-height: 220px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(32) {
+  height: 154px;
+  line-height: 154px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(33) {
+  height: 316px;
+  line-height: 316px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(34) {
+  height: 220px;
+  line-height: 220px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(35) {
+  height: 406px;
+  line-height: 406px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(36) {
+  height: 354px;
+  line-height: 354px;
 }
 
 /* SPECIFICS */
@@ -454,24 +739,6 @@ main .tab[data-route=notities]:active {
 }
 main .active {
   display: flex;
-}
-
-.inspiratie article {
-  max-width: 20%;
-}
-
-.searchUnsplash {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.searchUnsplash label, .searchUnsplash input, .searchUnsplash button {
-  margin: 0.5rem;
-}
-
-.inspiratie > span {
-  min-width: 60vw;
 }
 
 /* STATES */
@@ -516,21 +783,10 @@ button:disabled {
   right: 30px;
   background: black;
   color: white;
-  padding: 0.3rem 0.6rem;
+  padding: 1rem 0.8rem;
   border-radius: 5px 5px 0 0;
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 450px) {
-  article {
-    width: 80%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  article {
-    max-width: 40%;
-    margin: 0.75rem;
-  }
-}
 
 /*# sourceMappingURL=index.css.map */

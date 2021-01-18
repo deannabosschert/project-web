@@ -20,6 +20,37 @@ img {
   // padding: 0 0.5rem;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  label,
+  input,
+  button {
+    margin: 0.5rem;
+  }
+
+  label {
+    text-align: center;
+    width: 100%;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  input,
+  button {
+    height: 3rem;
+  }
+}
+
 aside figure {
   margin-bottom: 4rem;
 
@@ -37,6 +68,12 @@ blockquote {
   margin: 0.2rem 0;
 }
 
+h3 {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
 /* COMPONENTS */
 header {
   display: flex;
@@ -47,14 +84,11 @@ header {
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #7fb1e2 0%, #c9afe2 100%);
-    // background-image: url("/assets/img/Foto_07.jpg"); // image source: Bron: © Getty Images/iStockphoto
-    background-position: 8px left;
-    background-size: cover;
     justify-content: center;
-    height: 14rem;
+    height: 12rem;
     padding-left: 10%;
 
     h1 {
@@ -71,8 +105,12 @@ header {
       width: 65%;
       color: white;
       margin-bottom: 1rem;
-      font-size: $h2;
-      line-height: $h2;
+      font-size: $h6;
+      line-height: $h6;
+
+      span {
+        font-weight: 500;
+      }
     }
 
     button {
@@ -80,6 +118,8 @@ header {
       padding: 1rem 0.8rem;
       margin: 1rem 0 0.5rem;
     }
+
+
 
     a {
       background-color: $sweetpink;
@@ -90,6 +130,12 @@ header {
       right: 30px;
       min-height: 20px;
       padding: 0.2rem $h2;
+      font-weight: bold;
+      text-align: center;
+
+      span {
+        color: black;
+      }
     }
   }
 
@@ -110,7 +156,7 @@ header {
         // width: 5rem;
         border-radius: 2px;
         border-bottom: 2.5px solid $sweetpink;
-        padding: 0.1rem 0.3rem;
+        padding: 0.2rem 0.3rem;
 
         &:hover {
           border-bottom: 2px solid black;
@@ -180,16 +226,16 @@ main {
 }
 
 article {
-  background-color: #fefefe;
-  background-color: white;
-  border-radius: $border-radius;
+  // background-color: #fefefe;
+  // background-color: white;
+  // border-radius: $border-radius;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  // align-items: center;
-  align-content: flex-start;
-  margin: 1rem;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .15);
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // // align-items: center;
+  // align-content: flex-start;
+  // margin: 1rem;
+  // box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .15);
 
   h2 {
     text-align: center;
@@ -219,68 +265,109 @@ footer {
   justify-content: center;
   width: 100vw;
 
-  p {
+  ul {
     display: flex;
     justify-content: space-between;
     max-height: 2rem;
-    width: 25%;
+    width: 50%;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+
+    li,
+    a {
+      max-height: 2rem;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
+
+/* SECTIONS */
+
+
+.unsplashGallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 2.2rem;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // max-width: 100%;
+
+
+  h4 {
+    font-weight: lighter;
+    color: $dark;
+    font-variant: all-petite-caps;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .masonry-with-columns {
+    columns: 3;
+    column-gap: 1rem;
+    line-height: 0;
+
+    article {
+      // margin: 0 1rem 1rem 0;
+      display: inline-block;
+      width: 100%;
+
+      figure {
+        img {
+          padding: 0;
+          // object-fit: cover;
+        }
+
+        // figcaption {}
+      }
+    }
+
+    @for $i from 1 through 36 {
+      div:nth-child(#{$i}) {
+        $h: (random(400) + 100) + px;
+        height: $h;
+        line-height: $h;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
 
 /* SPECIFICS */
 main {
- .tab {
-  display: none;
-}
+  .tab {
+    display: none;
+  }
 
-.tab[data-route="tijdlijn"]:active {
-  display: flex;
-}
+  .tab[data-route="tijdlijn"]:active {
+    display: flex;
+  }
 
- .tab[data-route="inspiratie"]:active {
-  display: flex;
-}
+  .tab[data-route="inspiratie"]:active {
+    display: flex;
+  }
 
- .tab[data-route="notities"]:active {
-  display: flex;
-}
+  .tab[data-route="notities"]:active {
+    display: flex;
+  }
 
- .active {
-  display: flex;
-}
-}
-
-.inspiratie {
-  article {
-    max-width: 20%;
+  .active {
+    display: flex;
   }
 }
-
-.searchUnsplash {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  label, input, button {
-    margin: 0.5rem;
-  }
-}
-
-
-
-.inspiratie>span {
-
-  min-width: 60vw;
-}
-
-
-
-
-
-
 
 
 /* STATES */
@@ -334,27 +421,29 @@ button {
   right: 30px;
   background: black;
   color: white;
-  padding: 0.3rem 0.6rem;
+  padding: 1rem 0.8rem;
   border-radius: 5px 5px 0 0;
 }
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 450px) {
   article {
-    width: 80%;
+    // width: 80%;
   }
 }
+
 @media screen and (min-width: 1024px) {
   article {
-    max-width: 40%;
-    margin: 0.75rem;
+    // max-width: 40%;
+    // margin: 0.75rem;
   }
 }
+
 @media screen and (min-width: 1300px) {
   // article {
   //   max-width: 45%;
   // }
-  }
+}
 
 
 //   .unsplashGallery {
@@ -380,33 +469,3 @@ button {
 //     }
 //   }
 // }
-
-
-// voorbeeldje voor eerstejaars
-// .homepage {
-//   h1 {
-//     color: blue;
-//   }
-
-//   article {
-//     border-radius: 5px;
-//   }
-
-//   section {
-//     background-image: url("/src/assets/img/1.png")
-//   }
-// }
-
-
-// .homepage {
-//   background-image: url("/src/assets/img/1.png")
-// }
-
-// .profile {
-//   background-image: url("/src/assets/img/2.png")
-// }
-
-// .menu {
-//   background-image: url("/src/assets/img/3.png")
-// }
-

@@ -42,7 +42,7 @@ function flickr() {
 
     albumname.innerHTML += photoset.title
     amount.innerHTML += photoset.total + ' photos'
-    owner.innerHTML += 'by ' + `<em>${photoset.ownername}</em>`
+    owner.innerHTML += 'by ' + `<span>${photoset.ownername}</span>`
 
 
     return photoset.photo.map(data => {
@@ -54,7 +54,6 @@ function flickr() {
             <img src="${data.url_l}" alt="${data.title}">
             <figcaption>${data.title}</figcaption>
         </figure>
-        <p>hier komt een bijschrift</p>
         <ul>
          <li>${data.tags}</li>
         </ul>
@@ -73,31 +72,35 @@ function unsplash() {
 
   const endpoint = "https://api.unsplash.com"
   // const searchTerm = "trees"
-  const count = "18"
+  const count = "12"
   const clientID = "WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
   const apiLink = `${endpoint}/photos/random/?count=${count}&query=${searchTerm}&client_id=${clientID}`
-  
-  
+
+
   // const username = "deannabosschert"
   // const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
   // const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
-  
-  const gallery = document.querySelector('.unsplashGallery')
+
+  const gallery = document.querySelector('.masonry-with-columns')
+  const searchResults = document.querySelector('.searchResults')
 
   fetch(apiLink)
     .then(res => res.json())
     .then(data => renderPhotos(data))
-    .then(data => fillMasonry(data))
+  // .then(data => fillMasonry(data))
 
   function renderPhotos(data) {
     console.log(data)
+    searchResults.innerHTML = `Search results for: <span>${searchTerm}</span>`
+    gallery.innerHTML = ""
+
     return data.map(data => {
       // console.log(data.urls.regular)
-      gallery.innerHTML += 
-      `
+      gallery.innerHTML +=
+        `
       <article>
       <figure>
-        <img style="border-bottom: 10px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
+        <img style="border: 6.5px solid ${data.color};" src="${data.urls.regular}" alt="${data.alt_description}">
       </figure>
       </article>
       `
