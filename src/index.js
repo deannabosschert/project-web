@@ -1,5 +1,5 @@
 // ja, ik weet dat ze async moeten en dat het een troep is, nee heeft geen prio want niemand gaat toch in mn code loeren deze week lol, zal het omgooien naar sockets voor realtime functionality anyways
-// async (variable) => {
+// async () => {
 //   try {
 //     return cleanColors = await getData(questionnaire, variable) // wait for data
 //       .then(data => removeWhitespace(data, variable)) // remove whitespace
@@ -11,7 +11,6 @@
 //     console.error(err)
 //   }
 
-// const Masonry = require("masonry-layout")
 
 // }
 flickr()
@@ -120,10 +119,6 @@ function unsplash() {
   event.preventDefault();
 }
 
-function fillMasonry() {
-  return
-
-}
 
 function hangSlingersOp() {
   var slingers = document.querySelector(".slingers");
