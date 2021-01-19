@@ -1,0 +1,97 @@
+import {
+  renderData
+} from "./render.js"
+import {
+  loadData
+} from "./API.js"
+
+
+// async function route() {
+const router = {
+  noData() {
+    // if (data === 'dataPresent')
+    routie({
+      '/': () => {
+        const loadPhotos = loadData.timeline()
+        loadPhotos.then(photos => {
+          renderData.timeline(photos)
+          updatePageUI('/')
+        })
+      },
+      '': () => {
+        const loadPhotos = loadData.timeline()
+        loadPhotos.then(photos => {
+          renderData.timeline(photos)
+          updatePageUI('/')
+        })
+      },
+      '/notities': () => {
+        const loadNotes = loadData.notes()
+        loadNotes.then(data => {
+          renderData.notities(data)
+          updatePageUI('notities')
+        })
+      // },
+      // '/:id': id => {
+      //   const loadDing = loadData.timeline()
+      //   loadDing.then(photos => {
+      //     let onephoto = photos.filter(function(photo) {
+      //       return photo.id == id
+      //     })
+      //     renderData.detail(onephoto)
+      //   })
+      //   updatePageUI('pictureDetail')
+      }
+    })
+  },
+  hasData() {
+    const photos = JSON.parse(localStorage.getItem("flickrPhotos"))
+    // const photoAvatars = JSON.parse(storage.getItem("githubAvatars"))
+
+    routie({
+      '/': () => {
+        renderData.timeline(photos)
+        updatePageUI('/')
+      },
+      '': () => {
+        renderData.timeline(photos)
+        updatePageUI('/')
+      },
+      notities: () => {
+        // renderData.notities(photos)
+        updatePageUI('notities')
+      },
+      inspiratie: () => {
+        updatePageUI('inspiratie')
+      // },
+      // '/:id': id => {
+      //   let onephoto = photos.filter(function(photo) {
+      //     return photo.id == id
+      //   })
+      //   renderData.detail(onephoto)
+      //   updatePageUI('pictureDetail')
+      //   // http://localhost:8000/src/#/237659708
+      }
+    })
+
+  }
+}
+
+// update page from route
+function updatePageUI(route) {
+  // console.log(route)
+  const tabs = document.querySelectorAll('.tab')
+  tabs.forEach(tab => {
+    tab.classList.remove('active')
+  })
+
+  const activeSection = document.querySelector(`[data-route="${route}"]`)
+  // console.log(activeSection)
+  activeSection.classList.add('active')
+}
+
+// }
+
+export {
+  router
+}

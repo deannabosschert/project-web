@@ -4,21 +4,21 @@ title: Project Web- dBosschert
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" type="text/css" href="/assets/index.css">
-</head>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/assets/index.css">
+  </head>
 
-<body>
-  <header id="top">
-    <section>
-      <a href="https://miro.com/app/board/o9J_lfbhbfA=/">20<span>21.</span></a>
-      <h1 class="albumname"></h1>
-      <p class="owner"></p>
-      <p class="amount"></p>
-    </section>
-    <!-- <aside>
+  <body>
+    <header id="top">
+      <section id="headerInfo">
+        <a href="https://miro.com/app/board/o9J_lfbhbfA=/">20<span>21.</span></a>
+        <h1 class="albumName"></h1>
+        <p>by <span class="albumOwner"></span></p>
+        <p class="amount"></p>
+      </section>
+      <!-- <aside>
       <figure onclick="hangSlingersOp()" class="quote">
         <img class="slingers" src="./assets/img/slingers_opgehangen.png">
         <blockquote cite="techkech.nl">
@@ -28,61 +28,87 @@ title: Project Web- dBosschert
         <figcaption>- Deanna Bosschert, <cite> vijfdejaarsstudent CMD</cite></figcaption>
       </figure>
     </aside> -->
-    <nav>
-      <ul>
-        <li><a onclick="updatePageUI('inspiratie')" href="/#inspiratie">inspiratie</a></li>
-        <li><a onclick="updatePageUI('tijdlijn')" href="/#tijdlijn">tijdlijn</a></li>
-        <li><a onclick="updatePageUI('notities')" href="/#notities">notities</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section data-route="tijdlijn" id="/src/" class="flickr tab">
-      <h2 id="tijdlijn">Tijdlijn</h2>
-    </section>
-    <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab active">
-      <h2 id="inspiratie">Inspiratie</h2>
-      <form class="searchUnsplash">
-        <label for="site-search">
-          <h3>Search for images:</h3>
-        </label>
-        <input type="search" id="unsplash-search" name="q" aria-label="Search through unsplash content">
-        <button type="submit">Search</button>
-      </form>
-      <section class="unsplashGallery">
-      <h4 class="searchResults"></h4>
-      <div class="masonry-with-columns">
-      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/#inspiratie">inspiratie</a>
+          </li>
+          <li>
+            <a href="/">tijdlijn</a>
+          </li>
+          <li>
+            <a href="/#notities">notities</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section data-route="/" id="/src/" class="flickr tab">
+        <h2 id="tijdlijn">Tijdlijn</h2>
+        <div class="loader"></div>
+        <div id="photoTimeline">
+          <article class="photo">
+            <h3 class="title"></h3>
+
+            <figure>
+              <img class="url">
+              <figcaption class="title"></figcaption>
+            </figure>
+            <ul>
+              <li class="tags"></li>
+            </ul>
+          </article>
+        </div>
       </section>
-      <section>
-        <h3>Mood boards</h3>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+      <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab">
+        <h2 id="inspiratie">Inspiratie</h2>
+        <form class="searchUnsplash">
+          <label for="site-search">
+            <h3>Search for images:</h3>
+          </label>
+          <input type="search" id="unsplash-search" name="q" aria-label="Search through unsplash content">
+          <button type="submit">Search</button>
+        </form>
+        <section class="unsplashGallery">
+          <h4 class="searchResults"></h4>
+          <div class="masonry-with-columns"></div>
+        </section>
+        <section>
+          <h3>Mood boards</h3>
+          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/austria/"></a>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/winter-wonderland/"></a>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/forest-fun/"></a>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/wonderful-waterfall/"></a>
+        </section>
       </section>
-    </section>
-    <section data-route="notities" id="/src/#notities" class="notities tab">
-      <h2 id="notities">Notities</h2>
-   <form>
-        <label for="add-note">
+      <section data-route="notities" id="/src/#notities" class="notities tab">
+        <h2 id="notities">Notities</h2>
+        <form class="addNote">
           <h3>Add note</h3>
-        </label>
-        <input type="add-note" id="add-notition" aria-label="Add notition">
-        <button type="submit">Add</button>
-      </form>
-      <section class="saved-notitions">
-      <article>
-        <h4>notition title</h4>
-        <p>notition text thing</p>
-      </article>
+
+          <label for="date">
+            <h4>Datum</4>
+            <input type="date" name="date" id="datePicker">
+          </label>
+          <label for="add-notition">
+            <input type="text" id="add-notition" aria-label="Add notition" placeholder="add a note.." maxlength="800" required>
+          </label>
+
+          <button type="submit">Add</button>
+        </form>
+        <h5>test</h5>
+        <section id="saved-notitions">
+          <article>
+            <h4 class="noteDate"></h4>
+            <p class="noteText"></p>
+          </article>
+        </section>
       </section>
-    </section>
-    <!-- <aside>
+      <!-- <aside>
       <figure class="quote">
         <blockquote cite="techkech.nl">
           <p>"Will simp voor studiepunten"
@@ -91,20 +117,27 @@ title: Project Web- dBosschert
         <figcaption>— Ik, <cite>jullie favoriete langstudeerder</cite></figcaption>
       </figure>
     </aside> -->
-  </main>
-  <footer>
-    <ul>
-      <li><a href="https://www.facebook.com/deanna.bosschert"><img src="/assets/img/icons/facebook.png"
-            alt="facebook icon"></a></li>
-      <li><a href="https://www.instagram.com/techkech.jpeg/"><img src="/assets/img/icons/instagram.png"
-            alt="instagram icon"></a></li>
-      <li><a href="https://twitter.com/tech_kech"><img src="/assets/img/icons/twitter.png" alt="twitter icon"></a></li>
-    </ul>
-    <a class="backToTop " href="#top">Back to top</a>
-  </footer>
-  <!-- <script src="../node_modules/masonry-layout/"></script> -->
-  <script src="index.js" charset="utf-8"></script>
-  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-</body>
+    </main>
+    <footer>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/deanna.bosschert"><img src="/assets/img/icons/facebook.png"
+            alt="facebook icon"></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/techkech.jpeg/"><img src="/assets/img/icons/instagram.png"
+            alt="instagram icon"></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/tech_kech"><img src="/assets/img/icons/twitter.png" alt="twitter icon"></a>
+        </li>
+      </ul>
+      <a class="backToTop " href="#top">Back to top</a>
+    </footer>
+    <script src="./js/modules/helpers/transparency.js"></script>
+    <script src="./js/modules/helpers/routie.js"></script>
+    <script type="module" src="./js/app.js"></script>
+    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+  </body>
 
 </html>
