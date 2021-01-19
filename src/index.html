@@ -56,11 +56,11 @@ title: Project Web- dBosschert
             </figure>
             <ul>
               <li class="tags"></li>
-            </ul>      
+            </ul>
           </article>
         </div>
       </section>
-      <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab active">
+      <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab">
         <h2 id="inspiratie">Inspiratie</h2>
         <form class="searchUnsplash">
           <label for="site-search">
@@ -87,17 +87,24 @@ title: Project Web- dBosschert
       </section>
       <section data-route="notities" id="/src/#notities" class="notities tab">
         <h2 id="notities">Notities</h2>
-        <form>
-          <label for="add-note">
-            <h3>Add note</h3>
+        <form class="addNote">
+          <h3>Add note</h3>
+
+          <label for="date">
+            <h4>Datum</4>
+            <input type="date" name="date" id="datePicker">
           </label>
-          <input type="add-note" id="add-notition" aria-label="Add notition">
+          <label for="add-notition">
+            <input type="text" id="add-notition" aria-label="Add notition" placeholder="add a note.." maxlength="800" required>
+          </label>
+
           <button type="submit">Add</button>
         </form>
-        <section class="saved-notitions">
+        <h5>test</h5>
+        <section id="saved-notitions">
           <article>
-            <h4>notition title</h4>
-            <p>notition text thing</p>
+            <h4 class="noteDate"></h4>
+            <p class="noteText"></p>
           </article>
         </section>
       </section>
@@ -127,7 +134,6 @@ title: Project Web- dBosschert
       </ul>
       <a class="backToTop " href="#top">Back to top</a>
     </footer>
-    <!-- <script src="../node_modules/masonry-layout/"></script> -->
     <script src="./js/modules/helpers/transparency.js"></script>
     <script src="./js/modules/helpers/routie.js"></script>
     <script type="module" src="./js/app.js"></script>

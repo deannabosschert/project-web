@@ -1,3 +1,6 @@
+import {
+  renderData
+} from "./render.js"
 const store = {
   async set(res) {
     const photos = await filterData(res)
@@ -5,6 +8,32 @@ const store = {
     console.log("adding photos to localStorage")
     localStorage.setItem("flickrPhotos", JSON.stringify(photos))
     return photos
+  },
+  note(res) {
+    if (window.localStorage.getItem("notitions")) {
+      const notitions = JSON.parse(localStorage.getItem("notitions"))
+      notitions.push({
+        date: res.date,
+        note: res.text
+      })
+
+      console.log(notitions)
+      localStorage.setItem("notitions", JSON.stringify(notitions))
+      const currentNotes = JSON.parse(localStorage.getItem("notitions"))
+
+      renderData.notities(currentNotes)
+    } else {
+      const notitions = [{
+        date: res.date,
+        note: res.text
+      }]
+      console.log("adding note to localStorage")
+      localStorage.setItem("notitions", JSON.stringify(notitions))
+      const currentNotes = JSON.parse(localStorage.getItem("notitions"))
+
+      renderData.notities(currentNotes)
+    }
+
   }
 }
 
@@ -23,16 +52,16 @@ async function filterData(data) {
     amount: data.photoset.total,
     photos: data.photoset.photo.map(data => {
       return {
-      id: data.id,
-      url_small: data.url_s,
-      url_large: data.url_l,
-      title: data.title,
-      tags: data.tags,
-      date: data.datetaken
+        id: data.id,
+        url_small: data.url_s,
+        url_large: data.url_l,
+        title: data.title,
+        tags: data.tags,
+        date: data.datetaken
       }
     })
-    }
-  
+  }
+
 
   return photoset
   // console.log(array.photoset)

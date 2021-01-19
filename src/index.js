@@ -11,56 +11,57 @@
 //     console.error(err)
 //   }
 
+// const Masonry = require("masonry-layout")
 
 // }
-flickr()
+// flickr()
 
-function flickr() {
-  const endpoint = "https://www.flickr.com/services/rest/"
-  const method = "flickr.photosets.getPhotos"
-  const api_key = "daae0f655b02ece802021848177b2903"
-  const user_id = "169241155%40N05"
-  const format = "format=json&nojsoncallback=1"
-  const photoset_id = "72157717231770806"
-  const extras = "extras=license%2C+date_upload%2C+date_taken%2C+owner_name%2C+icon_server%2C+original_format%2C+last_update%2C+geo%2C+tags%2C+machine_tags%2C+o_dims%2C+views%2C+media%2C+path_alias%2C+url_sq%2C+url_l"
-  const apiLink = `${endpoint}?method=${method}&api_key=${api_key}&photoset_id=${photoset_id}&user_id=${user_id}&extras=${extras}&${format}`
+// function flickr() {
+//   const endpoint = "https://www.flickr.com/services/rest/"
+//   const method = "flickr.photosets.getPhotos"
+//   const api_key = "daae0f655b02ece802021848177b2903"
+//   const user_id = "169241155%40N05"
+//   const format = "format=json&nojsoncallback=1"
+//   const photoset_id = "72157717231770806"
+//   const extras = "extras=license%2C+date_upload%2C+date_taken%2C+owner_name%2C+icon_server%2C+original_format%2C+last_update%2C+geo%2C+tags%2C+machine_tags%2C+o_dims%2C+views%2C+media%2C+path_alias%2C+url_sq%2C+url_l"
+//   const apiLink = `${endpoint}?method=${method}&api_key=${api_key}&photoset_id=${photoset_id}&user_id=${user_id}&extras=${extras}&${format}`
 
-  const albumname = document.querySelector('.albumname')
-  const owner = document.querySelector('.owner')
-  const amount = document.querySelector('.amount')
-  const album = document.querySelector('.flickr')
-
-
-  fetch(apiLink)
-    .then(res => res.json())
-    .then(data => renderPhotos(data))
-
-  function renderPhotos(data) {
-    const photoset = Object.values(data)[0]
-    // console.log(photoset.photo[0])
-
-    albumname.innerHTML += photoset.title
-    amount.innerHTML += photoset.total + ' photos'
-    owner.innerHTML += 'by ' + `<span>${photoset.ownername}</span>`
+//   const albumname = document.querySelector('.albumname')
+//   const owner = document.querySelector('.owner')
+//   const amount = document.querySelector('.amount')
+//   const album = document.querySelector('.flickr')
 
 
-    return photoset.photo.map(data => {
-      // console.log(data.height_l)
-      album.innerHTML +=
-        `
-        <article>
-        <figure>
-            <img src="${data.url_l}" alt="${data.title}">
-            <figcaption>${data.title}</figcaption>
-        </figure>
-        <ul>
-         <li>${data.tags}</li>
-        </ul>
-        </article>`
-    })
-  }
+//   fetch(apiLink)
+//     .then(res => res.json())
+//     .then(data => renderPhotos(data))
 
-}
+//   function renderPhotos(data) {
+//     const photoset = Object.values(data)[0]
+//     // console.log(photoset.photo[0])
+
+//     albumname.innerHTML += photoset.title
+//     amount.innerHTML += photoset.total + ' photos'
+//     owner.innerHTML += 'by ' + `<span>${photoset.ownername}</span>`
+
+
+//     return photoset.photo.map(data => {
+//       // console.log(data.height_l)
+//       album.innerHTML +=
+//         `
+//         <article>
+//         <figure>
+//             <img src="${data.url_l}" alt="${data.title}">
+//             <figcaption>${data.title}</figcaption>
+//         </figure>
+//         <ul>
+//          <li>${data.tags}</li>
+//         </ul>
+//         </article>`
+//     })
+//   }
+
+// }
 
 const searchUnsplash = document.querySelector('.searchUnsplash');
 searchUnsplash.addEventListener('submit', unsplash);
@@ -106,6 +107,7 @@ function unsplash() {
     })
   }
 
+  event.preventDefault();
 
   // `
   // <article>
@@ -116,9 +118,7 @@ function unsplash() {
   // <p>${data.alt_description}</p>
   // </article>
   // `
-  event.preventDefault();
 }
-
 
 function hangSlingersOp() {
   var slingers = document.querySelector(".slingers");
@@ -129,15 +129,15 @@ function hangSlingersOp() {
   }
 }
 
-// update page from route
-function updatePageUI(route) {
-  // console.log(route)
-  const tabs = document.querySelectorAll('.tab')
-  tabs.forEach(tab => {
-    tab.classList.remove('active')
-  })
+// // update page from route
+// function updatePageUI(route) {
+//   // console.log(route)
+//   const tabs = document.querySelectorAll('.tab')
+//   tabs.forEach(tab => {
+//     tab.classList.remove('active')
+//   })
 
-  const activeSection = document.querySelector(`[data-route="${route}"]`)
-  // console.log(activeSection)
-  activeSection.classList.add('active')
-}
+//   const activeSection = document.querySelector(`[data-route="${route}"]`)
+//   // console.log(activeSection)
+//   activeSection.classList.add('active')
+// }

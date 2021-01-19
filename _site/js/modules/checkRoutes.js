@@ -1,8 +1,8 @@
 import {
-  renderPhotos
+  renderData
 } from "./render.js"
 import {
-  loadPhotos
+  loadData
 } from "./API.js"
 
 
@@ -12,33 +12,33 @@ const router = {
     // if (data === 'dataPresent')
     routie({
       '/': () => {
-        const loadData = loadPhotos.timeline()
-        loadData.then(photos => {
-          renderPhotos.timeline(photos)
+        const loadPhotos = loadData.timeline()
+        loadPhotos.then(photos => {
+          renderData.timeline(photos)
           updatePageUI('/')
         })
       },
       '': () => {
-        const loadData = loadPhotos.timeline()
-        loadData.then(photos => {
-          renderPhotos.timeline(photos)
+        const loadPhotos = loadData.timeline()
+        loadPhotos.then(photos => {
+          renderData.timeline(photos)
           updatePageUI('/')
         })
-      // },
-      // notities: () => {
-      //   const loadData = loadPhotos.timeline()
-      //   loadData.then(photos => {
-      //     renderPhotos.notities(photos)
-      //     updatePageUI('notities')
-      //   })
+      },
+      '/notities': () => {
+        const loadNotes = loadData.notes()
+        loadNotes.then(data => {
+          renderData.notities(data)
+          updatePageUI('notities')
+        })
       // },
       // '/:id': id => {
-      //   const loadData = loadPhotos.timeline()
-      //   loadData.then(photos => {
+      //   const loadDing = loadData.timeline()
+      //   loadDing.then(photos => {
       //     let onephoto = photos.filter(function(photo) {
       //       return photo.id == id
       //     })
-      //     renderPhotos.detail(onephoto)
+      //     renderData.detail(onephoto)
       //   })
       //   updatePageUI('pictureDetail')
       }
@@ -50,15 +50,15 @@ const router = {
 
     routie({
       '/': () => {
-        renderPhotos.timeline(photos)
+        renderData.timeline(photos)
         updatePageUI('/')
       },
       '': () => {
-        renderPhotos.timeline(photos)
+        renderData.timeline(photos)
         updatePageUI('/')
       },
       notities: () => {
-        // renderPhotos.notities(photos)
+        // renderData.notities(photos)
         updatePageUI('notities')
       },
       inspiratie: () => {
@@ -68,7 +68,7 @@ const router = {
       //   let onephoto = photos.filter(function(photo) {
       //     return photo.id == id
       //   })
-      //   renderPhotos.detail(onephoto)
+      //   renderData.detail(onephoto)
       //   updatePageUI('pictureDetail')
       //   // http://localhost:8000/src/#/237659708
       }

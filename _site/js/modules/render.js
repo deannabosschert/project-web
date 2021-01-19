@@ -1,4 +1,4 @@
-const renderPhotos = {
+const renderData = {
   timeline: function (data) {
     console.log(data)
     const photoTimeline = document.getElementById("photoTimeline")
@@ -62,20 +62,18 @@ const renderPhotos = {
     Transparency.render(photoTimeline, photoList, directives)
     // Transparency.render(root, avatarIMG, directives)
   },
-  notities: function (photos) {
-    const notities = document.getElementById("/src/#notities")
-    console.log(notities)
-    const photoList = photos.map(photo => ({
-      projectName: 'Paginatwee' + photo.name,
-      description: 'Description: ' + photo.description,
-      homepage: 'Link to pictureDetail: ' + photo.homepage,
-      id: photo.id,
-      name: 'Name: ' + photo.name,
-      full_name: 'Full name: ' + photo.full_name,
-      private: 'Private repo?: ' + photo.private
+  notities: function (data) {
+    console.log(data)
+
+    const savedNotitions = document.getElementById("saved-notitions")
+    console.log(savedNotitions)
+
+    const notities = data.map(data => ({
+      noteDate: data.date,
+      noteText: data.note 
     }))
 
-    Transparency.render(notities, photoList)
+    Transparency.render(savedNotitions, notities)
     // },
     // detail: function(id) {
     //   const pictureDetail = document.getElementById("onephoto")
@@ -137,5 +135,5 @@ const renderPhotos = {
 
 
 export {
-  renderPhotos
+  renderData
 }

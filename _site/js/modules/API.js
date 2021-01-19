@@ -5,10 +5,10 @@ import {
   store
 } from "./store.js"
 import {
-  renderPhotos
+  renderData
 } from "./render.js"
 
-const loadPhotos = {
+const loadData = {
   timeline: () => {
     const endpoint = "https://www.flickr.com/services/rest/"
     const method = "flickr.photosets.getPhotos"
@@ -32,13 +32,31 @@ const loadPhotos = {
           reject(console.log(err))
         })
     })
+  },
+  notes: () => {
+    return new Promise((resolve, reject) => {
+      getNotes()
+        .then(() => {
+          console.log(data)
+          resolve(data)
+          return data
+        })
+        .catch(err => {
+          reject(console.log(err))
+        })
+    })
   }
 
+}
+
+function getNotes() {
+  const notes = JSON.parse(localStorage.getItem("notities"))
+  return notes
 }
 
 
 
 
 export {
-  loadPhotos
+  loadData
 }

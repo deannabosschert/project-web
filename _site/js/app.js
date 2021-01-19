@@ -4,6 +4,9 @@ import {
 import {
   loadingState
 } from "./modules/loader.js"
+import {
+  store
+} from "./modules/store.js"
 
 (function init() {
   (async function checkLocalStorage() {
@@ -24,8 +27,11 @@ import {
 })()
 
 
-const searchUnsplash = document.querySelector('.searchUnsplash');
-searchUnsplash.addEventListener('submit', unsplash);
+const searchUnsplash = document.querySelector('.searchUnsplash')
+const addNote = document.querySelector('.addNote')
+
+searchUnsplash.addEventListener('submit', unsplash)
+addNote.addEventListener('submit', note)
 
 function unsplash() {
   const input = document.getElementById("unsplash-search")
@@ -81,3 +87,18 @@ function unsplash() {
   event.preventDefault();
 }
 
+// document.getElementById('datePicker').valueAsDate = new Date()
+
+function note() {
+  const textInput = document.getElementById("add-notition")
+  const dateInput = document.getElementById("datePicker")
+
+  const data = {
+    text: textInput.value,
+    date: dateInput.value
+  }
+
+  store.note(data)
+  event.preventDefault();
+  textInput.value = ""
+}
