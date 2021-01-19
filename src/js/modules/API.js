@@ -50,8 +50,15 @@ const loadData = {
 }
 
 function getNotes() {
-  const notes = JSON.parse(localStorage.getItem("notities"))
-  return notes
+  const storage = window.localStorage
+  if (storage.getItem("notities") === null) {
+    return
+  } else {
+    const notes = JSON.parse(localStorage.getItem("notities"))
+    return notes
+  }
+
+
 }
 
 

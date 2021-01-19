@@ -25,12 +25,29 @@ const router = {
           updatePageUI('/')
         })
       },
-      '/notities': () => {
-        const loadNotes = loadData.notes()
-        loadNotes.then(data => {
-          renderData.notities(data)
+      inspiratie: () => {
+        console.log('nodatainspi')
+
+          updatePageUI('inspiratie')
+      },
+      notities: () => {
+        console.log('nodatanotities')
+
+        const storage = window.localStorage
+        if (storage.getItem("notities") === null) {
           updatePageUI('notities')
-        })
+          return
+        } else {
+          // const notes = JSON.parse(localStorage.getItem("notities"))
+          const loadNotes = loadData.notes()
+          loadNotes.then(data => {
+            renderData.notities(data)
+            updatePageUI('notities')
+          })
+        }
+
+       
+
       // },
       // '/:id': id => {
       //   const loadDing = loadData.timeline()
@@ -58,10 +75,13 @@ const router = {
         updatePageUI('/')
       },
       notities: () => {
+        console.log('hasdatanotities')
         // renderData.notities(photos)
         updatePageUI('notities')
       },
       inspiratie: () => {
+        console.log('hasdatainspiratie')
+
         updatePageUI('inspiratie')
       // },
       // '/:id': id => {

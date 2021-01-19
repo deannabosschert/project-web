@@ -21,7 +21,7 @@ const store = {
       localStorage.setItem("notitions", JSON.stringify(notitions))
       const currentNotes = JSON.parse(localStorage.getItem("notitions"))
 
-      renderData.notities(currentNotes)
+      renderData.notities()
     } else {
       const notitions = [{
         date: res.date,
@@ -29,9 +29,8 @@ const store = {
       }]
       console.log("adding note to localStorage")
       localStorage.setItem("notitions", JSON.stringify(notitions))
-      const currentNotes = JSON.parse(localStorage.getItem("notitions"))
 
-      renderData.notities(currentNotes)
+      renderData.notities()
     }
 
   }

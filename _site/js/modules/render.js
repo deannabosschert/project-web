@@ -62,18 +62,20 @@ const renderData = {
     Transparency.render(photoTimeline, photoList, directives)
     // Transparency.render(root, avatarIMG, directives)
   },
-  notities: function (data) {
-    console.log(data)
+  notities: function () {
+    const notes = JSON.parse(localStorage.getItem("notitions"))
+    console.log(notes)
 
     const savedNotitions = document.getElementById("saved-notitions")
     console.log(savedNotitions)
 
-    const notities = data.map(data => ({
+    const notities = notes.map(data => ({
       noteDate: data.date,
       noteText: data.note 
     }))
 
     Transparency.render(savedNotitions, notities)
+    return
     // },
     // detail: function(id) {
     //   const pictureDetail = document.getElementById("onephoto")
