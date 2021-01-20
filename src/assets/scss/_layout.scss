@@ -369,6 +369,63 @@ main {
   }
 }
 
+// POST-IT NOTES
+.saved-notitions {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+ .sticky{
+   position:relative;
+   height: 15rem;
+   width :14rem;
+   display:inline-block;
+   padding: 2rem;
+   margin: 1rem;
+   background: lightpink;
+   resize: both;
+   overflow: scroll;
+   animation: stickAnim .3s ease;
+   
+   &:focus {
+     outline: none;
+   }
+   
+   .close {
+     font-size: 26px;
+     position: absolute;
+     top: 0;
+     right:0;
+     cursor: pointer;
+     width: 18px;
+     
+       &:active {
+         transform: scale(0.98);
+       }
+   }
+   
+   @keyframes stickAnim {
+     0% {
+       transform: scale(1.2);
+     }
+     
+     100% {
+       transform: scale(1);
+     }
+   }
+
+ }
+
+.placeholder {
+  display: none;
+}
+
+
+
+
+
+
 
 /* STATES */
 button {

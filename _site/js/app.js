@@ -87,7 +87,7 @@ function unsplash() {
   event.preventDefault();
 }
 
-// document.getElementById('datePicker').valueAsDate = new Date()
+document.getElementById('datePicker').valueAsDate = new Date()
 
 function note() {
   const textInput = document.getElementById("add-notition")

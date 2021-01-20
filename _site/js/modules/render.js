@@ -66,10 +66,11 @@ const renderData = {
     const notes = JSON.parse(localStorage.getItem("notitions"))
     console.log(notes)
 
-    const savedNotitions = document.getElementById("saved-notitions")
-    console.log(savedNotitions)
+    const savedNotitions = document.querySelector(".saved-notitions")
+    savedNotitions.classList.remove('placeholder')
 
     const notities = notes.map(data => ({
+      close: 'x',
       noteDate: data.date,
       noteText: data.note 
     }))

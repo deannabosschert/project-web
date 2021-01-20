@@ -88,20 +88,21 @@
           <h3>Add note</h3>
 
           <label for="date">
-            <h4>Datum</4>
+            <h4>Datum</h4>
             <input type="date" name="date" id="datePicker">
           </label>
           <label for="add-notition">
-            <input type="text" id="add-notition" aria-label="Add notition" placeholder="add a note.." maxlength="800" required>
+            <textarea type="text" id="add-notition" aria-label="Add notition" autocomplete="off" minlength="2" maxlength="800" placeholder="add a note.." required></textarea>
           </label>
 
           <button type="submit">Add</button>
         </form>
         <!-- <h5>test</h5> -->
-        <section id="saved-notitions">
-          <article>
-            <h4 class="noteDate"></h4>
-            <p class="noteText"></p>
+        <section class="saved-notitions placeholder">
+          <article class="sticky">
+            <span class="close"></span>
+            <h4 class="noteDate" contenteditable="true"></h4>
+            <p class="noteText" contenteditable="true"></p>
           </article>
         </section>
       </section>
