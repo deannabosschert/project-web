@@ -34,31 +34,28 @@ const loadData = {
     })
   },
   notes: () => {
-    return new Promise((resolve, reject) => {
-      getNotes()
-        .then(() => {
-          console.log(data)
-          resolve(data)
-          return data
-        })
-        .catch(err => {
-          reject(console.log(err))
-        })
-    })
-  }
+    // return new Promise((resolve, reject) => {
+    //   getNotes()
+    //   .then(res => console.log(res))
+    //     .then(() => {
+          const notes = JSON.parse(localStorage.getItem("notitions"))
+          // console.log(notes)
+          // resolve(notes)
+          return notes
+        // })
+        // .catch(err => {
+        //   reject(console.log(err))
+        // })
+    }
+  
 
 }
 
 function getNotes() {
-  const storage = window.localStorage
-  if (storage.getItem("notities") === null) {
-    return
-  } else {
-    const notes = JSON.parse(localStorage.getItem("notities"))
+  
+    const notes = JSON.parse(localStorage.getItem("notitions"))
+    console.log(notes)
     return notes
-  }
-
-
 }
 
 

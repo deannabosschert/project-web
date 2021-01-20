@@ -34,7 +34,7 @@ const router = {
         console.log('nodatanotities')
 
         const storage = window.localStorage
-        if (storage.getItem("notities") === null) {
+        if (storage.getItem("notitions") === null) {
           updatePageUI('notities')
           return
         } else {
@@ -75,12 +75,22 @@ const router = {
         updatePageUI('/')
       },
       notities: () => {
-        console.log('hasdatanotities')
+        console.log('hasflickrdatanotities')
         // renderData.notities(photos)
-        updatePageUI('notities')
+        const storage = window.localStorage
+        if (storage.getItem("notitions") === null) {
+          updatePageUI('notities')
+          return
+        } else {
+          // const notes = JSON.parse(localStorage.getItem("notities"))
+          const loadedNotes = loadData.notes()
+            renderData.notities(loadedNotes)
+            updatePageUI('notities')
+          
+        }
       },
       inspiratie: () => {
-        console.log('hasdatainspiratie')
+        console.log('hasflickrdatainspiratie')
 
         updatePageUI('inspiratie')
       // },

@@ -29,9 +29,11 @@ import {
 
 const searchUnsplash = document.querySelector('.searchUnsplash')
 const addNote = document.querySelector('.addNote')
+const openNotes = document.querySelector('.openNotes')
 
 searchUnsplash.addEventListener('submit', unsplash)
 addNote.addEventListener('submit', note)
+// openNotes.addEventListener('click', loadNotes)
 
 function unsplash() {
   const input = document.getElementById("unsplash-search")
@@ -101,4 +103,30 @@ function note() {
   store.note(data)
   event.preventDefault();
   textInput.value = ""
+}
+
+function loadNotes() {
+  console.log('hahahahaha')
+  const storage = window.localStorage
+  if (storage.getItem("notitions") === null) {
+    console.log('niets in notesStorage on click')
+    return
+  } else {
+    console.log('wel in notesStorage on click, ga naar router')
+    router.noData()
+  }
+}
+
+
+
+// Delete function. used "for" to bind delete button with 
+// coresponding stickynote
+let stickies = document.getElementsByClassName("sticky");
+let xs = document.getElementsByClassName("close");
+
+for (let i = 0; i < stickies.length; i++) {
+  xs[i].addEventListener("click", () => {
+    console.log(stickies.length);
+    stickies[i].style.display = "none";
+  });
 }
