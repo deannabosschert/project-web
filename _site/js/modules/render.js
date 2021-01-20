@@ -76,7 +76,8 @@ const renderData = {
     }))
 
     Transparency.render(savedNotitions, notities)
-    return
+    
+    addCloseButtons()
     // },
     // detail: function(id) {
     //   const pictureDetail = document.getElementById("onephoto")
@@ -136,6 +137,19 @@ const renderData = {
   }
 }
 
+function addCloseButtons() {
+  let stickies = document.getElementsByClassName("sticky");
+  let xs = document.getElementsByClassName("close");
+
+  for (let i = 0; i < stickies.length; i++){
+      xs[i].addEventListener("click", ()=> {
+          console.log(stickies.length);
+          stickies[i].style.display = "none";
+          // router.noData()
+    
+      });
+}
+}
 
 export {
   renderData

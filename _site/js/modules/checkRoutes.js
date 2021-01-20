@@ -39,11 +39,10 @@ const router = {
           return
         } else {
           // const notes = JSON.parse(localStorage.getItem("notities"))
-          const loadNotes = loadData.notes()
-          loadNotes.then(data => {
-            renderData.notities(data)
+          const loadedNotes = loadData.notes()
+            renderData.notities(loadedNotes)
             updatePageUI('notities')
-          })
+          
         }
 
        
@@ -118,9 +117,21 @@ function updatePageUI(route) {
   const activeSection = document.querySelector(`[data-route="${route}"]`)
   // console.log(activeSection)
   activeSection.classList.add('active')
+
+  //  // Delete function. used "for" to bind delete button with 
+  //   // coresponding stickynote
+  //   let stickies = document.getElementsByClassName("sticky");
+  //   let xs = document.getElementsByClassName("close");
+  //   for (let i = 0; i < stickies.length; i++){
+  //     xs[i].addEventListener("click", ()=> {
+  //         console.log(stickies.length);
+  //         stickies[i].style.display = "none";
+  //         router.noData()
+
+  //     })
 }
 
-// }
+
 
 export {
   router

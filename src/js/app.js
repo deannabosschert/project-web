@@ -29,10 +29,13 @@ import {
 
 const searchUnsplash = document.querySelector('.searchUnsplash')
 const addNote = document.querySelector('.addNote')
-const openNotes = document.querySelector('.openNotes')
+// const openNotes = document.querySelector('.openNotes')
+// const deleteNote = document.querySelector('.close')
+
 
 searchUnsplash.addEventListener('submit', unsplash)
 addNote.addEventListener('submit', note)
+// deleteNote.addEventListener('click', removeNote)
 // openNotes.addEventListener('click', loadNotes)
 
 function unsplash() {
@@ -105,28 +108,79 @@ function note() {
   textInput.value = ""
 }
 
-function loadNotes() {
-  console.log('hahahahaha')
-  const storage = window.localStorage
-  if (storage.getItem("notitions") === null) {
-    console.log('niets in notesStorage on click')
-    return
-  } else {
-    console.log('wel in notesStorage on click, ga naar router')
-    router.noData()
-  }
-}
+// function loadNotes() {
+//   console.log('hahahahaha')
+//   const storage = window.localStorage
+//   if (storage.getItem("notitions") === null) {
+//     console.log('niets in notesStorage on click')
+//     return
+//   } else {
+//     console.log('wel in notesStorage on click, ga naar router')
+//     router.noData()
+//   }
+// }
 
+
+// function removeNote() {
+//   console.log('aboutt to remove stuff')
+//   var x = document.getElementById("myLI").parentNode.nodeName;
+//   console.log(x)
+// }
 
 
 // Delete function. used "for" to bind delete button with 
 // coresponding stickynote
-let stickies = document.getElementsByClassName("sticky");
-let xs = document.getElementsByClassName("close");
+// let stickies = document.getElementsByClassName("sticky");
+// let xs = document.querySelector(".close");
+// let noteContainer = document.querySelector(".saved-notitions");
 
-for (let i = 0; i < stickies.length; i++) {
-  xs[i].addEventListener("click", () => {
-    console.log(stickies.length);
-    stickies[i].style.display = "none";
-  });
+// const closeButtons = noteContainer.querySelectorAll(".close");
+// const allNotes = noteContainer.querySelectorAll(".sticky");
+// console.log(allNotes)
+
+// console.log(closeButtons)
+// for (let i = 0; i < stickies.length; i++){
+//   xs[i].addEventListener("click", ()=> {
+//       console.log(stickies.length);
+//       stickies[i].style.display = "none";
+//       router.noData()
+
+//   });
+// }
+// mountCloses()
+
+function mountCloses() {
+  // let xs = document.querySelector(".close");
+  // let noteContainer = document.querySelector(".saved-notitions");
+  // const highlightedItems = noteContainer.querySelectorAll(".close");
+  let noteContainer = document.querySelector(".saved-notitions");
+
+  let allNotes = noteContainer.querySelectorAll(".sticky");
+  console.log(allNotes)
+  // let allNotesArray = Array.from(allNotes)
+  // console.log(allNotesArray)
+
+  for (let i = 0; i < allNotes.length; i++) {
+    console.log(sticky)
+  }
+
+
 }
+
+// xs.addEventListener('click', () => {
+//   console.log('yeet')
+//   var x = xs.parentElement
+//   console.log(x)
+
+// })
+
+// xs.addEventListener('click', () => {
+//   var x = xs.parentElement
+
+//   // for (let i = 0; i < stickies.length; i++) {
+
+//   // }
+//   console.log(x)
+
+// })
+// activeSection.classList.add('active')
