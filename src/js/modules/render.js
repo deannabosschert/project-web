@@ -1,6 +1,6 @@
 const renderData = {
   timeline: function (data) {
-    console.log(data)
+    // console.log(data)
     const photoTimeline = document.getElementById("photoTimeline")
     const headerInfo = document.getElementById("headerInfo")
 
@@ -18,7 +18,7 @@ const renderData = {
       }
     })
 
-    console.log(photoList)
+    // console.log(photoList)
 
     const directives = {
       url: {
@@ -40,7 +40,7 @@ const renderData = {
   },
   notities: function () {
     const notes = JSON.parse(localStorage.getItem("notitions"))
-    console.log(notes)
+    // console.log(notes)
 
     const savedNotitions = document.querySelector(".saved-notitions")
     savedNotitions.classList.remove('placeholder')
@@ -113,7 +113,7 @@ const renderData = {
   },
   pinterestboards: function () {
     const boardurls = JSON.parse(localStorage.getItem("pinterestUrls"))
-    console.log(boardurls)
+    // console.log(boardurls)
 
     const noPinterestWarning = document.querySelector(".noPinterest")
     const pinterestboards = document.querySelector(".pinterestboards")
@@ -139,8 +139,8 @@ const renderData = {
       }
     }
 
-    console.log(boardContent)
-    console.log(directives)
+    // console.log(boardContent)
+    // console.log(directives)
 
     Transparency.render(pinterestboards, boardContent, directives)
     // location.reload();
@@ -172,8 +172,8 @@ function addCloseButtons() {
 
       const notes = JSON.parse(localStorage.getItem("notitions"))
 
-      console.log(noteData)
-      console.log(notes)
+      // console.log(noteData)
+      // console.log(notes)
 
 
       const index = notes.findIndex(x => x.date == noteData.date && x.note === noteData.note);
@@ -184,7 +184,7 @@ function addCloseButtons() {
         console.log("removed note, update to localStorage")
         localStorage.setItem("notitions", JSON.stringify(notes))
         const newnotes = JSON.parse(localStorage.getItem("notitions"))
-        console.log(newnotes)
+        // console.log(newnotes)
       }
 
       // array = [2, 9]

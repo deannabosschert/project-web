@@ -26,12 +26,12 @@ const router = {
         })
       },
       inspiratie: () => {
-        console.log('nodatainspi')
+        // console.log('nodatainspi')
 
           updatePageUI('inspiratie')
       },
       notities: () => {
-        console.log('nodatanotities')
+        // console.log('nodatanotities')
 
         const storage = window.localStorage
         if (storage.getItem("notitions") === null) {
@@ -45,7 +45,7 @@ const router = {
           
         }},
         inspiratie: () => {
-          console.log('nodatanotities')
+          // console.log('nodatanotities')
   
           const storage = window.localStorage
           if (storage.getItem("pinterestUrls") === null) {
@@ -88,7 +88,7 @@ const router = {
         updatePageUI('/')
       },
       notities: () => {
-        console.log('hasflickrdatanotities')
+        // console.log('hasflickrdatanotities')
         // renderData.notities(photos)
         const storage = window.localStorage
         if (storage.getItem("notitions") === null) {
@@ -103,7 +103,7 @@ const router = {
         }
       },
       inspiratie: () => {
-        console.log('hasflickrdataboards')
+        // console.log('hasflickrdataboards')
         // renderData.notities(photos)
         const storage = window.localStorage
         if (storage.getItem("pinterestUrls") === null) {
@@ -133,7 +133,7 @@ const router = {
 
 // update page from route
 function updatePageUI(route) {
-  console.log(route)
+  console.log('route: ' + route)
   const tabs = document.querySelectorAll('.tab')
   tabs.forEach(tab => {
     tab.classList.remove('active')

@@ -66,7 +66,7 @@ function unsplash() {
   // .then(data => fillMasonry(data))
 
   function renderPhotos(data) {
-    console.log(data)
+    // console.log(data)
     if (searchTerm == "") {
       searchResults.innerHTML = `Search results for: <span>a random search!</span>`
     } else {
@@ -123,7 +123,7 @@ function pinterest() {
   const input = document.getElementById("pinterest-search")
   let url = input.value
   if (url == "") {
-    console.log('randomURL')
+    console.log('load board from randomURL')
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }

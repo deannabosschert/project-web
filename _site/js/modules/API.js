@@ -24,7 +24,7 @@ const loadData = {
         .then(res => store.set(res))
         .then(() => {
           const photos = JSON.parse(localStorage.getItem("flickrPhotos"))
-          console.log(photos)
+          // console.log(photos)
           resolve(photos)
           return photos
         })
@@ -63,13 +63,6 @@ const loadData = {
       }
   
 
-}
-
-function getNotes() {
-  
-    const notes = JSON.parse(localStorage.getItem("notitions"))
-    console.log(notes)
-    return notes
 }
 
 
