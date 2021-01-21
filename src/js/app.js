@@ -53,6 +53,7 @@ function unsplash() {
   // const clientId = "client_id=WgCeJ15nZWDOCklDsGksqOag8Xb4TvCILMy5datSx7w"
   // const apiLink = `${endpoint}users/${username}/photos/?${clientId}`
 
+  const gallerySection = document.querySelector('.unsplashGallery')
   const gallery = document.querySelector('.masonry-with-columns')
   const searchResults = document.querySelector('.searchResults')
 
@@ -65,6 +66,7 @@ function unsplash() {
     console.log(data)
     searchResults.innerHTML = `Search results for: <span>${searchTerm}</span>`
     gallery.innerHTML = ""
+    gallerySection.classList.remove('placeholder')
 
     return data.map(data => {
       // console.log(data.urls.regular)
