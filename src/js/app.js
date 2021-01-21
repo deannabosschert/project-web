@@ -28,12 +28,15 @@ import {
 
 
 const searchUnsplash = document.querySelector('.searchUnsplash')
+const findPinterest = document.querySelector('.findPinterest')
+
 const addNote = document.querySelector('.addNote')
 // const openNotes = document.querySelector('.openNotes')
 // const deleteNote = document.querySelector('.close')
 
 
 searchUnsplash.addEventListener('submit', unsplash)
+findPinterest.addEventListener('submit', pinterest)
 addNote.addEventListener('submit', note)
 // deleteNote.addEventListener('click', removeNote)
 // openNotes.addEventListener('click', loadNotes)
@@ -64,7 +67,12 @@ function unsplash() {
 
   function renderPhotos(data) {
     console.log(data)
-    searchResults.innerHTML = `Search results for: <span>${searchTerm}</span>`
+    if (searchTerm == "") {
+      searchResults.innerHTML = `Search results for: <span>a random search!</span>`
+    } else {
+      searchResults.innerHTML = `Search results for: <span>${searchTerm}</span>`
+    }
+
     gallery.innerHTML = ""
     gallerySection.classList.remove('placeholder')
 
@@ -110,6 +118,30 @@ function note() {
   textInput.value = ""
 }
 
+
+function pinterest() {
+  const input = document.getElementById("pinterest-search")
+  let url = input.value
+  if (url == "") {
+    console.log('randomURL')
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    const randomURLs = ["https://nl.pinterest.com/dbosschert/austria/","https://nl.pinterest.com/dbosschert/winter-wonderland/","https://nl.pinterest.com/dbosschert/forest-fun/","https://nl.pinterest.com/dbosschert/wonderful-waterfall/"]
+    const randomUrlIndex= getRandomInt(4)
+    const randomURL = randomURLs[randomUrlIndex]
+    url = randomURL
+    store.pinterest(url)
+
+  } else {
+    store.pinterest(url)
+
+  }
+  event.preventDefault();
+  input.value = ""
+}
+
 // function loadNotes() {
 //   console.log('hahahahaha')
 //   const storage = window.localStorage
@@ -151,23 +183,23 @@ function note() {
 // }
 // mountCloses()
 
-function mountCloses() {
-  // let xs = document.querySelector(".close");
-  // let noteContainer = document.querySelector(".saved-notitions");
-  // const highlightedItems = noteContainer.querySelectorAll(".close");
-  let noteContainer = document.querySelector(".saved-notitions");
+// function mountCloses() {
+//   // let xs = document.querySelector(".close");
+//   // let noteContainer = document.querySelector(".saved-notitions");
+//   // const highlightedItems = noteContainer.querySelectorAll(".close");
+//   let noteContainer = document.querySelector(".saved-notitions");
 
-  let allNotes = noteContainer.querySelectorAll(".sticky");
-  console.log(allNotes)
-  // let allNotesArray = Array.from(allNotes)
-  // console.log(allNotesArray)
+//   let allNotes = noteContainer.querySelectorAll(".sticky");
+//   console.log(allNotes)
+//   // let allNotesArray = Array.from(allNotes)
+//   // console.log(allNotesArray)
 
-  for (let i = 0; i < allNotes.length; i++) {
-    console.log(sticky)
-  }
+//   for (let i = 0; i < allNotes.length; i++) {
+//     console.log(sticky)
+//   }
 
 
-}
+// }
 
 // xs.addEventListener('click', () => {
 //   console.log('yeet')

@@ -46,7 +46,21 @@ const loadData = {
         // .catch(err => {
         //   reject(console.log(err))
         // })
-    }
+    },
+    boards: () => {
+      // return new Promise((resolve, reject) => {
+      //   getNotes()
+      //   .then(res => console.log(res))
+      //     .then(() => {
+            const boards = JSON.parse(localStorage.getItem("pinterestUrls"))
+            // console.log(notes)
+            // resolve(notes)
+            return boards
+          // })
+          // .catch(err => {
+          //   reject(console.log(err))
+          // })
+      }
   
 
 }

@@ -33,6 +33,27 @@ const store = {
       renderData.notities()
     }
 
+  },
+  pinterest(res) {
+    console.log(res)
+    if (window.localStorage.getItem("pinterestUrls")) {
+      const pinterestUrls = JSON.parse(localStorage.getItem("pinterestUrls"))
+      pinterestUrls.push(res)
+
+      console.log(pinterestUrls)
+      localStorage.setItem("pinterestUrls", JSON.stringify(pinterestUrls))
+      const currentBoards = JSON.parse(localStorage.getItem("pinterestUrls"))
+
+      renderData.pinterestboards()
+    } else {
+      const pinterestUrls = [res]
+    
+      console.log("adding board to localStorage")
+      localStorage.setItem("pinterestUrls", JSON.stringify(pinterestUrls))
+
+      renderData.pinterestboards()
+    }
+
   }
 }
 

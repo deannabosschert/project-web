@@ -43,7 +43,21 @@ const router = {
             renderData.notities(loadedNotes)
             updatePageUI('notities')
           
-        }
+        }},
+        inspiratie: () => {
+          console.log('nodatanotities')
+  
+          const storage = window.localStorage
+          if (storage.getItem("pinterestUrls") === null) {
+            updatePageUI('inspiratie')
+            return
+          } else {
+            // const notes = JSON.parse(localStorage.getItem("notities"))
+            const loadedBoards = loadData.boards()
+            renderData.pinterestboards(loadedBoards)
+            updatePageUI('inspiratie')
+            
+          }
 
        
 
@@ -89,9 +103,20 @@ const router = {
         }
       },
       inspiratie: () => {
-        console.log('hasflickrdatainspiratie')
-
-        updatePageUI('inspiratie')
+        console.log('hasflickrdataboards')
+        // renderData.notities(photos)
+        const storage = window.localStorage
+        if (storage.getItem("pinterestUrls") === null) {
+          updatePageUI('inspiratie')
+          return
+        } else {
+          // const notes = JSON.parse(localStorage.getItem("notities"))
+          const loadedBoards = loadData.boards()
+            renderData.pinterestboards(loadedBoards)
+            updatePageUI('inspiratie')
+          
+        }
+    
       // },
       // '/:id': id => {
       //   let onephoto = photos.filter(function(photo) {
@@ -108,7 +133,7 @@ const router = {
 
 // update page from route
 function updatePageUI(route) {
-  // console.log(route)
+  console.log(route)
   const tabs = document.querySelectorAll('.tab')
   tabs.forEach(tab => {
     tab.classList.remove('active')

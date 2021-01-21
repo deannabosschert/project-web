@@ -10,13 +10,6 @@ const renderData = {
       amount: data.amount + ' photos'
     }
 
-    // const photoList = data.photos.map(photo => ({
-    //     url: photo.url_l,
-    //     title: photo.title,
-    //     tags: photo.tags
-    //   }))
-    // }
-
     const photoList = data.photos.map(photo => {
       return {
         url: photo.url_small,
@@ -25,13 +18,7 @@ const renderData = {
       }
     })
 
-
     console.log(photoList)
-
-    // const photoAvatars = JSON.parse(storage.getItem("githubAvatars"))
-    // const avatarIMG = photoAvatars.map(photoAvatar => ({
-    //   avatar: photoAvatar.transparency.model.avatar
-    // }))
 
     const directives = {
       url: {
@@ -41,22 +28,7 @@ const renderData = {
         href: function () {
           return this.url
         }
-      },
-      // linkTopictureDetail: {
-      //   href: function() {
-      //     return "#/" + this.id
-      //   }
-      // },
-      // html_url: {
-      //   href: function() {
-      //     return this.html_url
-      //   }
-      // },
-      // id: {
-      //   href: function() {
-      //     return this.id
-      //   }
-      // }
+      }
     }
 
     const daysNav = document.querySelector('.timelineNav')
@@ -138,6 +110,42 @@ const renderData = {
     //   }
 
     //   Transparency.render(pictureDetail, onephoto, directives)
+  },
+  pinterestboards: function () {
+    const boardurls = JSON.parse(localStorage.getItem("pinterestUrls"))
+    console.log(boardurls)
+
+    const noPinterestWarning = document.querySelector(".noPinterest")
+    const pinterestboards = document.querySelector(".pinterestboards")
+    pinterestboards.classList.remove('placeholder')
+    noPinterestWarning.classList.add('placeholder')
+
+    // const pinterestBoardURLS = boardurls.map(data => ({
+    //   close: 'x',
+    //   noteDate: data.date,
+    //   noteText: data.note
+    // }))
+
+
+    const boardContent = boardurls.map(data => ({
+      pinterestBoard: data
+    }))
+
+    const directives = {
+      pinterestBoard: {
+        href: function () {
+          return this.pinterestBoard
+        }
+      }
+    }
+
+    console.log(boardContent)
+    console.log(directives)
+
+    Transparency.render(pinterestboards, boardContent, directives)
+    // location.reload();
+
+
   }
 }
 
@@ -174,12 +182,12 @@ function addCloseButtons() {
       if (index > -1) {
         notes.splice(index, 1);
         console.log("removed note, update to localStorage")
-        localStorage.setItem("notitions", JSON.stringify(notes)) 
+        localStorage.setItem("notitions", JSON.stringify(notes))
         const newnotes = JSON.parse(localStorage.getItem("notitions"))
- console.log(newnotes)
+        console.log(newnotes)
       }
 
-           // array = [2, 9]
+      // array = [2, 9]
       // console.log(notes);
       // const found = notes.find(element => element > 10);
 

@@ -1,7 +1,32 @@
+html {
+  // height: 100%;
+  // font-smoothing: antialiased;
+  // text-rendering: optimizeLegibility;
+  // @include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
+}
+
+body {
+  line-height: $baseline;
+  // padding: $baseline 0;
+}
+
+p, li, address {
+  line-height: 1.4;
+  // margin-bottom: $baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  // margin-bottom: $baseline;
+}
+
 h1,
 h2 {
-  font-weight: 600;
-  text-align: center;
+  // font-weight: 600;
+  // text-align: center;
 }
 
 html {
@@ -44,11 +69,7 @@ h6 {
   line-height: $h6;
 }
 
-p,
-li,
-address,
-label,
-input {
+p, li, address {
   font-size: $p;
 }
 
@@ -86,40 +107,38 @@ figcaption {
 
   h3,
   nav ul li a {
-    font-size: calc(1.25rem * 1.2);
+    // font-size: calc(1.25rem * 1.2);
     // line-height: calc(2.25rem * 2);
   }
 
-  p,
-  li,
-  address {
+  p, li, address {
     font-size: 1.2rem;
+    // line-height: calc(1.2rem * 2.5);
   }
 
   figcaption {
     font-size: 1rem;
-    line-height: calc(1rem * 2.5);
+    // line-height: calc(1rem * 2.5);
   }
+
 }
 
 @media screen and (min-width: 450px) {
 
   h3,
   nav ul li a {
-    font-size: calc(2.25rem * 1.32);
+    // font-size: calc(2.25rem * 1.32);
     // line-height: calc(2.25rem * 2);
   }
 
-  p,
-  li,
-  address {
+  p, li, address {
     font-size: calc(1.2rem * 1.2);
-    line-height: calc(1.2rem * 2);
+    // line-height: calc(1.2rem * 2);
   }
 
   figcaption {
     font-size: 1rem;
-    line-height: calc(1rem * 2.5);
+    // line-height: calc(1rem * 2.5);
   }
 }
 
@@ -127,35 +146,37 @@ figcaption {
 
   h3,
   nav ul li a {
-    font-size: calc(2.25rem * 1.2);
-    line-height: calc(2.25rem * 2);
+    // font-size: calc(2.25rem * 1.05);
+    // line-height: calc(2.25rem * 2);
   }
 
-  p,
-  li,
-  address {
+  p, li, address {
     font-size: calc(1.2rem * 1.1);
+    // line-height: calc(1.2rem * 1.5);
   }
 
   figcaption {
     font-size: 1.1rem;
+    // line-height: calc(1rem * 1.8);
   }
 }
+
 
 @media screen and (min-width: 1024px) {
 
   h3,
   nav ul li a {
     font-size: $h3;
+    // line-height: $h3;
   }
 
-  p,
-  li,
-  address {
+  p, li, address {
     font-size: $p;
+    // line-height: $p;
   }
 
   figcaption {
     font-size: $figcaption;
+    // line-height: $figcaption;
   }
 }

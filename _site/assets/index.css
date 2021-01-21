@@ -154,10 +154,12 @@ table {
   font-style: italic;
   font-display: swap;
 }
-h1,
-h2 {
-  font-weight: 600;
-  text-align: center;
+body {
+  line-height: 1.2rem;
+}
+
+p, li, address {
+  line-height: 1.4;
 }
 
 html {
@@ -200,11 +202,7 @@ h6 {
   line-height: 1.25rem;
 }
 
-p,
-li,
-address,
-label,
-input {
+p, li, address {
   font-size: 1.2rem;
 }
 
@@ -239,50 +237,25 @@ figcaption {
 }
 
 @media screen and (min-width: 250px) {
-  h3,
-nav ul li a {
-    font-size: calc(1.25rem * 1.2);
-  }
-
-  p,
-li,
-address {
+  p, li, address {
     font-size: 1.2rem;
   }
 
   figcaption {
     font-size: 1rem;
-    line-height: calc(1rem * 2.5);
   }
 }
 @media screen and (min-width: 450px) {
-  h3,
-nav ul li a {
-    font-size: calc(2.25rem * 1.32);
-  }
-
-  p,
-li,
-address {
+  p, li, address {
     font-size: calc(1.2rem * 1.2);
-    line-height: calc(1.2rem * 2);
   }
 
   figcaption {
     font-size: 1rem;
-    line-height: calc(1rem * 2.5);
   }
 }
 @media screen and (min-width: 730px) {
-  h3,
-nav ul li a {
-    font-size: calc(2.25rem * 1.2);
-    line-height: calc(2.25rem * 2);
-  }
-
-  p,
-li,
-address {
+  p, li, address {
     font-size: calc(1.2rem * 1.1);
   }
 
@@ -296,9 +269,7 @@ nav ul li a {
     font-size: 1.75rem;
   }
 
-  p,
-li,
-address {
+  p, li, address {
     font-size: 1.2rem;
   }
 
@@ -368,6 +339,13 @@ form button {
   margin: 0.5rem;
   border-radius: 5px;
 }
+form input {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+}
+form input::placeholder {
+  color: rgba(89, 89, 89, 0.7);
+}
 form label {
   text-align: center;
   width: 100%;
@@ -384,7 +362,25 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.notities form input, .notities form textarea {
+.notities > p,
+.inspiratie > p,
+.inspiratie > section > p,
+.flickr > header > p {
+  margin-bottom: 2.2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  width: 95%;
+  max-width: 31rem;
+  padding: 1rem;
+}
+
+.notities form {
+  padding: 1rem;
+  min-width: 40%;
+  max-width: 35rem;
+}
+.notities form input,
+.notities form textarea {
   font-size: calc(1.2rem * 1.2);
   font-family: inherit;
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
@@ -412,13 +408,6 @@ form button {
   color: #595959;
 }
 
-.notities > p, .inspiratie > p, .inspiratie > section > p, .flickr > header > p {
-  margin-bottom: 2.2rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  max-width: 95%;
-}
-
 .inspiratie button {
   max-width: 7rem;
 }
@@ -433,6 +422,11 @@ form button {
 }
 .inspiratie span {
   margin-bottom: 1.5rem;
+}
+
+.flickr header {
+  align-content: center;
+  align-items: center;
 }
 
 aside figure {
@@ -452,7 +446,7 @@ blockquote {
 }
 
 h3 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   width: 100%;
   text-align: center;
 }
@@ -530,6 +524,7 @@ header nav ul li {
   border-radius: 2px;
   border-bottom: 2.5px solid #fc8ec5;
   padding: 0.2rem 0.3rem;
+  min-width: 14%;
 }
 header nav ul li:hover {
   border-bottom: 2px solid black;
@@ -541,6 +536,7 @@ header nav ul li a {
   font-variant: small-caps;
   text-align: center;
   padding: 0.1rem 0.5rem;
+  line-height: 1.25;
 }
 header .quote {
   align-self: flex-end;
@@ -633,12 +629,16 @@ footer ul a {
 /* SECTIONS */
 .unsplash {
   background-color: white;
-  padding: 1rem;
+  padding: 1.5rem 0rem 0rem 0rem;
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.75);
   box-shadow: 0 7px 16px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8px);
-  margin-bottom: 4rem;
+  max-width: 72rem;
+}
+
+main > .inspiratie > .unsplash {
+  margin-bottom: 7rem;
 }
 
 .unsplashGallery {
@@ -647,6 +647,8 @@ footer ul a {
   justify-content: center;
   align-content: center;
   margin-left: -0.8rem;
+  max-width: 72rem;
+  margin-bottom: -1rem;
 }
 .unsplashGallery h4 {
   font-weight: lighter;
@@ -672,148 +674,148 @@ footer ul a {
   padding: 0;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(1) {
-  height: 279px;
-  line-height: 279px;
+  height: 262px;
+  line-height: 262px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(2) {
-  height: 156px;
-  line-height: 156px;
+  height: 295px;
+  line-height: 295px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(3) {
-  height: 405px;
-  line-height: 405px;
+  height: 255px;
+  line-height: 255px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(4) {
-  height: 381px;
-  line-height: 381px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(5) {
-  height: 223px;
-  line-height: 223px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(6) {
-  height: 265px;
-  line-height: 265px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(7) {
-  height: 288px;
-  line-height: 288px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(8) {
-  height: 365px;
-  line-height: 365px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(9) {
-  height: 306px;
-  line-height: 306px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(10) {
-  height: 194px;
-  line-height: 194px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(11) {
-  height: 192px;
-  line-height: 192px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(12) {
-  height: 401px;
-  line-height: 401px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(13) {
-  height: 155px;
-  line-height: 155px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(14) {
-  height: 111px;
-  line-height: 111px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(15) {
-  height: 113px;
-  line-height: 113px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(16) {
-  height: 500px;
-  line-height: 500px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(17) {
-  height: 324px;
-  line-height: 324px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(18) {
-  height: 233px;
-  line-height: 233px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(19) {
-  height: 230px;
-  line-height: 230px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(20) {
-  height: 256px;
-  line-height: 256px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(21) {
-  height: 191px;
-  line-height: 191px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(22) {
-  height: 483px;
-  line-height: 483px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(23) {
-  height: 125px;
-  line-height: 125px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(24) {
-  height: 125px;
-  line-height: 125px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(25) {
-  height: 189px;
-  line-height: 189px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(26) {
-  height: 445px;
-  line-height: 445px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(27) {
-  height: 487px;
-  line-height: 487px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(28) {
   height: 461px;
   line-height: 461px;
 }
+.unsplashGallery .masonry-with-columns div:nth-child(5) {
+  height: 392px;
+  line-height: 392px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(6) {
+  height: 277px;
+  line-height: 277px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(7) {
+  height: 149px;
+  line-height: 149px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(8) {
+  height: 187px;
+  line-height: 187px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(9) {
+  height: 173px;
+  line-height: 173px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(10) {
+  height: 178px;
+  line-height: 178px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(11) {
+  height: 427px;
+  line-height: 427px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(12) {
+  height: 209px;
+  line-height: 209px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(13) {
+  height: 139px;
+  line-height: 139px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(14) {
+  height: 251px;
+  line-height: 251px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(15) {
+  height: 391px;
+  line-height: 391px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(16) {
+  height: 481px;
+  line-height: 481px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(17) {
+  height: 315px;
+  line-height: 315px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(18) {
+  height: 439px;
+  line-height: 439px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(19) {
+  height: 311px;
+  line-height: 311px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(20) {
+  height: 340px;
+  line-height: 340px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(21) {
+  height: 465px;
+  line-height: 465px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(22) {
+  height: 301px;
+  line-height: 301px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(23) {
+  height: 240px;
+  line-height: 240px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(24) {
+  height: 396px;
+  line-height: 396px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(25) {
+  height: 395px;
+  line-height: 395px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(26) {
+  height: 130px;
+  line-height: 130px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(27) {
+  height: 352px;
+  line-height: 352px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(28) {
+  height: 490px;
+  line-height: 490px;
+}
 .unsplashGallery .masonry-with-columns div:nth-child(29) {
-  height: 267px;
-  line-height: 267px;
+  height: 245px;
+  line-height: 245px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(30) {
-  height: 226px;
-  line-height: 226px;
+  height: 271px;
+  line-height: 271px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(31) {
-  height: 335px;
-  line-height: 335px;
+  height: 213px;
+  line-height: 213px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(32) {
-  height: 246px;
-  line-height: 246px;
+  height: 231px;
+  line-height: 231px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(33) {
-  height: 115px;
-  line-height: 115px;
+  height: 235px;
+  line-height: 235px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(34) {
-  height: 284px;
-  line-height: 284px;
+  height: 249px;
+  line-height: 249px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(35) {
-  height: 468px;
-  line-height: 468px;
+  height: 294px;
+  line-height: 294px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(36) {
-  height: 416px;
-  line-height: 416px;
+  height: 139px;
+  line-height: 139px;
 }
 
 /* SPECIFICS */
@@ -839,7 +841,8 @@ main .active {
 
 .saved-notitions {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
 .sticky {
@@ -909,6 +912,57 @@ main .active {
   display: none;
 }
 
+.inspiratie > section > .noPinterest {
+  background-color: white;
+  border: 1px solid purple;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 3px 6px 0 rgba(212, 17, 76, 0.37);
+  backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1.5rem 2.2rem;
+}
+.inspiratie > section > .noPinterest span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #d4114c;
+  font-weight: 900;
+  margin: 0 1rem;
+  font-size: 2rem;
+}
+
+.findPinterest {
+  max-width: 40rem;
+  border-radius: 5px;
+  background-color: rgba(31, 38, 135, 0.03);
+  box-shadow: inset 0px 0 1px 1px rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+  padding-bottom: 0.5rem;
+}
+.findPinterest h3 {
+  line-height: 1.5;
+}
+.findPinterest input {
+  width: 100%;
+}
+.findPinterest button {
+  background-image: linear-gradient(to right, #db709499 -10%, #db709499 60%, #ece0ec 99%, #b582b5 155%);
+}
+
+.moodboard {
+  min-width: 22rem;
+  width: 90%;
+  max-width: 35rem;
+}
+.moodboard a {
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: #ebecf0;
+  color: rgba(89, 89, 89, 0.7);
+  height: fit-content;
+}
+
 /* STATES */
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);
@@ -956,5 +1010,52 @@ button:disabled {
 }
 
 /* MEDIA QUERIES */
+@media screen and (min-width: 450px) {
+  .moodboard {
+    margin: 1.25rem;
+  }
+}
+@media screen and (min-width: 735px) {
+  .sticky {
+    margin: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sticky {
+    margin: 2rem;
+  }
+}
+@media screen and (min-width: 1219px) {
+  .inspiratie section > h3 {
+    margin-bottom: 2rem;
+  }
+
+  .notities > p,
+.inspiratie > p,
+.flickr > header > p {
+    border-left: 3px solid rgba(142, 142, 252, 0.6);
+    max-height: 9rem;
+  }
+
+  .notities > p,
+.inspiratie > p,
+.flickr > header > p,
+.unsplash {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .inspiratie > section > p {
+    border-left: 3px solid rgba(219, 112, 148, 0.6);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .notities > p {
+    margin-top: 5%;
+  }
+}
 
 /*# sourceMappingURL=index.css.map */
