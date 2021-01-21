@@ -4,7 +4,7 @@ import {
 const store = {
   async set(res) {
     const photos = await filterData(res)
-    console.log(photos)
+    // console.log(photos)
     console.log("adding photos to localStorage")
     localStorage.setItem("flickrPhotos", JSON.stringify(photos))
     return photos
@@ -35,12 +35,12 @@ const store = {
 
   },
   pinterest(res) {
-    console.log(res)
+    // console.log(res)
     if (window.localStorage.getItem("pinterestUrls")) {
       const pinterestUrls = JSON.parse(localStorage.getItem("pinterestUrls"))
       pinterestUrls.push(res)
 
-      console.log(pinterestUrls)
+      // console.log(pinterestUrls)
       localStorage.setItem("pinterestUrls", JSON.stringify(pinterestUrls))
       const currentBoards = JSON.parse(localStorage.getItem("pinterestUrls"))
 
@@ -58,7 +58,7 @@ const store = {
 }
 
 async function filterData(data) {
-  console.log(data)
+  // console.log(data)
   // return data.map(data => {
   //   return {
   //     owner: data.owner,
