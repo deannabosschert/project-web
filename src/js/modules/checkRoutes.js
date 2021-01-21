@@ -25,12 +25,28 @@ const router = {
           updatePageUI('/')
         })
       },
-      '/notities': () => {
-        const loadNotes = loadData.notes()
-        loadNotes.then(data => {
-          renderData.notities(data)
+      inspiratie: () => {
+        console.log('nodatainspi')
+
+          updatePageUI('inspiratie')
+      },
+      notities: () => {
+        console.log('nodatanotities')
+
+        const storage = window.localStorage
+        if (storage.getItem("notitions") === null) {
           updatePageUI('notities')
-        })
+          return
+        } else {
+          // const notes = JSON.parse(localStorage.getItem("notities"))
+          const loadedNotes = loadData.notes()
+            renderData.notities(loadedNotes)
+            updatePageUI('notities')
+          
+        }
+
+       
+
       // },
       // '/:id': id => {
       //   const loadDing = loadData.timeline()
@@ -58,10 +74,23 @@ const router = {
         updatePageUI('/')
       },
       notities: () => {
+        console.log('hasflickrdatanotities')
         // renderData.notities(photos)
-        updatePageUI('notities')
+        const storage = window.localStorage
+        if (storage.getItem("notitions") === null) {
+          updatePageUI('notities')
+          return
+        } else {
+          // const notes = JSON.parse(localStorage.getItem("notities"))
+          const loadedNotes = loadData.notes()
+            renderData.notities(loadedNotes)
+            updatePageUI('notities')
+          
+        }
       },
       inspiratie: () => {
+        console.log('hasflickrdatainspiratie')
+
         updatePageUI('inspiratie')
       // },
       // '/:id': id => {
@@ -88,9 +117,21 @@ function updatePageUI(route) {
   const activeSection = document.querySelector(`[data-route="${route}"]`)
   // console.log(activeSection)
   activeSection.classList.add('active')
+
+  //  // Delete function. used "for" to bind delete button with 
+  //   // coresponding stickynote
+  //   let stickies = document.getElementsByClassName("sticky");
+  //   let xs = document.getElementsByClassName("close");
+  //   for (let i = 0; i < stickies.length; i++){
+  //     xs[i].addEventListener("click", ()=> {
+  //         console.log(stickies.length);
+  //         stickies[i].style.display = "none";
+  //         router.noData()
+
+  //     })
 }
 
-// }
+
 
 export {
   router
