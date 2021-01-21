@@ -72,11 +72,11 @@ const renderData = {
     const notities = notes.map(data => ({
       close: 'x',
       noteDate: data.date,
-      noteText: data.note 
+      noteText: data.note
     }))
 
     Transparency.render(savedNotitions, notities)
-    
+
     addCloseButtons()
     // },
     // detail: function(id) {
@@ -138,17 +138,52 @@ const renderData = {
 }
 
 function addCloseButtons() {
-  let stickies = document.getElementsByClassName("sticky");
-  let xs = document.getElementsByClassName("close");
+  let stickies = document.getElementsByClassName("sticky")
+  let xs = document.getElementsByClassName("close")
 
-  for (let i = 0; i < stickies.length; i++){
-      xs[i].addEventListener("click", ()=> {
-          console.log(stickies.length);
-          stickies[i].style.display = "none";
-          // router.noData()
-    
-      });
-}
+  for (let i = 0; i < stickies.length; i++) {
+    xs[i].addEventListener("click", () => {
+      // console.log(stickies.length)
+      stickies[i].style.display = "none"
+
+      let note = stickies[i]
+      // console.log(note)
+      const currentNoteDate = note.querySelector(".noteDate").innerHTML
+      const currentNoteText = note.querySelector(".noteText").innerHTML
+
+
+
+      let noteData = {
+        date: currentNoteDate,
+        note: currentNoteText
+      }
+
+      const notes = JSON.parse(localStorage.getItem("notitions"))
+
+      console.log(noteData)
+      console.log(notes)
+
+
+      const index = notes.findIndex(x => x.date == noteData.date && x.note === noteData.note);
+      // console.log(index)
+
+      if (index > -1) {
+        notes.splice(index, 1);
+        console.log("removed note, update to localStorage")
+        localStorage.setItem("notitions", JSON.stringify(notes)) 
+        const newnotes = JSON.parse(localStorage.getItem("notitions"))
+ console.log(newnotes)
+      }
+
+           // array = [2, 9]
+      // console.log(notes);
+      // const found = notes.find(element => element > 10);
+
+
+
+      // router.noData()
+    })
+  }
 }
 
 export {
