@@ -23,7 +23,12 @@ img {
 }
 
 form {
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   width: 100%;
   margin-bottom: 2.5rem;
 
@@ -455,6 +460,8 @@ main {
   padding: 1rem;
   margin: 1rem;
   background: $verylightpink;
+    // gradient off https://dev.to/thormeier/fully-responsive-html-css-sticky-note-4okl
+
   background: linear-gradient(
     180deg,
     rgba(187, 235, 255, 1) 0%,
