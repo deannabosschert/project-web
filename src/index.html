@@ -31,20 +31,20 @@ title: Project Web- dBosschert
       <nav>
         <ul>
           <li>
-            <a href="/#inspiratie">inspiratie</a>
+            <a href="/#inspiratie">inspiration</a>
           </li>
           <li>
-            <a href="/">tijdlijn</a>
+            <a href="/">timeline</a>
           </li>
           <li>
-            <a class="openNotes" href="/#notities">notities</a>
+            <a class="openNotes" href="/#notities">notes</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
       <section data-route="/" id="/src/" class="flickr tab">
-        <h2 id="tijdlijn">Tijdlijn</h2>
+        <h2 id="tijdlijn">Timeline</h2>
         <div class="loader"></div>
         <div id="photoTimeline">
           <article class="photo">
@@ -61,7 +61,7 @@ title: Project Web- dBosschert
         </div>
       </section>
       <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab">
-        <h2 id="inspiratie">Inspiratie</h2>
+        <h2 id="inspiratie">Inspiration</h2>
         <form class="searchUnsplash">
           <label for="site-search">
             <h3>Search for images:</h3>
@@ -86,24 +86,28 @@ title: Project Web- dBosschert
         </section>
       </section>
       <section data-route="notities" id="/src/#notities" class="notities tab">
-        <h2 id="notities">Notities</h2>
+        <h2 id="notities">Notes</h2>
         <form class="addNote">
-          <h3>Add note</h3>
+          <fieldset>
+            <legend><h3>Add note</h3></legend>
 
           <label for="date">
-            <h4>Datum</h4>
+            <!-- <h4>Datum</h4> -->
             <input type="date" name="date" id="datePicker">
           </label>
           <label for="add-notition">
             <textarea type="text" id="add-notition" aria-label="Add notition" autocomplete="off" minlength="2" maxlength="800" placeholder="add a note.." required></textarea>
           </label>
+          <button type="reset">Clear</button>
 
           <button type="submit">Add</button>
+
+        </fieldset>
         </form>
         <!-- <h5>test</h5> -->
         <section class="saved-notitions placeholder">
           <article class="sticky">
-            <span class="close"></span>
+            <button class="close"></button>
             <h4 class="noteDate" contenteditable="true"></h4>
             <p class="noteText" contenteditable="true"></p>
           </article>
