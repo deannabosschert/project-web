@@ -127,7 +127,7 @@ form {
   }
 }
 }
-.notities>p, .inspiratie>p, .inspiratie>section>p {
+.notities>p, .inspiratie>p, .inspiratie>section>p, .flickr>header>p {
   margin-bottom: 2.2rem;
   font-size: $p;
   line-height: 1.5;
@@ -481,6 +481,10 @@ main {
   .active {
     display: flex;
   }
+}
+
+.options {
+  display: none;
 }
 
 // POST-IT NOTES
