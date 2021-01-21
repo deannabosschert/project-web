@@ -362,7 +362,25 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.notities form input, .notities form textarea {
+.notities > p,
+.inspiratie > p,
+.inspiratie > section > p,
+.flickr > header > p {
+  margin-bottom: 2.2rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  width: 95%;
+  max-width: 31rem;
+  padding: 1rem;
+}
+
+.notities form {
+  padding: 1rem;
+  min-width: 40%;
+  max-width: 35rem;
+}
+.notities form input,
+.notities form textarea {
   font-size: calc(1.2rem * 1.2);
   font-family: inherit;
   box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
@@ -388,15 +406,6 @@ form button {
   background-color: none;
   border: 1px solid #595959;
   color: #595959;
-}
-
-.notities > p, .inspiratie > p, .inspiratie > section > p, .flickr > header > p {
-  margin-bottom: 2.2rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  width: 95%;
-  max-width: 31rem;
-  padding: 1rem;
 }
 
 .inspiratie button {
@@ -665,148 +674,148 @@ main > .inspiratie > .unsplash {
   padding: 0;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(1) {
-  height: 171px;
-  line-height: 171px;
+  height: 169px;
+  line-height: 169px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(2) {
-  height: 287px;
-  line-height: 287px;
+  height: 412px;
+  line-height: 412px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(3) {
-  height: 465px;
-  line-height: 465px;
+  height: 332px;
+  line-height: 332px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(4) {
-  height: 301px;
-  line-height: 301px;
+  height: 407px;
+  line-height: 407px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(5) {
-  height: 457px;
-  line-height: 457px;
+  height: 349px;
+  line-height: 349px;
 }
 .unsplashGallery .masonry-with-columns div:nth-child(6) {
-  height: 122px;
-  line-height: 122px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(7) {
-  height: 355px;
-  line-height: 355px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(8) {
-  height: 474px;
-  line-height: 474px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(9) {
-  height: 356px;
-  line-height: 356px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(10) {
-  height: 184px;
-  line-height: 184px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(11) {
-  height: 372px;
-  line-height: 372px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(12) {
-  height: 312px;
-  line-height: 312px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(13) {
-  height: 423px;
-  line-height: 423px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(14) {
-  height: 351px;
-  line-height: 351px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(15) {
-  height: 142px;
-  line-height: 142px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(16) {
-  height: 198px;
-  line-height: 198px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(17) {
-  height: 408px;
-  line-height: 408px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(18) {
-  height: 123px;
-  line-height: 123px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(19) {
-  height: 110px;
-  line-height: 110px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(20) {
-  height: 249px;
-  line-height: 249px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(21) {
-  height: 120px;
-  line-height: 120px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(22) {
-  height: 254px;
-  line-height: 254px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(23) {
-  height: 262px;
-  line-height: 262px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(24) {
-  height: 456px;
-  line-height: 456px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(25) {
-  height: 154px;
-  line-height: 154px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(26) {
-  height: 248px;
-  line-height: 248px;
-}
-.unsplashGallery .masonry-with-columns div:nth-child(27) {
   height: 401px;
   line-height: 401px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(28) {
-  height: 341px;
-  line-height: 341px;
+.unsplashGallery .masonry-with-columns div:nth-child(7) {
+  height: 102px;
+  line-height: 102px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(29) {
-  height: 197px;
-  line-height: 197px;
+.unsplashGallery .masonry-with-columns div:nth-child(8) {
+  height: 112px;
+  line-height: 112px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(30) {
-  height: 283px;
-  line-height: 283px;
+.unsplashGallery .masonry-with-columns div:nth-child(9) {
+  height: 135px;
+  line-height: 135px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(31) {
-  height: 325px;
-  line-height: 325px;
+.unsplashGallery .masonry-with-columns div:nth-child(10) {
+  height: 115px;
+  line-height: 115px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(32) {
-  height: 331px;
-  line-height: 331px;
+.unsplashGallery .masonry-with-columns div:nth-child(11) {
+  height: 245px;
+  line-height: 245px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(33) {
-  height: 157px;
-  line-height: 157px;
+.unsplashGallery .masonry-with-columns div:nth-child(12) {
+  height: 126px;
+  line-height: 126px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(34) {
-  height: 454px;
-  line-height: 454px;
+.unsplashGallery .masonry-with-columns div:nth-child(13) {
+  height: 436px;
+  line-height: 436px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(35) {
-  height: 399px;
-  line-height: 399px;
+.unsplashGallery .masonry-with-columns div:nth-child(14) {
+  height: 269px;
+  line-height: 269px;
 }
-.unsplashGallery .masonry-with-columns div:nth-child(36) {
+.unsplashGallery .masonry-with-columns div:nth-child(15) {
+  height: 158px;
+  line-height: 158px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(16) {
+  height: 415px;
+  line-height: 415px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(17) {
   height: 396px;
   line-height: 396px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(18) {
+  height: 333px;
+  line-height: 333px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(19) {
+  height: 464px;
+  line-height: 464px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(20) {
+  height: 465px;
+  line-height: 465px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(21) {
+  height: 215px;
+  line-height: 215px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(22) {
+  height: 207px;
+  line-height: 207px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(23) {
+  height: 405px;
+  line-height: 405px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(24) {
+  height: 424px;
+  line-height: 424px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(25) {
+  height: 211px;
+  line-height: 211px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(26) {
+  height: 407px;
+  line-height: 407px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(27) {
+  height: 452px;
+  line-height: 452px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(28) {
+  height: 185px;
+  line-height: 185px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(29) {
+  height: 344px;
+  line-height: 344px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(30) {
+  height: 226px;
+  line-height: 226px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(31) {
+  height: 333px;
+  line-height: 333px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(32) {
+  height: 421px;
+  line-height: 421px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(33) {
+  height: 301px;
+  line-height: 301px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(34) {
+  height: 142px;
+  line-height: 142px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(35) {
+  height: 344px;
+  line-height: 344px;
+}
+.unsplashGallery .masonry-with-columns div:nth-child(36) {
+  height: 304px;
+  line-height: 304px;
 }
 
 /* SPECIFICS */
@@ -832,7 +841,8 @@ main .active {
 
 .saved-notitions {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
 .sticky {
@@ -980,16 +990,32 @@ button:disabled {
     margin: 1.25rem;
   }
 }
+@media screen and (min-width: 735px) {
+  .sticky {
+    margin: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .sticky {
+    margin: 2rem;
+  }
+}
 @media screen and (min-width: 1219px) {
   .inspiratie section > h3 {
     margin-bottom: 2rem;
   }
 
-  .notities > p, .inspiratie > p, .flickr > header > p {
+  .notities > p,
+.inspiratie > p,
+.flickr > header > p {
     border-left: 3px solid rgba(142, 142, 252, 0.6);
+    max-height: 9rem;
   }
 
-  .notities > p, .inspiratie > p, .flickr > header > p, .unsplash {
+  .notities > p,
+.inspiratie > p,
+.flickr > header > p,
+.unsplash {
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 4rem;
@@ -1000,6 +1026,10 @@ button:disabled {
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 4rem;
+  }
+
+  .notities > p {
+    margin-top: 5%;
   }
 }
 
