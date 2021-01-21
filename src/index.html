@@ -4,21 +4,21 @@ title: Project Web- dBosschert
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="/assets/index.css">
-  </head>
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" type="text/css" href="/assets/index.css">
+</head>
 
-  <body>
-    <header id="top">
-      <section id="headerInfo">
-        <a href="https://miro.com/app/board/o9J_lfbhbfA=/">20<span>21.</span></a>
-        <h1 class="albumName"></h1>
-        <p>by <span class="albumOwner"></span></p>
-        <p class="amount"></p>
-      </section>
-      <!-- <aside>
+<body>
+  <header id="top">
+    <section id="headerInfo">
+      <a href="https://miro.com/app/board/o9J_lfbhbfA=/">20<span>21.</span></a>
+      <h1 class="albumName">Vakantie 2020</h1>
+      <p>by <span class="albumOwner">deannabosschert</span></p>
+      <p class="amount">45 photos</p>
+    </section>
+    <!-- <aside>
       <figure onclick="hangSlingersOp()" class="quote">
         <img class="slingers" src="./assets/img/slingers_opgehangen.png">
         <blockquote cite="techkech.nl">
@@ -28,40 +28,139 @@ title: Project Web- dBosschert
         <figcaption>- Deanna Bosschert, <cite> vijfdejaarsstudent CMD</cite></figcaption>
       </figure>
     </aside> -->
-      <nav>
-        <ul>
-          <li>
-            <a href="/#inspiratie">inspiration</a>
-          </li>
-          <li>
-            <a href="/">timeline</a>
-          </li>
-          <li>
-            <a class="openNotes" href="/#notities">notes</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section data-route="/" id="/src/" class="flickr tab">
-        <h2 id="tijdlijn">Timeline</h2>
-        <div class="loader"></div>
-        <div id="photoTimeline">
-          <article class="photo">
-            <h3 class="title"></h3>
-
-            <figure>
-              <img class="url">
-              <figcaption class="title"></figcaption>
-            </figure>
-            <ul>
-              <li class="tags"></li>
-            </ul>
+    <nav>
+      <ul>
+        <li>
+          <a href="/#inspiratie">inspiration</a>
+        </li>
+        <li>
+          <a href="/">timeline</a>
+        </li>
+        <li>
+          <a class="openNotes" href="/#notities">notes</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section data-route="/" id="/src/" class="flickr tab">
+      <h2 id="tijdlijn">Timeline</h2>
+      <div class="loader"></div>
+      <header>
+        <!-- <h3>timeline</h3> -->
+        <p>This is where the magic happens; the photo's you've uploaded to Flickr are displayed below chronologically, starting from the first day of the trip. Swipe through the pics, give them a rating and add some comments.</p>
+        <form class="placeholder">
+          <h3>Start out with linking your account:</h3>
+          
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab placeholder">Name:
+            <p><input placeholder="First name..." oninput="this.className = ''"></p>
+            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+          </div>
+          
+        </form>
+        <article class="placeholder">
+          <p>Now you can view your photos below. If you'd like to apply ratings, add notes and keep all of this accessible anywhere after a refresh, register for an account</p>
+          <button>Register</button>
+        </article>
+        <form class="placeholder" id="regForm" action="">
+          <h3>Register:</h3>
+          
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab">Name:
+            <p><input placeholder="First name..." oninput="this.className = ''"></p>
+            <p><input placeholder="Last name..." oninput="this.className = ''"></p>
+          </div>
+          
+          <div class="tab">Contact Info:
+            <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+            <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+          </div>
+          
+          <div class="tab">Birthday:
+            <p><input placeholder="dd" oninput="this.className = ''"></p>
+            <p><input placeholder="mm" oninput="this.className = ''"></p>
+            <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+          </div>
+          
+          <div class="tab">Login Info:
+            <p><input placeholder="Username..." oninput="this.className = ''"></p>
+            <p><input placeholder="Password..." oninput="this.className = ''"></p>
+          </div>
+          
+          <div style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+          </div>
+          
+          <!-- Circles which indicates the steps of the form: -->
+          <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
+          
+          </form>
+          <article class="placeholder">
+            <h3>Sign-up successful</h3>
+            <p>Thank you for registering! Now we'll be able to save your efforts.</p>
+            <p>Change things <span>here.</span></p>
           </article>
-        </div>
-      </section>
-      <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab">
-        <h2 id="inspiratie">Inspiration</h2>
+        <nav class="timelineNav placeholder">
+          <ol>
+            <li>dag 1</li>
+            <li>dag 2</li>
+            <li>dag 3</li>
+            <li>dag 4</li>
+            <li>dag 5</li>
+            <li>dag 6</li>
+            <li>dag 7</li>
+            <li>dag 8</li>
+          </ol>
+        </nav>
+      </header>
+      <section>
+        <header>
+        <h3>Dag 1: 5-08</h3>
+        <ul>
+          <li>Dachstein</li>
+          <li>Hallstatt Hotel</li>
+          <li>Giant Ice Caves</li>
+          <li>Mammoth Cave</li>
+        </ul>
+        <p>12 foto's</p>
+        <button>edit</button>
+      </header>
+      <p>Hier een beschrijving van wat de gebruiker deze dag gedaan heeft; dit is de plek waar de annotaties bewaard worden. Als filltext kan ik net zo goed bovenstaande woorden nog even uitleggen; dat is de bezochte stad, het hotel waarin de gebruiker verblijft, en de uitgevoerde activiteiten.</p>
+      <div id="photoTimeline">
+        <article class="photo">
+          <h3 class="title"></h3>
+          <figure>
+            <img class="url">
+            <figcaption class="title"></figcaption>
+            <button class="options">rate</button>
+            <div class="options">
+              <button>add comment</button>
+              <button>rate</button>
+            </div>
+          </figure>
+          <ul>
+            <li class="tags"></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+     
+    </section>
+    <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab">
+      <h2 id="inspiratie">Inspiration</h2>
+      <p>Feeling creative, but not sure in what style you want to photograph today? Gain some visual inspiration by
+        entering a topic below which you'll encounter on your way today and we'll do the searching on Unsplash for you, guaranteed that something will catch your eye!</p>
+      <div class="unsplash">
         <form class="searchUnsplash">
           <label for="site-search">
             <h3>Search for images:</h3>
@@ -69,51 +168,61 @@ title: Project Web- dBosschert
           <input type="search" id="unsplash-search" name="q" aria-label="Search through unsplash content">
           <button type="submit">Search</button>
         </form>
-        <section class="unsplashGallery">
+        <section class="unsplashGallery placeholder">
           <h4 class="searchResults"></h4>
           <div class="masonry-with-columns"></div>
         </section>
-        <section>
-          <h3>Mood boards</h3>
-          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+      </div>
+      <section>
+        <h3>Mood boards</h3>
+        <p>These are the handy moodboards you created beforehand on Pinterest; to keep them up-to-date, just edit the
+          board in Pinterest and they'll refresh here automatically.</p>
+        <p>Hmm, it seems like you haven't connected your Pinterest boards yet. You can add them below by just entering the URL into the field and you're good to go!</p>
+        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/austria/"></a>
-          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/winter-wonderland/"></a>
-          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/forest-fun/"></a>
-          <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
           href="https://nl.pinterest.com/dbosschert/wonderful-waterfall/"></a>
-        </section>
       </section>
-      <section data-route="notities" id="/src/#notities" class="notities tab">
-        <h2 id="notities">Notes</h2>
-        <form class="addNote">
-          <fieldset>
-            <legend><h3>Add note</h3></legend>
+    </section>
+    <section data-route="notities" id="/src/#notities" class="notities tab">
+      <h2 id="notities">Notes</h2>
+      <p>Here, you can stash a few annotations of experiences on this trip that you'd like to remember afterwards. These
+        will come in handy once you get home when making descriptions per photo collection, or when making a photo book.
+      </p>
+      <form class="addNote">
+        <fieldset>
+          <legend>
+            <h3>Add note</h3>
+          </legend>
 
           <label for="date">
             <!-- <h4>Datum</h4> -->
             <input type="date" name="date" id="datePicker">
           </label>
           <label for="add-notition">
-            <textarea type="text" id="add-notition" aria-label="Add notition" autocomplete="off" minlength="2" maxlength="800" placeholder="add a note.." required></textarea>
+            <textarea type="text" id="add-notition" aria-label="Add notition" autocomplete="off" minlength="2"
+              maxlength="800" placeholder="add a note.." required></textarea>
           </label>
           <button type="reset">Clear</button>
 
           <button type="submit">Add</button>
 
         </fieldset>
-        </form>
-        <!-- <h5>test</h5> -->
-        <section class="saved-notitions placeholder">
-          <article class="sticky">
-            <button class="close"></button>
-            <h4 class="noteDate" contenteditable="true"></h4>
-            <p class="noteText" contenteditable="true"></p>
-          </article>
-        </section>
+      </form>
+      <!-- <h5>test</h5> -->
+      <section class="saved-notitions placeholder">
+        <article class="sticky">
+          <button class="close"></button>
+          <h4 class="noteDate" contenteditable="true"></h4>
+          <p class="noteText" contenteditable="true"></p>
+        </article>
       </section>
-      <!-- <aside>
+    </section>
+    <!-- <aside>
       <figure class="quote">
         <blockquote cite="techkech.nl">
           <p>"Will simp voor studiepunten"
@@ -122,27 +231,27 @@ title: Project Web- dBosschert
         <figcaption>— Ik, <cite>jullie favoriete langstudeerder</cite></figcaption>
       </figure>
     </aside> -->
-    </main>
-    <footer>
-      <ul>
-        <li>
-          <a href="https://www.facebook.com/deanna.bosschert"><img src="/assets/img/icons/facebook.png"
+  </main>
+  <footer>
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/deanna.bosschert"><img src="/assets/img/icons/facebook.png"
             alt="facebook icon"></a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/techkech.jpeg/"><img src="/assets/img/icons/instagram.png"
+      </li>
+      <li>
+        <a href="https://www.instagram.com/techkech.jpeg/"><img src="/assets/img/icons/instagram.png"
             alt="instagram icon"></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/tech_kech"><img src="/assets/img/icons/twitter.png" alt="twitter icon"></a>
-        </li>
-      </ul>
-      <a class="backToTop " href="#top">Back to top</a>
-    </footer>
-    <script src="./js/modules/helpers/transparency.js"></script>
-    <script src="./js/modules/helpers/routie.js"></script>
-    <script type="module" src="./js/app.js"></script>
-    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
-  </body>
+      </li>
+      <li>
+        <a href="https://twitter.com/tech_kech"><img src="/assets/img/icons/twitter.png" alt="twitter icon"></a>
+      </li>
+    </ul>
+    <a class="backToTop " href="#top">Back to top</a>
+  </footer>
+  <script src="./js/modules/helpers/transparency.js"></script>
+  <script src="./js/modules/helpers/routie.js"></script>
+  <script type="module" src="./js/app.js"></script>
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+</body>
 
 </html>

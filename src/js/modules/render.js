@@ -58,6 +58,10 @@ const renderData = {
       //   }
       // }
     }
+
+    const daysNav = document.querySelector('.timelineNav')
+    daysNav.classList.remove('placeholder')
+
     Transparency.render(headerInfo, headerContent)
     Transparency.render(photoTimeline, photoList, directives)
     // Transparency.render(root, avatarIMG, directives)

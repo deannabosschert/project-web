@@ -86,7 +86,7 @@ form {
   }
 
   button {
-    width: 10rem;
+    width: 7rem;
     box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
   }
 }
@@ -112,6 +112,7 @@ form {
 
     button {
       max-width: 40%;
+      width: 10rem;
       text-align: center;
       vertical-align: middle;
       margin: 0.7rem;
@@ -125,6 +126,34 @@ form {
     
   }
 }
+}
+.notities>p, .inspiratie>p, .inspiratie>section>p, .flickr>header>p {
+  margin-bottom: 2.2rem;
+  font-size: $p;
+  line-height: 1.5;
+  max-width: 95%;
+}
+
+.inspiratie {
+  button {
+    max-width: 7rem;
+  }
+
+  
+  input {
+    max-width: 50%;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
+    border: 0.2px solid $grey;
+    background-color: rgb(235, 236, 240, 0.2);
+  }
+
+  section>h3 {
+    font-weight: 600;
+  }
+
+  span {
+    margin-bottom: 1.5rem;
+  }
 }
 
 aside figure {
@@ -359,14 +388,23 @@ footer {
 }
 
 /* SECTIONS */
+.unsplash {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  background: rgba( 255, 255, 255, 0.75 );
+box-shadow: 0 7px 16px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 8.0px );
+margin-bottom: 4rem;
 
+}
 
 .unsplashGallery {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-bottom: 2.2rem;
+  margin-left: -0.8rem;
   // flex-direction: row;
   // flex-wrap: wrap;
   // max-width: 100%;
@@ -443,6 +481,10 @@ main {
   .active {
     display: flex;
   }
+}
+
+.options {
+  display: none;
 }
 
 // POST-IT NOTES
