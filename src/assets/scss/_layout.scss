@@ -662,13 +662,47 @@ main {
   }
 }
 
+.findPinterest {
+  max-width: 40rem;
+  // background-color: white;
+  // padding: 1.5rem 0rem 0rem 0rem;
+  border-radius: 5px;
+  // background: rgba(255, 255, 255, 0.75);
+  background-color: rgba(31, 38, 135, 0.03);
+  box-shadow: inset 0px 0 1px 1px rgba(31, 38, 135, 0.1);
+  backdrop-filter: blur(4px);
+  // max-width: 72rem;
 
+  h3 {
+    line-height: 1.5;
+
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    background-image: linear-gradient(to right, #db709499 -10%, #db709499 60%, #ece0ec 99%, #b582b5 155%);
+    
+  }
+}
 
 
 .moodboard {
   min-width: 22rem;
   width: 90%;
   max-width: 35rem;
+
+  a {
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: $grey;
+    color: $antracitetransparant;
+    height: fit-content;
+
+    // content: "click to load"
+  }
 }
 
 .moodboard>span>span {
