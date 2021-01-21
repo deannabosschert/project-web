@@ -156,13 +156,13 @@
     <section data-route="inspiratie" id="/src/#inspiratie" class="inspiratie tab">
       <h2 id="inspiratie">Inspiration</h2>
       <p>Feeling creative, but not sure in what style you want to photograph today? Gain some visual inspiration by
-        entering a topic below which you'll encounter on your way today and we'll do the searching on Unsplash for you, guaranteed that something will catch your eye!</p>
+        entering a topic right here which you'll encounter on your way today and we'll do the searching on Unsplash for you, guaranteed that something will catch your eye!</p>
       <div class="unsplash">
         <form class="searchUnsplash">
           <label for="site-search">
             <h3>Search for images:</h3>
           </label>
-          <input type="search" id="unsplash-search" name="q" aria-label="Search through unsplash content">
+          <input type="search" id="unsplash-search" name="q" aria-label="Search through unsplash content" placeholder="e.g. snowy mountains">
           <button type="submit">Search</button>
         </form>
         <section class="unsplashGallery placeholder">
@@ -174,15 +174,16 @@
         <h3>Mood boards</h3>
         <p>These are the handy moodboards you created beforehand on Pinterest; to keep them up-to-date, just edit the
           board in Pinterest and they'll refresh here automatically.</p>
-        <p>Hmm, it seems like you haven't connected your Pinterest boards yet. You can add them below by just entering the URL into the field and you're good to go!</p>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
-          href="https://nl.pinterest.com/dbosschert/austria/"></a>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
-          href="https://nl.pinterest.com/dbosschert/winter-wonderland/"></a>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
-          href="https://nl.pinterest.com/dbosschert/forest-fun/"></a>
-        <a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
-          href="https://nl.pinterest.com/dbosschert/wonderful-waterfall/"></a>
+        <p class="noPinterest"><span>!</span></span>Hmm, it seems like you haven't connected your Pinterest boards yet. You can add them below by just entering the URL into the field and you're good to go!</p>
+       
+        <article class="moodboard"><a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          href="https://nl.pinterest.com/dbosschert/austria/"></a></article>
+        <article class="moodboard"><a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          href="https://nl.pinterest.com/dbosschert/winter-wonderland/"></a></article>
+        <article class="moodboard"><a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          href="https://nl.pinterest.com/dbosschert/forest-fun/"></a></article>
+        <article class="moodboard"><a class="pinterest-board" data-pin-do="embedBoard" data-pin-lang="nl"
+          href="https://nl.pinterest.com/dbosschert/wonderful-waterfall/"></a></article>
       </section>
     </section>
     <section data-route="notities" id="/src/#notities" class="notities tab">

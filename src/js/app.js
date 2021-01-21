@@ -64,7 +64,12 @@ function unsplash() {
 
   function renderPhotos(data) {
     console.log(data)
-    searchResults.innerHTML = `Search results for: <span>${searchTerm}</span>`
+    if (searchTerm == "") {
+      searchResults.innerHTML = `Search results for: <span>a random search!</span>`
+    } else {
+      searchResults.innerHTML = `Search results for: <span>${searchTerm}</span>`
+    }
+
     gallery.innerHTML = ""
     gallerySection.classList.remove('placeholder')
 
