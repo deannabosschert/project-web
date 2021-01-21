@@ -712,6 +712,10 @@ main {
 
 
 /* STATES */
+*:focus {
+  outline: $lilac auto 7px;
+}
+
 button {
   box-shadow: 0 0 0 2px rgba(48, 8, 75, 0.45);
   // border: 5px solid rgba(95, 0, 158, 0.185);
@@ -727,6 +731,7 @@ button {
   background-size: 200% auto;
   padding: 0.6rem 1rem;
   margin: 0.2rem;
+  min-width: min-content;
 
   &:hover {
     // background-color: #efefef;
@@ -747,13 +752,19 @@ button {
   &:focus {
     background-color: white;
     color: black;
-    box-shadow: inset 3px 3px 4px $lilac, inset -3px -3px 4px $lilac;
+    // box-shadow: inset 3px 3px 4px $lilac, inset -3px -3px 4px $lilac;
+    box-shadow: inset 3px 3px 4px $lavender, inset -3px -3px 4px $lavender;
   }
 
   &:disabled {
     background-color: grey;
   }
 }
+
+input:focus {
+  outline: $purple auto 7px;
+}
+
 
 /* ATOMS */
 .backToTop {
