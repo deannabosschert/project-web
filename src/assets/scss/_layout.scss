@@ -552,7 +552,7 @@ main {
   height: 16rem;
   width: 16rem;
   //  display:inline-block;
-  padding: 1rem;
+  padding: 1.5rem 1rem 2rem 1rem;
   margin: 1rem;
   background: $verylightpink;
   // gradient off https://dev.to/thormeier/fully-responsive-html-css-sticky-note-4okl
@@ -633,6 +633,7 @@ main {
     order: 3;
     font-size: $p;
     font-size: calc(1.2rem * 1.2);
+    padding: 0rem 1.5rem 2rem 1rem
   }
 
 }
