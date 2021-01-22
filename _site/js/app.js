@@ -151,6 +151,10 @@ function pinterest() {
 }
 
 function sortNotesAsc() {
+  sortNoteDesc.classList.remove('buttonPressed')
+  sortNoteAsc.classList.add('buttonPressed')
+
+
   const notitions = JSON.parse(localStorage.getItem("notitions"))
   console.log(notitions)
   const sortedNotitions = notitions.sort(compareAsc);
@@ -174,6 +178,8 @@ function compareAsc(a, b) {
 }
 
 function sortNotesDesc() {
+  sortNoteAsc.classList.remove('buttonPressed')
+  sortNoteDesc.classList.add('buttonPressed')
   const notitions = JSON.parse(localStorage.getItem("notitions"))
   console.log(notitions)
   const sortedNotitions = notitions.sort(compareDesc);

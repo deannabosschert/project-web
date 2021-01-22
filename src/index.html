@@ -211,9 +211,7 @@ title: Project Web- dBosschert
     </section>
     <section data-route="notities" id="/src/#notities" class="notities tab">
       <h2 id="notities">Notes</h2>
-      <p>Here, you can stash a few annotations of experiences on this trip that you'd like to remember afterwards. These
-        will come in handy once you get home when making descriptions per photo collection, or when making a photo book.
-      </p>
+
       <form class="addNote">
         <fieldset>
           <legend>
@@ -234,10 +232,16 @@ title: Project Web- dBosschert
 
         </fieldset>
       </form>
+      <p>Here, you can stash a few annotations of experiences on this trip that you'd like to remember afterwards. These
+        will come in handy once you get home when making descriptions per photo collection, or when making a photo book.
+      </p>
       <!-- <h5>test</h5> -->
-      <button class="sortByDateAsc">Sort asc</button>
-      <button class="sortByDateDesc">Sort desc</button>
-
+      <div class="savedNotes">
+      <div class="sortbuttons">
+        <h4>sort notes by</h4>
+        <button class="sortByDateAsc">date asc</button>
+        <button class="sortByDateDesc">date desc</button>
+      </div>
       <section class="saved-notitions placeholder">
         <article class="sticky">
           <button class="close"></button>
@@ -245,6 +249,7 @@ title: Project Web- dBosschert
           <p class="noteText" contenteditable="true"></p>
         </article>
       </section>
+    </div>
     </section>
     <!-- <aside>
       <figure class="quote">
