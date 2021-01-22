@@ -43,7 +43,11 @@ const renderData = {
     // console.log(notes)
 
     const savedNotitions = document.querySelector(".saved-notitions")
+    const sortbuttons = document.querySelector(".sortbuttons")
+
     savedNotitions.classList.remove('placeholder')
+    sortbuttons.classList.remove('placeholder')
+
 
     const notities = notes.map(data => ({
       close: 'x',
