@@ -824,7 +824,11 @@ input:focus {
   display: none;
 }
 
-
+.notities .blank {
+  // padding: 0;
+  // margin: 0;
+  // order: 4;
+}
 
 /* ATOMS */
 .backToTop {
@@ -894,7 +898,7 @@ input:focus {
 
   .notities>p,
   .inspiratie>p,
-  .flickr>header>p {
+  .flickr>header>p, .notities>div>p {
     border-left: 3px solid $purpleborder;
     max-height: 9rem;
 
@@ -904,6 +908,7 @@ input:focus {
   .notities>p,
   .inspiratie>p,
   .flickr>header>p,
+  .notities>div>p,
   .unsplash {
     margin-left: 2rem;
     margin-right: 2rem;
@@ -919,9 +924,23 @@ input:focus {
   }
   
   .notities>p{
-    margin-top: 5%;
+    margin-top: 15%;
     max-width: 28rem;
+    padding-left: 1rem;
   }
+
+  .toevoegen {
+    animation: wiggle 2s infinite;
+
+  }
+
+  @keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
 
   // ORDER
   .notities {
@@ -932,7 +951,7 @@ input:focus {
       order: 2;
       max-width: 31rem;
     }
-    p {
+    .paragraphs {
       order: 3;
     }
 
