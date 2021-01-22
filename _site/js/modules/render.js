@@ -111,6 +111,20 @@ const renderData = {
 
     //   Transparency.render(pictureDetail, onephoto, directives)
   },
+  notitiesSort: function (sortedNotes) {
+    const savedNotitions = document.querySelector(".saved-notitions")
+    // savedNotitions.classList.remove('placeholder')
+
+    const notities = sortedNotes.map(data => ({
+      close: 'x',
+      noteDate: data.date,
+      noteText: data.note
+    }))
+
+    Transparency.render(savedNotitions, notities)
+
+    addCloseButtons()
+  },
   pinterestboards: function () {
     const boardurls = JSON.parse(localStorage.getItem("pinterestUrls"))
     // console.log(boardurls)

@@ -7,6 +7,9 @@ import {
 import {
   store
 } from "./modules/store.js"
+import {
+  renderData
+} from "./modules/render.js"
 
 (function init() {
   (async function checkLocalStorage() {
@@ -33,11 +36,16 @@ const findPinterest = document.querySelector('.findPinterest')
 const addNote = document.querySelector('.addNote')
 // const openNotes = document.querySelector('.openNotes')
 // const deleteNote = document.querySelector('.close')
+const sortNoteAsc = document.querySelector('.sortByDateAsc')
+const sortNoteDesc = document.querySelector('.sortByDateDesc')
 
 
 searchUnsplash.addEventListener('submit', unsplash)
 findPinterest.addEventListener('submit', pinterest)
 addNote.addEventListener('submit', note)
+sortNoteAsc.addEventListener('click', sortNotesAsc)
+sortNoteDesc.addEventListener('click', sortNotesDesc)
+
 // deleteNote.addEventListener('click', removeNote)
 // openNotes.addEventListener('click', loadNotes)
 
@@ -141,6 +149,68 @@ function pinterest() {
   event.preventDefault();
   input.value = ""
 }
+
+function sortNotesAsc() {
+  sortNoteDesc.classList.remove('buttonPressed')
+  sortNoteAsc.classList.add('buttonPressed')
+
+
+  const notitions = JSON.parse(localStorage.getItem("notitions"))
+  console.log(notitions)
+  const sortedNotitions = notitions.sort(compareAsc);
+
+  // const sortedNotitions = notitions.sort((a, z) => a - z)
+  console.log(sortedNotitions)
+  renderData.notitiesSort(sortedNotitions)
+}
+
+function compareAsc(a, b) {
+  const dateA = a.date;
+  const dateB = b.date;
+
+  let comparison = 0;
+  if (dateA > dateB) {
+    comparison = 1;
+  } else if (dateA < dateB) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
+function sortNotesDesc() {
+  sortNoteAsc.classList.remove('buttonPressed')
+  sortNoteDesc.classList.add('buttonPressed')
+  const notitions = JSON.parse(localStorage.getItem("notitions"))
+  console.log(notitions)
+  const sortedNotitions = notitions.sort(compareDesc);
+
+  // const sortedNotitions = notitions.sort((a, z) => a - z)
+  console.log(sortedNotitions)
+  renderData.notitiesSort(sortedNotitions)
+}
+
+function compareDesc(a, b) {
+  const dateA = a.date;
+  const dateB = b.date;
+
+  let comparison = 0;
+  if (dateA > dateB) {
+    comparison = 1;
+  } else if (dateA < dateB) {
+    comparison = -1;
+  }
+
+  //invert return value by multiplying by -1
+  return comparison * -1;
+}
+
+
+/* returns [
+  { name: 'Steven Tyler', band: 'Aerosmith',  born: 1948 },
+  { name: 'Stevie Nicks', band: 'Fleetwood Mac', born: 1948 },
+  { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+  { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 }
+] */
 
 // function loadNotes() {
 //   console.log('hahahahaha')
