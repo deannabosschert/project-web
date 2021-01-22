@@ -643,9 +643,6 @@ main {
 
 }
 
-.placeholder {
-  display: none;
-}
 
 .inspiratie>section>.noPinterest {
   background-color: white;
@@ -816,6 +813,16 @@ input:focus {
   }
 }
 
+.placeholder {
+  display: none;
+}
+
+.notities>.placeholder {
+  display: none;
+}
+.inspiratie .placeholder {
+  display: none;
+}
 
 
 
