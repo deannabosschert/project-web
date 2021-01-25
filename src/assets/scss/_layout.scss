@@ -290,7 +290,7 @@ form {
     .timelineBorder {
       max-width: 100%;
       border-left: 1px solid $timeline;
-      margin: 2rem 6rem;
+      margin: 2rem 2rem 2rem 3rem;
     }
 
     header {
@@ -298,11 +298,13 @@ form {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: flex-end;
+      min-width: 95%;
       max-width: 100%;
       // padding: 1rem 5%;
       margin: 0;
       padding: 1rem 0;
       margin-top: -2rem;
+padding-bottom:0;
 
       .titleContainer {
         border-bottom: 1.5px solid $timeline;
@@ -345,11 +347,12 @@ form {
         display: flex;
         flex-direction: row;
         width: 100%;
-        justify-content: center;
+        justify-content: flex-start;
         overflow-x: scroll;
         padding: 1rem;
         align-content: center;
         align-items: center;
+        margin-left: 2.5rem;
 
         &::before {
           content: "tags: ";
@@ -374,13 +377,15 @@ form {
 
     .dayIntro {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      margin-left: 2.5rem;
+      min-width: 90%;
       max-width: 100%;
       position: relative;
 
       p {
         min-width: 20rem;
-        width: 70%;
+        width: 80%;
         max-width: 50rem;
         // margin: 1rem;
         padding: 1rem;
@@ -559,7 +564,7 @@ form {
           align-content: center;
           // min-width: fit-content;
           font-size: 1rem;
-          
+
 
           h4 {
             font-variant: small-caps;
@@ -948,7 +953,14 @@ main {
 
   .active {
     display: flex;
+    justify-content: center;
   }
+}
+
+.oneDay {
+  margin-bottom: 6rem;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 
@@ -1261,10 +1273,28 @@ input:focus {
   }
 
   .flickr .flickrGallery header p {
-    margin: 0 0.5rem;
+    margin: 0 2rem;
   }
+  .flickr .flickrGallery header ul {
+    margin-left: 0.5rem;
+
+  }
+
+  .flickr .flickrGallery .dayIntro {
+    margin-left: 0.5rem;
+  }
+
+  .flickr .flickrGallery .dayIntro p {
+    min-width: 18.5rem;
+  }
+
+
   .flickr .flickrGallery #photoTimeline .photo {
     min-width: 85%;
+  }
+
+  #dag1 {
+    font-size: $h3;
   }
 
 }
@@ -1292,6 +1322,10 @@ input:focus {
     margin-right: 4.5rem;
   }
 
+  .flickr .flickrGallery .timelineBorder {
+    margin: 2rem 2rem 2rem 3.75rem;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -1302,11 +1336,21 @@ input:focus {
   .notities .sortbuttons {
     margin-right: 4.5rem;
   }
+  .flickr .flickrGallery .timelineBorder {
+    margin: 2rem 2rem 2rem 5.3rem;
+  }
 
+  p {
+    width: 70%;
+  }
 
 }
 
 @media screen and (min-width: 1219px) {
+  .flickr .flickrGallery .timelineBorder {
+    margin: 2rem 2rem 2rem 6rem;
+  }
+
   .flickr .flickrGallery #photoTimeline .photo {
     max-width: 17%;
     min-width: 13rem;
