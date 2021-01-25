@@ -40,11 +40,11 @@ const sortNoteAsc = document.querySelector('.sortByDateAsc')
 const sortNoteDesc = document.querySelector('.sortByDateDesc')
 
 const paragraphToEdit = document.querySelector('.editParagraph')
-const addComment = document.querySelector('.addComment')
-const addRating = document.querySelector('.addRating')
+const addCommentButton = document.querySelector('.addComment')
+const addRatingButton = document.querySelector('.addRating')
 paragraphToEdit.addEventListener('click', editParagraph)
-addComment.addEventListener('click', addComment)
-addRating.addEventListener('click', addRating)
+addCommentButton.addEventListener('click', addComment)
+addRatingButton.addEventListener('click', addRating)
 
 
 searchUnsplash.addEventListener('submit', unsplash)
@@ -308,5 +308,5 @@ function editParagraph() {
 }
 
 function addRating() {
-  
+
 }
