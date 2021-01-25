@@ -109,34 +109,41 @@
           <p>Change things <span>here.</span></p>
         </article>
         <nav class="timelineNav placeholder">
+          <h3>tijdlijn</h3>
           <ol>
-            <li>dag 1</li>
-            <li>dag 2</li>
-            <li>dag 3</li>
-            <li>dag 4</li>
-            <li>dag 5</li>
-            <li>dag 6</li>
-            <li>dag 7</li>
-            <li>dag 8</li>
+            <li><a href="#dag1">dag 1</a></li>
+            <li><a href="#dag2">dag 2</a></li>
+            <li><a href="#dag3">dag 3</a></li>
+            <li><a href="#dag4">dag 4</a></li>
+            <li><a href="#dag5">dag 5</a></li>
+            <li><a href="#dag6">dag 6</a></li>
+            <li><a href="#dag7">dag 7</a></li>
+            <li><a href="#dag8">dag 8</a></li>
+
           </ol>
         </nav>
       </header>
-      <section>
+      <section class="flickrGallery">
+        <div class="timelineBorder">
         <header>
-          <h3>Dag 1: 5-08</h3>
+          <div class=titleContainer>
+          <h3 id="dag1">Dag 1: 5-08</h3>
+          <p>12 foto's</p>
+        </div>
           <ul>
             <li>Dachstein</li>
             <li>Hallstatt Hotel</li>
             <li>Giant Ice Caves</li>
             <li>Mammoth Cave</li>
           </ul>
-          <p>12 foto's</p>
-          <button>edit</button>
         </header>
+        <div class="dayIntro">
+        <button>edit</button>
         <p>Hier een beschrijving van wat de gebruiker deze dag gedaan heeft; dit is de plek waar de annotaties bewaard
           worden. Als filltext kan ik net zo goed bovenstaande woorden nog even uitleggen; dat is de bezochte stad, het
           hotel waarin de gebruiker verblijft, en de uitgevoerde activiteiten.</p>
-        <div id="photoTimeline">
+        </div>
+          <div id="photoTimeline">
           <article class="photo">
             <h3 class="title"></h3>
             <figure>
@@ -148,11 +155,15 @@
                 <button>rate</button>
               </div>
             </figure>
-            <ul>
-              <li class="tags"></li>
+            <div class="tagContainer">
+            <h4>tags:</h4>
+            <ul class="tags">
+              <li class="tag"></li>
             </ul>
+          </div>
           </article>
         </div>
+      </div>
       </section>
 
 
@@ -209,11 +220,13 @@
     <section data-route="notities" id="/src/#notities" class="notities tab">
       <h2 id="notities">Notes</h2>
       <div class="paragraphs">
-      <p>Here, you can stash a few annotations of experiences on this trip that you'd like to remember afterwards. These
-        will come in handy once you get home when making descriptions per photo collection, or when making a photo book.
-      </p>
-      <p class="blank">Add your first note here on the left!</p>
-    </div>
+        <p>Here, you can stash a few annotations of experiences on this trip that you'd like to remember afterwards.
+          These
+          will come in handy once you get home when making descriptions per photo collection, or when making a photo
+          book.
+        </p>
+        <p class="blank">Add your first note here on the left!</p>
+      </div>
       <form class="addNote">
         <fieldset>
           <legend>
@@ -248,7 +261,7 @@
           <p class="noteText" contenteditable="true"></p>
         </article>
       </section>
-    <!-- </div> -->
+      <!-- </div> -->
     </section>
     <!-- <aside>
       <figure class="quote">

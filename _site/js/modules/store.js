@@ -47,7 +47,7 @@ const store = {
       renderData.pinterestboards()
     } else {
       const pinterestUrls = [res]
-    
+
       console.log("adding board to localStorage")
       localStorage.setItem("pinterestUrls", JSON.stringify(pinterestUrls))
 
@@ -66,17 +66,31 @@ async function filterData(data) {
   //     amount: data.total
   //   }
   // })
+  // console.log(data)
+  // const tags = data.photoset.photo[0].tags
+  // const losseTags = tags
+  // console.log(losseTags)
+
   const photoset = {
     owner: data.photoset.ownername,
     albumname: data.photoset.title,
     amount: data.photoset.total,
     photos: data.photoset.photo.map(data => {
+      const tags = data.tags.split(' ')
+      const mapTags = tags.map(tag => {
+        return {
+          tag: tag
+        }
+      })
+
+      console.log(mapTags)
+
       return {
         id: data.id,
         url_small: data.url_s,
         url_large: data.url_l,
         title: data.title,
-        tags: data.tags,
+        tags: mapTags,
         date: data.datetaken
       }
     })

@@ -1,6 +1,6 @@
 const renderData = {
   timeline: function (data) {
-    // console.log(data)
+    console.log(data)
     const photoTimeline = document.getElementById("photoTimeline")
     const headerInfo = document.getElementById("headerInfo")
 
@@ -11,14 +11,23 @@ const renderData = {
     }
 
     const photoList = data.photos.map(photo => {
+      console.log(photo.tags)
       return {
         url: photo.url_small,
         title: photo.title,
-        tags: photo.tags
+        // tags: photo.tags.forEach(tag => {
+        //   return tag
+        // })
+        tags:  photo.tags
+      
       }
     })
 
-    // console.log(photoList)
+
+    // let dingen = data.photos.map(photo => {
+    //   console.log(photo.tags)
+    // })
+    console.log(photoList[0].tags)
 
     const directives = {
       url: {
