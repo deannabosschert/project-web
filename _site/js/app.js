@@ -39,6 +39,13 @@ const addNote = document.querySelector('.addNote')
 const sortNoteAsc = document.querySelector('.sortByDateAsc')
 const sortNoteDesc = document.querySelector('.sortByDateDesc')
 
+const paragraphToEdit = document.querySelector('.editParagraph')
+const addComment = document.querySelector('.addComment')
+const addRating = document.querySelector('.addRating')
+paragraphToEdit.addEventListener('click', editParagraph)
+addComment.addEventListener('click', addComment)
+addRating.addEventListener('click', addRating)
+
 
 searchUnsplash.addEventListener('submit', unsplash)
 findPinterest.addEventListener('submit', pinterest)
@@ -288,3 +295,18 @@ function compareDesc(a, b) {
 
 // })
 // activeSection.classList.add('active')
+
+function editParagraph() {
+  const parenty = paragraphToEdit.parentElement
+  // console.log(parenty)
+  const paragraph = parenty.querySelector(".dayParagraph")
+  // console.log(paragraph)
+
+  paragraph.setAttribute("contenteditable", "true")
+  paragraph.focus()
+
+}
+
+function addRating() {
+  
+}

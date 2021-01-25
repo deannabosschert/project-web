@@ -11,7 +11,7 @@ const renderData = {
     }
 
     const photoList = data.photos.map(photo => {
-      console.log(photo.tags)
+      // console.log(photo.tags)
       return {
         url: photo.url_small,
         title: photo.title,
@@ -27,7 +27,7 @@ const renderData = {
     // let dingen = data.photos.map(photo => {
     //   console.log(photo.tags)
     // })
-    console.log(photoList[0].tags)
+    // console.log(photoList[0].tags)
 
     const directives = {
       url: {
