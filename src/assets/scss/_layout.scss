@@ -281,7 +281,7 @@ form {
     // width: 90%;
     max-width: 90%;
     margin: 1rem;
-    padding: 1rem 0.5rem;
+    padding: 3rem 0.5rem;
     background-color: $lavenderbackground;
     border-radius: 5px;
     box-shadow: 0 1px 10px 5px rgba(31, 38, 135, 0.2);
@@ -321,6 +321,7 @@ form {
         text-align: left;
         padding: 0 1rem;
         font-weight: 600;
+        font-size: $h2;
 
         &::before {
           content: "⬤";
@@ -443,7 +444,8 @@ form {
           align-content: center;
           justify-content: center;
 
-          .emptyrating, .fullrating {
+          .emptyrating,
+          .fullrating {
             // visibility: hidden;
             position: absolute;
             top: 0;
@@ -456,14 +458,14 @@ form {
 
           input {
             width: 93%;
-            min-height : 4rem;
+            min-height: 4rem;
             max-width: 95%;
             height: 2rem;
             font-size: $p;
             position: absolute;
             bottom: 25%;
 
-                    }
+          }
 
           img {
             object-fit: contain;
@@ -475,8 +477,9 @@ form {
             background-color: #efefef;
             padding: 0.2rem;
           }
+
           .options {
-            // visibility: hidden;
+            visibility: hidden;
             position: absolute;
             width: 95%;
             max-width: 95%;
@@ -490,9 +493,9 @@ form {
             height: 4.5rem;
             align-items: center;
             align-content: center;
-           
-           
-            
+
+
+
             button {
               background-color: none;
               background-size: contain;
@@ -531,7 +534,7 @@ form {
           }
         }
 
-    
+
 
         .tagContainer {
           display: flex;
@@ -584,11 +587,12 @@ form {
           }
         }
 
-       &:hover {
+        &:hover {
+
           // border: 2px solid red;
-        .options {
-          visibility: visible;
-        }
+          .options {
+            visibility: visible;
+          }
         }
       }
     }

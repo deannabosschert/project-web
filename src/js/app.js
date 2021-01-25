@@ -32,41 +32,88 @@ import {
 reAddEventlisteners()
 
 function reAddEventlisteners() {
-  const fotoOpties = document.querySelectorAll('.options .addComment')
-  const paragraphToEdit = document.querySelector('.editParagraph')
-  const addCommentButtons = document.getElementsByClassName('comment')
-  // console.log(addCommentButton)
-  const ratingStars = document.getElementsByClassName('ratingStars')
-  const addRatingButton = document.getElementsByClassName('addRating')
+  const addCommentButtons = document.querySelectorAll('.options .addComment')
+  const inputComment = document.getElementsByClassName('comment')
 
-  paragraphToEdit.addEventListener('click', editParagraph)
+  const addRatingButtons = document.querySelectorAll('.options .addRating')
+  const ratingStars = document.getElementsByClassName('ratingStars')
+
+  const ratingStarsButtons = document.querySelectorAll('.emptyrating')
+
+  const editParagraphButton = document.querySelector('.editParagraph')
+
+
+  editParagraphButton.addEventListener('click', editParagraph)
   // addCommentButton.addEventListener('click', addComment)
   // addRatingButton.addEventListener('click', selectRating)
   // ratingStars.addEventListener('click', addRating) 
   const comment = document.querySelector('.comment')
+  const fullrating = document.querySelector('.fullrating')
 
-  for (let i = 0; i < fotoOpties.length; i++) {
-    // console.log(comment)
-
-    // comment.classList.add('visible')
-    // comment.classList.remove('hidden')
+  changeVisibility(addCommentButtons, inputComment, "comment")
+  changeVisibility(addRatingButtons, ratingStars, "rating")
 
 
-    fotoOpties[i].addEventListener("click", () => {
-      console.log(comment);
-      console.log([i])
+  function changeVisibility(addButtons, input, thing) {
+    if (thing == "comment") {
+      console.log("comment")
 
-      const commentbtn = addCommentButtons[i]
-      // const yeet = addCommentButtons[i].classList
-      // console.log(yeet)
+      for (let i = 0; i < addButtons.length; i++) {
+        addButtons[i].addEventListener("click", () => {
+          console.log(comment);
+          console.log([i])
 
-      commentbtn.classList.add('visible')
-      commentbtn.classList.remove('hidden')
-      // addCommentButtons.classList.add('hidden')
+          const commentbtn = input[i]
 
-    });
+
+          commentbtn.classList.add('visible')
+          commentbtn.classList.remove('hidden')
+        })
+      }
+    } else if (thing == "rating") {
+      console.log("rating")
+      for (let i = 0; i < addButtons.length; i++) {
+        addButtons[i].addEventListener("click", () => {
+          console.log(comment);
+          console.log([i])
+
+          const inputbtn = input[i]
+
+
+          inputbtn.classList.remove('hidden')
+          inputbtn.addEventListener("click", changeStars)
+
+          function changeStars() {
+
+            inputbtn.classList.remove('visible')
+            inputbtn.classList.add('hidden')
+            fullrating.classList.remove('hidden')
+
+            fullrating.classList.add('visible')
+
+          }
+
+        })
+      }
+
+      //   for (let i = 0; i < addButtons.length; i++) {
+      //     addButtons[i].addEventListener("click", () => {
+      //       console.log(comment);
+      //       console.log([i])
+
+      //       const inputbtn = input[i]
+
+
+      //       inputbtn.classList.add('visible')
+      //       inputbtn.classList.remove('hidden')
+      //     })
+      //   }
+      // }
+    }
   }
 }
+
+
 
 const searchUnsplash = document.querySelector('.searchUnsplash')
 const findPinterest = document.querySelector('.findPinterest')
@@ -328,10 +375,12 @@ function compareDesc(a, b) {
 // activeSection.classList.add('active')
 
 function editParagraph() {
+  const paragraphToEdit = document.querySelector('.dayParagraph')
+
   const parenty = paragraphToEdit.parentElement
   // console.log(parenty)
   const paragraph = parenty.querySelector(".dayParagraph")
-  // console.log(paragraph)
+  console.log(paragraph)
 
   paragraph.setAttribute("contenteditable", "true")
   paragraph.focus()
