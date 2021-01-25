@@ -456,6 +456,18 @@ form {
             max-width: 95%;
           }
 
+          .fullratingstats {
+            // visibility: hidden;
+            position: absolute;
+            top: 0;
+            // background: rgba(255, 255, 255, 0.40);
+            // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            // backdrop-filter: blur(6.5px);
+            width: 95%;
+            max-width: 95%;
+            max-height: 3rem;
+          }
+
           input {
             width: 93%;
             min-height: 4rem;
@@ -1247,7 +1259,9 @@ input:focus {
   .flickr .flickrGallery #photoTimeline .photo .tagContainer ul {
     justify-content: flex-start;
   }
-
+  .flickr .flickrGallery header p {
+    margin: 0 0.5rem;
+  }
 }
 
 @media screen and (min-width: 450px) {
@@ -1432,4 +1446,21 @@ input:focus {
 .visible {
   visibility: visible;
   z-index: 10;
+
+}
+
+.visiblehover {
+  // visibility: hidden;
+
+  &:hover{
+  visibility: visible;
+  z-index: 10;
+  }
+}
+
+.photo:hover {
+  .visiblehover{
+    visibility: hidden;
+    z-index: 10;
+    }
 }
