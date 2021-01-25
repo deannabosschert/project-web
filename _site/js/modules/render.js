@@ -1,9 +1,26 @@
 const renderData = {
   timeline: function (data) {
     console.log(data)
-    const photoTimeline = document.getElementById("photoTimeline")
+    const photoTimeline1 = document.getElementById("photoTimeline1")
+    const photoTimeline2 = document.getElementById("photoTimeline2")
+    const photoTimeline3 = document.getElementById("photoTimeline3")
+    const photoTimeline4 = document.getElementById("photoTimeline4")
+    const photoTimeline5 = document.getElementById("photoTimeline5")
+    const photoTimeline6 = document.getElementById("photoTimeline6")
+    const photoTimeline7 = document.getElementById("photoTimeline7")
+    const photoTimeline8 = document.getElementById("photoTimeline8")
+
+
     const headerInfo = document.getElementById("headerInfo")
     const day1info = document.querySelector(".day1amount")
+    const day2info = document.querySelector(".day2amount")
+    const day3info = document.querySelector(".day3amount")
+    const day4info = document.querySelector(".day4amount")
+    const day5info = document.querySelector(".day5amount")
+    const day6info = document.querySelector(".day6amount")
+    const day7info = document.querySelector(".day7amount")
+    const day8info = document.querySelector(".day8amount")
+
 
     const headerContent = {
       albumName: data.albumname,
@@ -11,7 +28,6 @@ const renderData = {
       amount: data.amount + ' photos'
     }
 
-    day1info.innerHTML = data.amount + ' photos'
 
     const photoList = data.photos.map(photo => {
       // console.log(photo.tags)
@@ -43,11 +59,43 @@ const renderData = {
       }
     }
 
+    const photoList1 = photoList.slice(0, 9)
+    const photoList2 = photoList.slice(9, 21)
+    const photoList3 = photoList.slice(21, 46)
+    const photoList4 = photoList.slice(46, 69)
+    const photoList5 = photoList.slice(69, 84)
+    const photoList6 = photoList.slice(84, 96)
+    const photoList7 = photoList.slice(96, 113)
+    const photoList8 = photoList.slice(113, 137)
+
+    
+
+    // console.log(photoList1.length)
+    day1info.innerHTML = photoList1.length + ' photos'
+    day2info.innerHTML = photoList2.length + ' photos'
+    day3info.innerHTML = photoList3.length + ' photos'
+    day4info.innerHTML = photoList4.length + ' photos'
+    day5info.innerHTML = photoList5.length + ' photos'
+    day6info.innerHTML = photoList6.length + ' photos'
+    day7info.innerHTML = photoList7.length + ' photos'
+    day8info.innerHTML = photoList8.length + ' photos'
+
+    
+
     const daysNav = document.querySelector('.timelineNav')
     daysNav.classList.remove('placeholder')
 
     Transparency.render(headerInfo, headerContent)
-    Transparency.render(photoTimeline, photoList, directives)
+    Transparency.render(photoTimeline1, photoList1, directives)
+    Transparency.render(photoTimeline2, photoList2, directives)
+    Transparency.render(photoTimeline3, photoList3, directives)
+    Transparency.render(photoTimeline4, photoList4, directives)
+    Transparency.render(photoTimeline5, photoList5, directives)
+    Transparency.render(photoTimeline6, photoList6, directives)
+    Transparency.render(photoTimeline7, photoList7, directives)
+    Transparency.render(photoTimeline8, photoList8, directives)
+
+
     // Transparency.render(root, avatarIMG, directives)
   },
   notities: function () {
