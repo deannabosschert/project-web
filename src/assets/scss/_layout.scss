@@ -1253,6 +1253,19 @@ input:focus {
   // order: 4;
 }
 
+.filter {
+  max-height: 11rem;
+  max-width: 12rem;
+  margin-top: -3.75rem;
+
+  img {
+    object-fit: cover;
+    // width: 200%;
+    // height: 200%;
+    // transform: scale(3.5);   
+  }
+}
+
 /* ATOMS */
 .backToTop {
   position: fixed;
@@ -1266,6 +1279,37 @@ input:focus {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 450px) {
+
+  .filter {
+    display: flex;
+    justify-content: center;
+
+    max-width: 90%;
+    // max-width: 12rem;
+    // margin-top: -1.75rem;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    // min-width: 100%;
+    // margin-bottom: -2.5rem;
+    
+
+      p {
+        margin: 0;
+        min-width:fit-content;
+      }
+
+      img {
+        object-fit: contain;
+        margin: 0;
+
+    }
+  }
+
+
+    
+
 
   .flickr .flickrGallery header ul,
   .flickr .flickrGallery #photoTimeline .photo .tagContainer ul {

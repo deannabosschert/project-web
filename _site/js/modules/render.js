@@ -3,12 +3,15 @@ const renderData = {
     console.log(data)
     const photoTimeline = document.getElementById("photoTimeline")
     const headerInfo = document.getElementById("headerInfo")
+    const day1info = document.querySelector(".day1amount")
 
     const headerContent = {
       albumName: data.albumname,
       albumOwner: data.owner,
       amount: data.amount + ' photos'
     }
+
+    day1info.innerHTML = data.amount + ' photos'
 
     const photoList = data.photos.map(photo => {
       // console.log(photo.tags)
