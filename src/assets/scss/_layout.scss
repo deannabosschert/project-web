@@ -148,7 +148,7 @@ form {
       min-height: 10rem;
       border-radius: 5px;
       min-width: 50%;
-      
+
     }
 
     button {
@@ -193,12 +193,11 @@ form {
 }
 
 .flickr {
-
   header {
     align-content: center;
     align-items: center;
     max-width: 100%;
-    
+
 
     nav {
       display: flex;
@@ -207,6 +206,8 @@ form {
       text-align: center;
       width: 100%;
       max-width: 100%;
+      border-top: 2px solid $timeline;
+
 
       h3 {
         font-variant: small-caps;
@@ -216,19 +217,29 @@ form {
         text-align: center;
         transform: rotate(-180deg);
         margin: 0;
-        margin-top: -1rem;
+        margin-top: -4rem;
         min-width: 2rem;
         width: 10%;
         max-width: 4rem;
+        
       }
 
       ol {
         display: flex;
         flex-direction: row;
-        border-top: 1px solid $antracite;
         min-width: 10rem;
         width: 90%;
-        
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: scroll;
+        padding: 1rem;
+        align-content: center;
+        align-items: center;
+        margin-top: -3rem;
+margin-right: 1.5rem;
 
         li {
           display: flex;
@@ -239,6 +250,11 @@ form {
           margin: 0 1rem;
           margin-top: -1rem;
 
+          margin: 1rem;
+          min-width: fit-content;
+          font-size: 1rem;
+          font-style: normal;
+
           a {
             color: $antracite;
 
@@ -246,10 +262,17 @@ form {
         }
 
         li::before {
-         content: "⚫️"; 
+          content: "⬤";
+          color: $timelinedot;
+          font-style: normal;
+          font-size: 1.3rem;
         }
       }
 
+    }
+
+    p {
+      margin-bottom: 5rem;
     }
   }
 
@@ -261,83 +284,231 @@ form {
     padding: 1rem 0.5rem;
     background-color: $lavenderbackground;
     border-radius: 5px;
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 7.0px );
+    box-shadow: 0 1px 10px 5px rgba(31, 38, 135, 0.2);
+    backdrop-filter: blur(7.0px);
 
-   header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 100%;
-    // padding: 1rem 5%;
-    margin: 0;
-    padding: 0;
-
-   h3 {
-      scroll-margin-top: 2ex;
-      width: 100%;
-      text-align: left;
-      padding: 1rem 10%;
-
+    .timelineBorder {
+      max-width: 100%;
+      border-left: 1px solid $timeline;
+      margin: 2rem 6rem;
     }
 
-    p {
-      min-width: max-content;
-      width: 7rem;
-      align-self: flex-end;
-      padding: 0;
-      margin: 0;
-    }
-
-    // <div>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    button {
-      align-self: flex-end;
-      background-image: url("/assets/img/noun_edit_2162449.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      font-size: 0;
-      width: 1.2rem;
-      max-width: 99px;
-      max-height: 99px;
-      height: 1.2rem;
-      padding: 0;
-      border: none;
-      box-shadow: none;
-    }
-    ul {
+    header {
       display: flex;
       flex-direction: row;
-      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: 100%;
+      // padding: 1rem 5%;
+      margin: 0;
+      padding: 1rem 0;
+      margin-top: -2rem;
+
+      .titleContainer {
+        border-bottom: 1.5px solid $timeline;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 100%;
+        align-items: baseline;
+      }
+
+      h3 {
+        scroll-margin-top: 2ex;
+        width: fit-content;
+        text-align: left;
+        padding: 0 1rem;
+        font-weight: 600;
+
+        &::before {
+          content: "⬤";
+          margin-left: -1.8rem;
+          margin-right: 1rem;
+          color: $timelinedot;
+        }
+      }
+
+      p {
+        min-width: max-content;
+        width: 4rem;
+        // align-self: flex-end;
+        padding: 0;
+        margin: 0 1rem;
+        font-weight: 500;
+      }
+
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        overflow-x: scroll;
+        padding: 1rem;
+        align-content: center;
+        align-items: center;
+
+        &::before {
+          content: "tags: ";
+          font-variant: small-caps;
+          margin-right: 0.7rem;
+        }
+
+        li {
+          margin: 1rem;
+          min-width: fit-content;
+          font-size: 1rem;
+          // text-align: center;
+          font-style: italic;
+
+          &:nth-last-child(1) {
+            padding-right: 1.5rem;
+          }
+
+        }
+      }
+    }
+
+    .dayIntro {
+      display: flex;
       justify-content: center;
-      overflow-x: scroll;
-      padding: 0.5rem;
+      max-width: 100%;
+      position: relative;
 
-      li {
-        margin: 1rem;
-        min-width: fit-content;
-        // font-size: 1.em;
-        // text-align: center;
-        font-style: italic;
-   
+      p {
+        min-width: 20rem;
+        width: 70%;
+        max-width: 50rem;
+        // margin: 1rem;
+        padding: 1rem;
+        line-height: 1.5;
+        // font-size: 1.2re
+      }
 
+      // <div>Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      button {
+        align-self: flex-end;
+        background-image: url("/assets/img/noun_edit_2162449.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: 0;
+        width: 2rem;
+        max-width: 99px;
+        max-height: 99px;
+        height: 2rem;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+
+
+
+    #photoTimeline {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 100%;
+      justify-content: center;
+
+      .photo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 19rem;
+        width: 20%;
+        max-width: 25rem;
+        padding: 0.5rem;
+        // border: 1px solid $sweetpink;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: inset 0 0px 4px 4px $pinkshadow;
+        backdrop-filter: blur(4px);
+        margin: 1rem 0.5rem;
+
+        h3 {
+          display: none;
+        }
+
+        figure {
+          display: flex;
+          flex-direction: column;
+          max-width: 100%;
+          // align-items: center;
+          align-content: center;
+
+          img {
+            object-fit: contain;
+            width: 100%
+          }
+
+          figcaption {
+            text-align: center;
+            background-color: #efefef;
+            padding: 0.2rem;
+          }
+        }
+
+        .tagContainer {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: scroll;
+          padding: 0.5rem;
+          align-items: center;
+          align-content: center;
+          // min-width: fit-content;
+          font-size: 1rem;
+
+
+          h4 {
+            font-variant: small-caps;
+            font-size: inherit;
+            min-width: fit-content;
+
+          }
+
+          ul {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-start;
+            overflow-x: scroll;
+            // padding: 0.5rem;
+            align-items: center;
+            align-content: center;
+            // min-width: fit-content;
+
+
+            li {
+              margin: 1rem;
+              min-width: fit-content;
+              // font-size: 1.em;
+              // text-align: center;
+              font-style: italic;
+              font-size: 1rem;
+
+              &:nth-child(1) {
+                margin-left: 1rem;
+              }
+
+              &:nth-last-child(1) {
+                padding-right: 1rem;
+              }
+            }
+          }
+        }
       }
     }
   }
-
-  p {
-    min-width: 20rem;
-    width: 70%;
-    max-width: 50rem;
-    margin: 1rem;
-    padding: 1rem;
-    line-height: 1.5;
-    // font-size: 1.2rem
-
-  }
-  }
 }
-  
+
 
 aside figure {
   margin-bottom: 4rem;
@@ -827,7 +998,7 @@ main {
 
   button {
     background-image: linear-gradient(to right, #db709499 -10%, #db709499 60%, #ece0ec 99%, #b582b5 155%);
-    
+
   }
 }
 
@@ -906,6 +1077,7 @@ button {
 input:focus {
   outline: $purple auto 7px;
 }
+
 .notities .savedNotes {
   display: flex;
   flex-direction: column;
@@ -921,9 +1093,9 @@ input:focus {
   padding: 0;
   margin: 1rem;
   // background-color: white;
-    display: flex;
-    align-content: center;
-    align-items: baseline;
+  display: flex;
+  align-content: center;
+  align-items: baseline;
 
   h4 {
     text-align: right;
@@ -932,7 +1104,7 @@ input:focus {
     margin: 0.25rem 0.5rem;
 
   }
-  
+
 
   button {
     margin: 0.5rem;
@@ -959,6 +1131,7 @@ input:focus {
 .notities>.placeholder {
   display: none;
 }
+
 .inspiratie .placeholder {
   display: none;
 }
@@ -982,7 +1155,9 @@ input:focus {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 450px) {
-  .flickr .flickrGallery header ul {
+
+  .flickr .flickrGallery header ul,
+  .flickr .flickrGallery #photoTimeline .photo .tagContainer ul {
     justify-content: flex-start;
   }
 
@@ -997,20 +1172,22 @@ input:focus {
     margin: 1.25rem;
 
   }
+
   .notities .sortbuttons {
-    margin-right:3rem;
+    margin-right: 3rem;
   }
-  
+
 }
 
 @media screen and (min-width: 735px) {
   .sticky {
     margin: 1rem;
   }
+
   .notities .sortbuttons {
-    margin-right:4.5rem;
+    margin-right: 4.5rem;
   }
-  
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -1019,17 +1196,17 @@ input:focus {
   }
 
   .notities .sortbuttons {
-    margin-right:4.5rem;
+    margin-right: 4.5rem;
   }
-  
+
 
 }
 
 @media screen and (min-width: 1219px) {
 
-.notities .sortbuttons {
-  margin-right:4.5rem;
-}
+  .notities .sortbuttons {
+    margin-right: 4.5rem;
+  }
 
   .inspiratie section>h3 {
     margin-bottom: 2rem;
@@ -1037,7 +1214,8 @@ input:focus {
 
   .notities>p,
   .inspiratie>p,
-  .flickr>header>p, .notities>div>p {
+  .flickr>header>p,
+  .notities>div>p {
     border-left: 3px solid $purpleborder;
     max-height: 9rem;
 
@@ -1061,8 +1239,8 @@ input:focus {
     margin-right: 2rem;
     margin-bottom: 4rem;
   }
-  
-  .notities>p{
+
+  .notities>p {
     margin-top: 15%;
     max-width: 28rem;
     padding-left: 1rem;
@@ -1074,22 +1252,38 @@ input:focus {
   }
 
   @keyframes wiggle {
-    0% { transform: rotate(0deg); }
-   80% { transform: rotate(0deg); }
-   85% { transform: rotate(5deg); }
-   95% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
-}
+    0% {
+      transform: rotate(0deg);
+    }
+
+    80% {
+      transform: rotate(0deg);
+    }
+
+    85% {
+      transform: rotate(5deg);
+    }
+
+    95% {
+      transform: rotate(-5deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
   // ORDER
   .notities {
     h2 {
       order: 1
     }
+
     .addNote {
       order: 2;
       max-width: 31rem;
     }
+
     .paragraphs {
       order: 3;
     }
@@ -1097,6 +1291,7 @@ input:focus {
     .sortbuttons {
       order: 4;
     }
+
     .saved-notitions {
       order: 5;
     }
@@ -1104,10 +1299,11 @@ input:focus {
 }
 
 @media screen and (min-width: 1300px) {
+
   // article {
   //   max-width: 45%;
   // }
- .notities .addNote {
+  .notities .addNote {
     // order: 2;
     max-width: 37rem;
   }
