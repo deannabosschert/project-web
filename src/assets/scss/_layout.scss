@@ -422,7 +422,7 @@ form {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-width: 19rem;
+        min-width: 14rem;
         width: 20%;
         max-width: 25rem;
         padding: 0.5rem;
@@ -559,7 +559,7 @@ form {
           align-content: center;
           // min-width: fit-content;
           font-size: 1rem;
-
+          
 
           h4 {
             font-variant: small-caps;
@@ -1259,15 +1259,18 @@ input:focus {
   .flickr .flickrGallery #photoTimeline .photo .tagContainer ul {
     justify-content: flex-start;
   }
+
   .flickr .flickrGallery header p {
     margin: 0 0.5rem;
   }
+  .flickr .flickrGallery #photoTimeline .photo {
+    min-width: 85%;
+  }
+
 }
 
 @media screen and (min-width: 450px) {
-  article {
-    // width: 80%;
-  }
+ 
 
   .moodboard {
     margin: 1.25rem;
@@ -1304,7 +1307,10 @@ input:focus {
 }
 
 @media screen and (min-width: 1219px) {
-
+  .flickr .flickrGallery #photoTimeline .photo {
+    max-width: 17%;
+    min-width: 13rem;
+  }
   .notities .sortbuttons {
     margin-right: 4.5rem;
   }
@@ -1452,15 +1458,15 @@ input:focus {
 .visiblehover {
   // visibility: hidden;
 
-  &:hover{
-  visibility: visible;
-  z-index: 10;
+  &:hover {
+    visibility: visible;
+    z-index: 10;
   }
 }
 
 .photo:hover {
-  .visiblehover{
+  .visiblehover {
     visibility: hidden;
     z-index: 10;
-    }
+  }
 }
