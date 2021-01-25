@@ -49,6 +49,8 @@ function reAddEventlisteners() {
   // ratingStars.addEventListener('click', addRating) 
   const comment = document.querySelector('.comment')
   const fullrating = document.querySelector('.fullrating')
+    const fullratingstats = document.querySelector('.fullratingstats')
+
 
   changeVisibility(addCommentButtons, inputComment, "comment")
   changeVisibility(addRatingButtons, ratingStars, "rating")
@@ -89,8 +91,8 @@ function reAddEventlisteners() {
             inputbtn.classList.add('hidden')
             fullrating.classList.remove('hidden')
 
-            fullrating.classList.add('visible')
-
+            fullrating.classList.add('visiblehover')
+            fullratingstats.classList.add('visible')
           }
 
         })
