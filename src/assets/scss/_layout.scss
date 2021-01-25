@@ -443,6 +443,28 @@ form {
           align-content: center;
           justify-content: center;
 
+          .emptyrating, .fullrating {
+            // visibility: hidden;
+            position: absolute;
+            top: 0;
+            background: rgba(255, 255, 255, 0.40);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(6.5px);
+            width: 95%;
+            max-width: 95%;
+          }
+
+          input {
+            width: 93%;
+            min-height : 4rem;
+            max-width: 95%;
+            height: 2rem;
+            font-size: $p;
+            position: absolute;
+            bottom: 25%;
+
+                    }
+
           img {
             object-fit: contain;
             width: 100%
@@ -454,7 +476,7 @@ form {
             padding: 0.2rem;
           }
           .options {
-            visibility: hidden;
+            // visibility: hidden;
             position: absolute;
             width: 95%;
             max-width: 95%;
@@ -468,11 +490,9 @@ form {
             height: 4.5rem;
             align-items: center;
             align-content: center;
-
-          
-
-          
            
+           
+            
             button {
               background-color: none;
               background-size: contain;
@@ -494,14 +514,16 @@ form {
               width: 50%;
               margin: 0;
 
-              &:nth-child(1) {
-                background-image: url("/assets/img/noun_rate_2456498.png");
+              &:nth-child(2) {
+                background-image: url("/assets/img/noun_comment_2902496.png");
+
                 padding: 1rem 2rem;
                 border-right: 1px solid $antracitetransparant;
               }
 
-              &:nth-child(2) {
-                background-image: url("/assets/img/noun_comment_2902496.png");
+              &:nth-child(3) {
+                background-image: url("/assets/img/noun_rate_2456498.png");
+
                 padding: 1rem 2rem;
                 border-left: 1px solid $antracitetransparant;
               }
@@ -1394,3 +1416,16 @@ input:focus {
 //     }
 //   }
 // }
+
+.hidden {
+  visibility: hidden;
+
+  &:hover {
+    visibility: hidden;
+  }
+}
+
+.visible {
+  visibility: visible;
+  z-index: 10;
+}

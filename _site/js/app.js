@@ -29,6 +29,44 @@ import {
 
 })()
 
+reAddEventlisteners()
+
+function reAddEventlisteners() {
+  const fotoOpties = document.querySelectorAll('.options .addComment')
+  const paragraphToEdit = document.querySelector('.editParagraph')
+  const addCommentButtons = document.getElementsByClassName('comment')
+  // console.log(addCommentButton)
+  const ratingStars = document.getElementsByClassName('ratingStars')
+  const addRatingButton = document.getElementsByClassName('addRating')
+
+  paragraphToEdit.addEventListener('click', editParagraph)
+  // addCommentButton.addEventListener('click', addComment)
+  // addRatingButton.addEventListener('click', selectRating)
+  // ratingStars.addEventListener('click', addRating) 
+  const comment = document.querySelector('.comment')
+
+  for (let i = 0; i < fotoOpties.length; i++) {
+    // console.log(comment)
+
+    // comment.classList.add('visible')
+    // comment.classList.remove('hidden')
+
+
+    fotoOpties[i].addEventListener("click", () => {
+      console.log(comment);
+      console.log([i])
+
+      const commentbtn = addCommentButtons[i]
+      // const yeet = addCommentButtons[i].classList
+      // console.log(yeet)
+
+      commentbtn.classList.add('visible')
+      commentbtn.classList.remove('hidden')
+      // addCommentButtons.classList.add('hidden')
+
+    });
+  }
+}
 
 const searchUnsplash = document.querySelector('.searchUnsplash')
 const findPinterest = document.querySelector('.findPinterest')
@@ -38,14 +76,6 @@ const addNote = document.querySelector('.addNote')
 // const deleteNote = document.querySelector('.close')
 const sortNoteAsc = document.querySelector('.sortByDateAsc')
 const sortNoteDesc = document.querySelector('.sortByDateDesc')
-
-const paragraphToEdit = document.querySelector('.editParagraph')
-const addComment = document.querySelector('.addComment')
-const addRating = document.querySelector('.addRating')
-paragraphToEdit.addEventListener('click', editParagraph)
-addComment.addEventListener('click', addComment)
-addRating.addEventListener('click', addRating)
-
 
 searchUnsplash.addEventListener('submit', unsplash)
 findPinterest.addEventListener('submit', pinterest)
@@ -139,12 +169,13 @@ function pinterest() {
   let url = input.value
   if (url == "") {
     console.log('load board from randomURL')
+
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
     }
 
-    const randomURLs = ["https://nl.pinterest.com/dbosschert/austria/","https://nl.pinterest.com/dbosschert/winter-wonderland/","https://nl.pinterest.com/dbosschert/forest-fun/","https://nl.pinterest.com/dbosschert/wonderful-waterfall/"]
-    const randomUrlIndex= getRandomInt(4)
+    const randomURLs = ["https://nl.pinterest.com/dbosschert/austria/", "https://nl.pinterest.com/dbosschert/winter-wonderland/", "https://nl.pinterest.com/dbosschert/forest-fun/", "https://nl.pinterest.com/dbosschert/wonderful-waterfall/"]
+    const randomUrlIndex = getRandomInt(4)
     const randomURL = randomURLs[randomUrlIndex]
     url = randomURL
     store.pinterest(url)
@@ -304,9 +335,33 @@ function editParagraph() {
 
   paragraph.setAttribute("contenteditable", "true")
   paragraph.focus()
+  reAddEventlisteners()
+}
 
+function selectRating() {
+  const rating = document.querySelector('.emptyrating')
+  console.log(rating)
+  rating.classList.add('visible')
+  rating.classList.remove('hidden')
+  fotoOpties.classList.add('hidden')
+  reAddEventlisteners()
 }
 
 function addRating() {
-  
+  const rating = document.querySelector('.emptyrating')
+  const fullrating = document.querySelector('.fullrating')
+
+  rating.classList.remove('visible')
+  fullrating.classList.add('visible')
+  reAddEventlisteners()
+
 }
+
+// function addComment() {
+//   const comment = document.querySelector('.comment')
+//   console.log(comment)
+//   comment.classList.add('visible')
+//   comment.classList.remove('hidden')
+//   fotoOpties.classList.add('hidden')
+//   reAddEventlisteners()
+// }
