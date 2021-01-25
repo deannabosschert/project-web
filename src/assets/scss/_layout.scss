@@ -416,7 +416,7 @@ padding-bottom:0;
 
 
 
-    #photoTimeline {
+    .photoTimeline {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -1346,7 +1346,7 @@ input:focus {
 
 
   .flickr .flickrGallery header ul,
-  .flickr .flickrGallery #photoTimeline .photo .tagContainer ul {
+  .flickr .flickrGallery .photoTimeline .photo .tagContainer ul {
     justify-content: flex-start;
   }
 
@@ -1369,7 +1369,7 @@ input:focus {
   }
 
 
-  .flickr .flickrGallery #photoTimeline .photo {
+  .flickr .flickrGallery .photoTimeline .photo {
     min-width: 85%;
   }
 
@@ -1527,7 +1527,7 @@ input:focus {
     margin: 2rem 2rem 2rem 6rem;
   }
 
-  .flickr .flickrGallery #photoTimeline .photo {
+  .flickr .flickrGallery .photoTimeline .photo {
     max-width: 17%;
     min-width: 13rem;
   }
