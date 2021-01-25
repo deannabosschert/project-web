@@ -416,3 +416,15 @@ function addRating() {
 //   fotoOpties.classList.add('hidden')
 //   reAddEventlisteners()
 // }
+
+const backToTop = document.querySelector(".backToTop");
+console.log(backToTop)
+
+
+
+backToTop.addEventListener("click", topFunction)
+function topFunction() {
+  console.log('en zo hoist je naar booooven')
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
