@@ -1278,6 +1278,21 @@ input:focus {
   }
 }
 
+
+.paragraphs {
+  margin-top: 5%;
+  width: 90%;
+  max-width: 40rem;
+  border-left: 3px solid rgba(142, 142, 252, 0.6);
+    // max-height: 9rem;
+    padding-left: 0.6rem;
+    margin-left: 1rem;
+
+    p {
+      border-left: 0px;
+    }
+}
+
 /* ATOMS */
 .backToTop {
   position: fixed;
@@ -1481,6 +1496,8 @@ input:focus {
     margin: 2rem 2rem 2rem 5.3rem;
   }
 
+  
+
   p {
     width: 70%;
   }
@@ -1525,12 +1542,23 @@ input:focus {
   .notities>p,
   .inspiratie>p,
   .flickr>header>p,
-  .notities>div>p {
+  .notities>.paragraphs {
     border-left: 3px solid $purpleborder;
     max-height: 9rem;
 
   }
 
+
+.paragraphs {
+  margin-top: 5%;
+  max-width: 50%;
+  // border-left: 3px solid rgba(142, 142, 252, 0.6);
+    max-height: 9rem;
+
+    p {
+      // border-left: 0px;
+    }
+}
 
   .notities>p,
   .inspiratie>p,
@@ -1540,7 +1568,14 @@ input:focus {
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 4rem;
+  }
+  
+  .notities .paragraphs {
+    margin-left: 1rem;
+  }
 
+  .notities>div>p {
+    margin-left: 1rem 
   }
 
   .inspiratie>section>p {
@@ -1560,6 +1595,14 @@ input:focus {
     animation: wiggle 2s infinite;
 
   }
+
+  .notities > p {
+    margin-top: 5%;
+    max-width: 28rem;
+    padding-left: 2rem;
+    // border: none;
+}
+
 
   @keyframes wiggle {
     0% {
