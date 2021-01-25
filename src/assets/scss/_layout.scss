@@ -1253,16 +1253,28 @@ input:focus {
   // order: 4;
 }
 
-.filter {
-  max-height: 11rem;
-  max-width: 12rem;
-  margin-top: -3.75rem;
+.flickr .flickrGallery header ul {
+  position: relative;
+}
 
-  img {
-    object-fit: cover;
+.flickr .flickrGallery header .filter {
+  font-size: $h4;
+  position: absolute;
+  top: 31rem;
+  right: 17%;
+  // max-height: 11rem;
+  // max-width: 12rem;
+  // margin-top: -3.75rem;
+
+  // img {
+    // object-fit: cover;
     // width: 200%;
     // height: 200%;
     // transform: scale(3.5);   
+  // }
+
+  span {
+    font-size: $h3;
   }
 }
 
@@ -1280,33 +1292,40 @@ input:focus {
 /* MEDIA QUERIES */
 @media screen and (max-width: 450px) {
 
-  .filter {
-    display: flex;
-    justify-content: center;
+  .flickr .flickrGallery header .filter {
+      font-size: $h4;
+    font-size: 1.375rem;
+    position: absolute;
+    top: 31rem;
+    right: 17%;
+    // display: flex;
+    // justify-content: center;
 
-    max-width: 90%;
-    // max-width: 12rem;
-    // margin-top: -1.75rem;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
+    // max-width: 90%;
+    // // max-width: 12rem;
+    // // margin-top: -1.75rem;
+    // align-content: center;
+    // align-items: center;
+    // align-self: center;
+    // text-align: center;
     // min-width: 100%;
     // margin-bottom: -2.5rem;
     
 
-      p {
-        margin: 0;
-        min-width:fit-content;
-      }
+    //   p {
+    //     margin: 0;
+    //     min-width:fit-content;
+    //   }
 
-      img {
-        object-fit: contain;
-        margin: 0;
+    //   img {
+    //     object-fit: contain;
+    //     margin: 0;
 
-    }
+    // }
   }
 
+
+  
 
     
 
@@ -1321,11 +1340,13 @@ input:focus {
   }
   .flickr .flickrGallery header ul {
     margin-left: 0.5rem;
+    // margin-bottom: 2.5rem;
 
   }
 
   .flickr .flickrGallery .dayIntro {
     margin-left: 0.5rem;
+    margin-bottom: 4rem;
   }
 
   .flickr .flickrGallery .dayIntro p {
@@ -1344,7 +1365,16 @@ input:focus {
 }
 
 @media screen and (min-width: 450px) {
- 
+  .flickr .flickrGallery header .filter {
+    right: 27%;
+    top: 35rem;
+    font-size: $h3;
+  }
+
+  .flickr .flickrGallery .dayIntro {
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
 
   .moodboard {
     margin: 1.25rem;
@@ -1357,7 +1387,47 @@ input:focus {
 
 }
 
+@media screen and (min-width: 555px) {
+.flickr .flickrGallery header .filter {
+  right: 27%;
+  top: 33rem;
+  font-size: $h3;
+}
+
+.flickr .flickrGallery .dayIntro {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+}
+
+@media screen and (min-width: 715px) {
+  .flickr .flickrGallery header .filter {
+    right: 32%;
+    top: 32rem;
+    font-size: $h3;
+  }
+  
+  .flickr .flickrGallery .dayIntro {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+  }
+  
+  @media screen and (min-width: 731px) {
+    .flickr .flickrGallery header .filter {
+      right: 32%;
+      top: 28rem;
+      font-size: $h3;
+    }
+    
+    .flickr .flickrGallery .dayIntro {
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
 @media screen and (min-width: 735px) {
+  
   .sticky {
     margin: 1rem;
   }
@@ -1371,6 +1441,33 @@ input:focus {
   }
 
 }
+@media screen and (min-width: 867px) {
+
+.flickr .flickrGallery header .filter {
+  right: 32%;
+  top: 26rem;
+  font-size: $h3;
+}
+
+.flickr .flickrGallery .dayIntro {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+}
+
+@media screen and (min-width: 987px) {
+
+  .flickr .flickrGallery header .filter {
+    right: 32%;
+    top: 24rem;
+    font-size: $h3;
+  }
+  
+  .flickr .flickrGallery .dayIntro {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+  }
 
 @media screen and (min-width: 1024px) {
   .sticky {
@@ -1390,7 +1487,25 @@ input:focus {
 
 }
 
+@media screen and (min-width: 1090px) {
+
+  .flickr .flickrGallery header .filter {
+    right: 4%;
+    top: 8rem;
+    font-size: $h4;
+  }
+  
+  .flickr .flickrGallery .dayIntro {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  }
+
 @media screen and (min-width: 1219px) {
+    .flickr .flickrGallery header .filter {
+      right: 4%;
+    }
+
   .flickr .flickrGallery .timelineBorder {
     margin: 2rem 2rem 2rem 6rem;
   }
@@ -1494,13 +1609,22 @@ input:focus {
 }
 
 @media screen and (min-width: 1300px) {
-
+    .flickr .flickrGallery header .filter {
+      right: 3%;
+    }
+    
   // article {
   //   max-width: 45%;
   // }
   .notities .addNote {
     // order: 2;
     max-width: 37rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .flickr .flickrGallery header .filter {
+    right: 6%;
   }
 }
 
